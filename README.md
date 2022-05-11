@@ -1,10 +1,10 @@
-# ENS Application
+# XNS Application
 
-ENS Application
+XNS Application
 
 # ⚠️ IMPORTANT NOTE TO CONTRIBUTORS ⚠️
 
-As work has begun on the next version of the ENS app, please do not submit PRs for
+As work has begun on the next version of the XNS app, please do not submit PRs for
 issues marked 'redesign' or 'post-redesign'. We will soon have info on how to
 contribute to the new app. Thanks for all your hard work!
 
@@ -15,8 +15,8 @@ contribute to the new app. Thanks for all your hard work!
 Expects Node.js version >=14.17.0
 
 ```shell
-$> git clone https://github.com/ensdomains/ens-app.git
-$> cd ens-app
+$> git clone https://github.com/yodaplus/xns-app.git
+$> cd xns-app
 $> yarn install
 $> yarn start
 ```
@@ -31,7 +31,7 @@ yarn start:ipfs
 
 The main difference of the ipfs-build is that it uses HashRouter instead of BrowserRouter and makes sure all links are relative.
 
-The ENS app can be used with the Gnosis Safe web interface. The required steps are outline [here](./docs/gnosis_safe_app_support.md).
+The XNS app can be used with the Gnosis Safe web interface. The required steps are outline [here](./docs/gnosis_safe_app_support.md).
 
 ## Unit Testing
 
@@ -52,7 +52,7 @@ If you get this error:
 ```bash
 $ npm test
 
-> ens-app@0.1.0 test /Users/youruser/drive/projects/ens-app
+> xns-app@0.1.0 test /Users/youruser/drive/projects/xns-app
 > react-scripts test --env=jsdom
 
 2018-05-23 09:17 node[85833] (FSEvents.framework) FSEventStreamStart: register_with_server: ERROR: f2d_register_rpc() => (null) (-22)
@@ -117,6 +117,7 @@ const Component = styled('div')`
   display: flex;
 `
 ```
+
 
 ### Media Queries
 
@@ -189,13 +190,13 @@ Once this has been done, please create a pull request for us to review and check
 
 In case you haven't already:
 
-- `git clone https://github.com/ensdomains/ens-app.git`
-- `git clone https://github.com/ensdomains/ens-subgraph`
+- `git clone https://github.com/yodaplus/xns-app.git`
+- `git clone https://github.com/yodaplus/xns-subgraph`
 - `git clone https://github.com/graphprotocol/graph-node`
 
 You need to make sure these are all cloned into the same parent folder.
 
-Next in the ens-app folder run the following (will need multiple terminals open):
+Next in the xns-app folder run the following (will need multiple terminals open):
 
 ```
 yarn graph-node
@@ -211,18 +212,18 @@ rm -rf data
 docker-compose up
 ```
 
-in the `ens-app` folder:
+in the `xns-app` folder:
 
 ```
 yarn preTest
 yarn subgraph
 ```
 
-in the `ens-subgraph` folder:
+in the `xns-subgraph` folder:
 
 `yarn setup`
 
-in the `ens-app` folder:
+in the `xns-app` folder:
 
 ```
 yarn start:test
@@ -233,9 +234,9 @@ This should open up cypress. To run the tests click on 'Run n integration tests'
 
 ---
 
-The main package for the E2E tests is `ensdomains/mock`, which exposes a script that will prepopulate ganache with ENS so you have everything setup to run Cypress on.
+The main package for the E2E tests is `xnsdomains/mock`, which exposes a script that will prepopulate ganache with XNS so you have everything setup to run Cypress on.
 
-The ENS app has end to end tests with Cypress. To run them you need to start ganache, run the seed script, run the app and then run cypress. This should start chrome and the Cypress GUI. Each time the test run, the script needs to be re-run and the app restarted for it to work.
+The XNS app has end to end tests with Cypress. To run them you need to start ganache, run the seed script, run the app and then run cypress. This should start chrome and the Cypress GUI. Each time the test run, the script needs to be re-run and the app restarted for it to work.
 
 ```bash
 ganache-cli
@@ -271,11 +272,11 @@ Subgraph is used to list subdomains and all the names you have registered.
 
 ### Prerequisite
 
-Get ens subgraph
+Get xns subgraph
 
 ```
-git clone https://github.com/ensdomains/ens-subgraph
-cd ens-subgraph
+git clone https://github.com/yodaplus/xns-subgraph
+cd xns-subgraph
 yarn
 ```
 
@@ -285,7 +286,7 @@ Get graph-node
 git clone https://github.com/graphprotocol/graph-node
 ```
 
-From now on, we assume that `graph-node`, `ens-app`, and `ens-subgraph` all exist under the same directory
+From now on, we assume that `graph-node`, `xns-app`, and `xns-subgraph` all exist under the same directory
 
 ### Start ganache
 
@@ -306,22 +307,22 @@ cd graph-node/docker
 docker-compose up
 ```
 
-### Deploy ENS contracts and update subgraph.yml
+### Deploy XNS contracts and update subgraph.yml
 
 ```
-cd ens-app
+cd xns-app
 yarn preTest
 yarn subgraph
 ```
 
-`subgraph` job updates ENS contract addresses and updates environment from `mainnet` to `dev`
+`subgraph` job updates XNS contract addresses and updates environment from `mainnet` to `dev`
 
-### Deploy ENS subgraph
+### Deploy XNS subgraph
 
 ### Generate deployment code
 
 ```
-cd ../ens-subgraph
+cd ../xns-subgraph
 yarn
 yarn codegen
 ```
