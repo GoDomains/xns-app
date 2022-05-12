@@ -1,5 +1,5 @@
 import { utils as avtUtils } from '@ensdomains/ens-avatar'
-import { ethers, getNetworkProviderUrl } from '@ensdomains/ui'
+import { ethers, getNetworkProviderUrl } from '@xnsdomains/ui/src'
 
 const specs = {
   erc721: {
