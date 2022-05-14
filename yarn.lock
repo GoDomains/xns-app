@@ -2539,10 +2539,9 @@
     dns-packet "^5.2.1"
     js-sha3 "^0.8.0"
 
-"@ensdomains/ui@^3.3.35":
-  version "3.3.35"
-  resolved "https://registry.yarnpkg.com/@ensdomains/ui/-/ui-3.3.35.tgz#bbffbc0bbe2a5e9cd8745e104644037c546eea33"
-  integrity sha512-LkDceeIRP0ljUwsxCkI3M39bIEYZnxUz8rXqJaXeBw6cXplPs5aqgYU3ilEvQE0OA4KhwLuUcXiGjIqyd+yXTQ==
+"@ensdomains/ui@https://github.com/yodaplus/ui.git#master":
+  version "3.3.32"
+  resolved "https://github.com/yodaplus/ui.git#4f63c57486450a4b8e62501d47d83f89172bb7fe"
   dependencies:
     "@0xproject/utils" "^2.0.2"
     "@babel/plugin-proposal-class-properties" "^7.8.3"
