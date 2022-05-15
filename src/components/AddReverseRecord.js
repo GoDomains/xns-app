@@ -262,7 +262,7 @@ function AddReverseRecord({ account, currentAddress }) {
                   name:
                     (hasValidReverseRecord(getReverseRecord) &&
                       getReverseRecord.name) ||
-                    'example.eth'
+                    'example.xdc'
                 }}
                 ' rather than the long address '{{ account }}'. If you would
                 like to set up your reverse for a different account, please
@@ -285,7 +285,7 @@ function AddReverseRecord({ account, currentAddress }) {
             <Explanation>
               <p>
                 <Trans i18nKey="singleName.record.messages.explanation2">
-                  You can only select names you set this Ethereum Address as.
+                  You can only select names you set this Xinfin Address as.
                 </Trans>
               </p>
             </Explanation>
