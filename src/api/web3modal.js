@@ -8,7 +8,7 @@ import {
 } from '../apollo/reactiveVars'
 
 const INFURA_ID =
-  window.location.host === 'app.ens.domains'
+  window.location.host === 'app.xns.domains'
     ? '90f210707d3c450f847659dc9a3436ea'
     : '58a380d3ecd545b2b5b3dad5d2b18bf0'
 
@@ -30,7 +30,7 @@ const option = {
       package: () => import('walletlink'),
       packageFactory: true,
       options: {
-        appName: 'Ethereum name service',
+        appName: 'Xinfin name service',
         jsonRpcUrl: `https://mainnet.infura.io/v3/${INFURA_ID}`
       }
     },
