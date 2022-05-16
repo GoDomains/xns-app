@@ -23,8 +23,8 @@ describe('Home', () => {
   it('should not show MyAccount if we have accounts but are in readOnly mode', async () => {
     const mockProps = {
       domain: {
-        name: 'vitalik.eth',
-        parent: 'eth'
+        name: 'vitalik.xdc',
+        parent: 'xdc'
       },
       pathname: '',
       tab: 'register',
@@ -47,7 +47,7 @@ describe('Home', () => {
         return {
           data: {
             network: '1',
-            displayName: 'vitalik.eth',
+            displayName: 'vitalik.xdc',
             isReadOnly: true,
             isSafeApp: false
           }

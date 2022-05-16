@@ -40,7 +40,7 @@ function refreshAndCheckText(url, textOrArrayOfText) {
 describe('Name Wrapper Tests', () => {
   describe('page with wrapped name', () => {
     it('should have details be read only', () => {
-      cy.visit(`${NAME_ROOT}/wrappedname.eth/details`, { timeout: 10000 })
+      cy.visit(`${NAME_ROOT}/wrappedname.xdc/details`, { timeout: 10000 })
       cy.wait(3000)
       cy.getByTestId('edit-registrant').should(
         'have.css',
@@ -66,18 +66,18 @@ describe('Name Wrapper Tests', () => {
     })
 
     it('should display edit name wrapper', () => {
-      cy.visit(`${NAME_ROOT}/wrappedname.eth/details`, { timeout: 10000 })
+      cy.visit(`${NAME_ROOT}/wrappedname.xdc/details`, { timeout: 10000 })
       cy.getByTestId('banner-namewrapper-edit').should('exist')
-      cy.visit(`${NAME_ROOT}/wrappedname.eth/register`, { timeout: 10000 })
+      cy.visit(`${NAME_ROOT}/wrappedname.xdc/register`, { timeout: 10000 })
       cy.getByTestId('banner-namewrapper-edit').should('exist')
-      cy.visit(`${NAME_ROOT}/subdomain.wrappedname.eth/details`, {
+      cy.visit(`${NAME_ROOT}/subdomain.wrappedname.xdc/details`, {
         timeout: 10000
       })
       cy.getByTestId('banner-namewrapper-edit').should('exist')
     })
 
     it('should have subdomains be read only', () => {
-      cy.visit(`${NAME_ROOT}/wrappedname.eth/subdomains`, { timeout: 10000 })
+      cy.visit(`${NAME_ROOT}/wrappedname.xdc/subdomains`, { timeout: 10000 })
       cy.waitUntilTestIdDoesNotExist('addsubdomain')
       cy.getByTestId('banner-namewrapper-edit').should('exist')
     })
@@ -85,7 +85,7 @@ describe('Name Wrapper Tests', () => {
 
   describe('page with wrapped subdomain', () => {
     it('should have details be read only', () => {
-      cy.visit(`${NAME_ROOT}/subdomain.wrappedname.eth/details`, {
+      cy.visit(`${NAME_ROOT}/subdomain.wrappedname.xdc/details`, {
         timeout: 10000
       })
       cy.getByTestId('edit-controller').should(
@@ -102,18 +102,18 @@ describe('Name Wrapper Tests', () => {
     })
 
     it('should display edit name wrapper banner', () => {
-      cy.visit(`${NAME_ROOT}/subdomain.wrappedname.eth/details`, {
+      cy.visit(`${NAME_ROOT}/subdomain.wrappedname.xdc/details`, {
         timeout: 10000
       })
       cy.getByTestId('banner-namewrapper-edit').should('exist')
-      cy.visit(`${NAME_ROOT}/subdomain.wrappedname.eth/subdomains`, {
+      cy.visit(`${NAME_ROOT}/subdomain.wrappedname.xdc/subdomains`, {
         timeout: 10000
       })
       cy.getByTestId('banner-namewrapper-edit').should('exist')
     })
 
     it('should have subdomains be read only', () => {
-      cy.visit(`${NAME_ROOT}/subdomain.wrappedname.eth/subdomains`, {
+      cy.visit(`${NAME_ROOT}/subdomain.wrappedname.xdc/subdomains`, {
         timeout: 10000
       })
       cy.waitUntilTestIdDoesNotExist('addsubdomain')
@@ -122,7 +122,7 @@ describe('Name Wrapper Tests', () => {
 
   describe('page with unwrapped subdomain of wrapped domain', () => {
     it('should have details in normal mode', () => {
-      cy.visit(`${NAME_ROOT}/unwrapped.wrappedname.eth/details`, {
+      cy.visit(`${NAME_ROOT}/unwrapped.wrappedname.xdc/details`, {
         timeout: 10000
       })
       cy.wait(3000)
@@ -143,18 +143,18 @@ describe('Name Wrapper Tests', () => {
     })
 
     it('should display upgrade name wrapper banner', () => {
-      cy.visit(`${NAME_ROOT}/unwrapped.wrappedname.eth/details`, {
+      cy.visit(`${NAME_ROOT}/unwrapped.wrappedname.xdc/details`, {
         timeout: 10000
       })
       cy.getByTestId('banner-namewrapper-upgrade').should('exist')
-      cy.visit(`${NAME_ROOT}/expiredwrappedname.eth/subdomains`, {
+      cy.visit(`${NAME_ROOT}/expiredwrappedname.xdc/subdomains`, {
         timeout: 10000
       })
       cy.getByTestId('banner-namewrapper-upgrade').should('exist')
     })
 
     it('should have subdomains be in normal mode', () => {
-      cy.visit(`${NAME_ROOT}/expiredwrappedname.eth/subdomains`, {
+      cy.visit(`${NAME_ROOT}/expiredwrappedname.xdc/subdomains`, {
         timeout: 10000
       })
       cy.wait(3000)
@@ -164,7 +164,7 @@ describe('Name Wrapper Tests', () => {
 
   describe('page with domain that was wrapped but expired and reregistered', () => {
     it('should have details in normal mode', () => {
-      cy.visit(`${NAME_ROOT}/expiredwrappedname.eth/details`, {
+      cy.visit(`${NAME_ROOT}/expiredwrappedname.xdc/details`, {
         timeout: 10000
       })
       cy.wait(10000)
@@ -192,7 +192,7 @@ describe('Name Wrapper Tests', () => {
     })
 
     it('should have subdomains be in normal mode', () => {
-      cy.visit(`${NAME_ROOT}/expiredwrappedname.eth/subdomains`, {
+      cy.visit(`${NAME_ROOT}/expiredwrappedname.xdc/subdomains`, {
         timeout: 10000
       })
       cy.wait(3000)
@@ -200,15 +200,15 @@ describe('Name Wrapper Tests', () => {
     })
 
     it('should display upgrade namewrapper banner', () => {
-      cy.visit(`${NAME_ROOT}/expiredwrappedname.eth/details`, {
+      cy.visit(`${NAME_ROOT}/expiredwrappedname.xdc/details`, {
         timeout: 10000
       })
       cy.getByTestId('banner-namewrapper-upgrade').should('exist')
-      cy.visit(`${NAME_ROOT}/expiredwrappedname.eth/register`, {
+      cy.visit(`${NAME_ROOT}/expiredwrappedname.xdc/register`, {
         timeout: 10000
       })
       cy.getByTestId('banner-namewrapper-upgrade').should('exist')
-      cy.visit(`${NAME_ROOT}/expiredwrappedname.eth/subdomains`, {
+      cy.visit(`${NAME_ROOT}/expiredwrappedname.xdc/subdomains`, {
         timeout: 10000
       })
       cy.getByTestId('banner-namewrapper-upgrade').should('exist')

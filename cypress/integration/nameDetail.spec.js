@@ -39,18 +39,18 @@ function refreshAndCheckText(url, textOrArrayOfText) {
 
 describe('Name detail view', () => {
   it('should redirect if searchTerm and normalized name does not match', () => {
-    cy.visit(`${NAME_ROOT}/%E2%80%8Btest.eth`)
+    cy.visit(`${NAME_ROOT}/%E2%80%8Btest.xdc`)
     cy.wait(10000)
-    cy.url().should('match', /\/test\.eth\/?/)
+    cy.url().should('match', /\/test\.xdc\/?/)
   })
   it('can see list of top level domains from [root]', () => {
     cy.visit(`${NAME_ROOT}/[root]/subdomains`)
-    cy.queryByTestId('eth', { timeout: 30000 }).should('exist')
+    cy.queryByTestId('xdc', { timeout: 30000 }).should('exist')
     cy.queryByTestId('reverse', { timeout: 1000 }).should('exist')
     cy.url().should('eq', `${NAME_ROOT}/[root]/subdomains`)
   })
   it('cannot transfer ownership to a non-ethereum address', () => {
-    cy.visit(`${NAME_ROOT}/awesome.eth`)
+    cy.visit(`${NAME_ROOT}/awesome.xdc`)
     cy.wait(10000)
     cy.getByText('Transfer')
       .scrollIntoView()
@@ -74,7 +74,7 @@ describe('Name detail view', () => {
   })
 
   it('can transfer ownership', () => {
-    cy.visit(`${NAME_ROOT}/awesome.eth`)
+    cy.visit(`${NAME_ROOT}/awesome.xdc`)
     cy.wait(5000)
     cy.getByText('Transfer').click({ force: true })
 
@@ -100,7 +100,7 @@ describe('Name detail view', () => {
   })
 
   it('can change the resolver to the public resolver', () => {
-    cy.visit(`${NAME_ROOT}/superawesome.eth`)
+    cy.visit(`${NAME_ROOT}/superawesome.xdc`)
     waitUntilInputResolves({ type: 'testId', value: 'edit-resolver' }).then(
       () => {
         cy.getByTestId('edit-resolver').click({ force: true })
@@ -140,7 +140,7 @@ describe('Name detail view', () => {
   })
 
   it('cannot change the resolver to a non contract address', () => {
-    cy.visit(`${NAME_ROOT}/superawesome.eth`)
+    cy.visit(`${NAME_ROOT}/superawesome.xdc`)
     waitUntilInputResolves({ type: 'testId', value: 'edit-resolver' }).then(
       () => {
         cy.getByTestId('edit-resolver').click({ force: true })
@@ -163,7 +163,7 @@ describe('Name detail view', () => {
   })
 
   it(`prevents user from adding a record that isn't an address`, () => {
-    cy.visit(`${NAME_ROOT}/notsoawesome.eth`)
+    cy.visit(`${NAME_ROOT}/notsoawesome.xdc`)
 
     cy.getByTestId('name-details').within(container => {
       cy.getByText('Add/Edit Record').click({ force: true, exact: false })
@@ -180,12 +180,12 @@ describe('Name detail view', () => {
       cy.getByText('ETH', { timeout: 10000 }).click({
         force: true
       })
-      cy.getByPlaceholderText('Enter a ETH Address', {
+      cy.getByPlaceholderText('Enter a XDC Address', {
         timeout: 10000,
         exact: false
       }).type('blah', { force: true, timeout: 10000 })
 
-      cy.getByPlaceholderText('Enter a ETH Address', {
+      cy.getByPlaceholderText('Enter a XDC Address', {
         exact: false
       }).should(elem => {
         expect(elem.val()).to.equal('blah')
@@ -195,7 +195,7 @@ describe('Name detail view', () => {
       //force click like a real user
       cy.getByTestId('save-record', { exact: false }).click({ force: true })
 
-      cy.getByPlaceholderText('Enter a ETH Address', {
+      cy.getByPlaceholderText('Enter a XDC Address', {
         exact: false
       }).should(elem => {
         expect(elem.val()).to.equal('blah')
@@ -214,7 +214,7 @@ describe('Name detail view', () => {
       'ipfs://bafybeico3uuyj3vphxpvbowchdwjlrlrh62awxscrnii7w7flu5z6fk77y'
     const otherAddress = 'MQMcJhpWHYVeQArcZR3sBgyPZxxRtnH441'
     const text = 'Hello'
-    const url = `${NAME_ROOT}/notsoawesome.eth`
+    const url = `${NAME_ROOT}/notsoawesome.xdc`
     cy.visit(url)
 
     cy.getByTestId('name-details').within(container => {
@@ -231,7 +231,7 @@ describe('Name detail view', () => {
         .click({
           force: true
         })
-        .getByPlaceholderText('Enter a ETH Address', {
+        .getByPlaceholderText('Enter a XDC Address', {
           timeout: 10000,
           exact: false
         })
@@ -316,7 +316,7 @@ describe('Name detail view', () => {
   })
 
   it('can change the record', () => {
-    const url = `${NAME_ROOT}/abittooawesome.eth`
+    const url = `${NAME_ROOT}/abittooawesome.xdc`
     cy.visit(url)
 
     const ADDRESS = '0x0000000000000000000000000000000000000007'
@@ -367,7 +367,7 @@ describe('Name detail view', () => {
   })
 
   it('cannot change deprecated ipns contenthash', () => {
-    const url = `${NAME_ROOT}/abittooawesome2.eth`
+    const url = `${NAME_ROOT}/abittooawesome2.xdc`
     cy.visit(url)
     const DEPRECATED_CONTENT_HASH = 'ipns://app.uniswap.org'
     cy.queryByText(DEPRECATED_CONTENT_HASH, { timeout: 10000 }).should('exist')
@@ -380,7 +380,7 @@ describe('Name detail view', () => {
   })
 
   it('can delete records', () => {
-    cy.visit(`${NAME_ROOT}/notsoawesome.eth`)
+    cy.visit(`${NAME_ROOT}/notsoawesome.xdc`)
     cy.getByTestId('name-details').within(container => {
       cy.getByText('Add/Edit Record').click({ force: true })
       cy.wait(5000)
@@ -414,15 +414,15 @@ describe('Name detail view', () => {
   })
 
   it('can navigate to a subdomain', () => {
-    cy.visit(`${NAME_ROOT}/subdomaindummy.eth/subdomains`, { timeout: 10000 })
-    cy.getByText('original.subdomaindummy.eth', { timeout: 15000 }).click({
+    cy.visit(`${NAME_ROOT}/subdomaindummy.xdc/subdomains`, { timeout: 10000 })
+    cy.getByText('original.subdomaindummy.xdc', { timeout: 15000 }).click({
       force: true
     })
   })
 
   it('can add a subdomain', () => {
-    const LABEL = 'sub1' // using the same subdomain label which is used at sub1.testing.eth
-    cy.visit(`${NAME_ROOT}/subdomaindummy.eth/subdomains`, { timeout: 10000 })
+    const LABEL = 'sub1' // using the same subdomain label which is used at sub1.testing.xdc
+    cy.visit(`${NAME_ROOT}/subdomaindummy.xdc/subdomains`, { timeout: 10000 })
     cy.wait(5000)
     cy.getByTestId('addsubdomain', { exact: false, timeout: 10000 }).click({
       force: true
@@ -436,17 +436,17 @@ describe('Name detail view', () => {
     cy.getByText('save', { exact: false }).click({ force: true })
 
     cy.wait(1000)
-    cy.visit(`${NAME_ROOT}/subdomaindummy.eth/subdomains`)
+    cy.visit(`${NAME_ROOT}/subdomaindummy.xdc/subdomains`)
       .getByText('subdomains', { exact: false, timeout: 10000 })
       .click({ force: true })
 
-    cy.queryByText(`${LABEL}.subdomaindummy.eth`, { timeout: 10000 }).should(
+    cy.queryByText(`${LABEL}.subdomaindummy.xdc`, { timeout: 10000 }).should(
       'exist'
     )
   })
 
   it('can view records that the user does now own', () => {
-    cy.visit(`${NAME_ROOT}/otherowner.eth`, { timeout: 10000 })
+    cy.visit(`${NAME_ROOT}/otherowner.xdc`, { timeout: 10000 })
     cy.getByTestId('migrate-value').should($div => {
       const text = $div.text()
       cy.getByTestId('unlinked-value-ETH').contains(text)

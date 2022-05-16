@@ -24,12 +24,12 @@ expect.extend({
 
     if (pass) {
       return {
-        message: () => `expected ${received} to be an Eth address`,
+        message: () => `expected ${received} to be an XDC address`,
         pass: true
       }
     } else {
       return {
-        message: () => `expected ${received} to be an Eth address`,
+        message: () => `expected ${received} to be an XDC address`,
         pass: false
       }
     }

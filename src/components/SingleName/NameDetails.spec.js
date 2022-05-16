@@ -29,8 +29,8 @@ describe('NameDetails', () => {
   it('should redirect to /register if register tab and is not an absolute path', () => {
     const mockProps = {
       domain: {
-        name: 'vitalik.eth',
-        parent: 'eth'
+        name: 'vitalik.xdc',
+        parent: 'xdc'
       },
       pathname: '',
       tab: 'register'
@@ -56,8 +56,8 @@ describe('NameDetails', () => {
   it('should redirect to /details if details tab and is not an absolute path', () => {
     const mockProps = {
       domain: {
-        name: 'vitalik.eth',
-        parent: 'eth'
+        name: 'vitalik.xdc',
+        parent: 'xdc'
       },
       pathname: '',
       tab: 'details'
@@ -83,7 +83,7 @@ describe('NameDetails', () => {
   it('should redirect to /subdomains if subdomains tab and is not an absolute path', () => {
     const mockProps = {
       domain: {
-        name: 'sub.vitalik.eth',
+        name: 'sub.vitalik.xdc',
         parent: 'vitalik'
       },
       pathname: '',
@@ -110,10 +110,10 @@ describe('NameDetails', () => {
   it('should pass isMigrated loading state to DetailsContainer', () => {
     const mockProps = {
       domain: {
-        name: 'vitalik.eth',
+        name: 'vitalik.xdc',
         parent: ''
       },
-      pathname: '/name/leontalbert.eth/details',
+      pathname: '/name/leontalbert.xdc/details',
       tab: 'details'
     }
 
@@ -133,7 +133,7 @@ describe('NameDetails', () => {
     const context = {}
     render(
       <StaticRouter
-        location={'/name/leontalbert.eth/details'}
+        location={'/name/leontalbert.xdc/details'}
         context={context}
       >
         <NameDetails {...mockProps} />

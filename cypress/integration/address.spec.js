@@ -7,14 +7,14 @@ describe('/address', () => {
   it('does not contain unnormalised names', () => {
     cy.visit(ROOT)
     cy.getByText('My Account').click({ force: true })
-    cy.queryByText('InvalidName.eth', { exact: false, timeout: 5000 }).should(
+    cy.queryByText('InvalidName.xdc', { exact: false, timeout: 5000 }).should(
       'not.exist'
     )
   })
 
   it('contains the list of names owened by the user', () => {
     cy.visit(ROOT)
-    cy.getByPlaceholderText('Search', { exact: false }).type('resolver.eth')
+    cy.getByPlaceholderText('Search', { exact: false }).type('resolver.xdc')
     cy.wait(1000)
     cy.get('button')
       .contains('Search')
@@ -33,7 +33,7 @@ describe('/address', () => {
       exact: false,
       timeout: 10000
     }).should('exist')
-    cy.queryByText('newname.eth', { exact: false }).should('exist')
+    cy.queryByText('newname.xdc', { exact: false }).should('exist')
     cy.queryByText('Expires', { exact: false }).should('exist')
   })
 
@@ -41,10 +41,10 @@ describe('/address', () => {
     cy.visit(ROOT)
     cy.getByText('My Account').click({ force: true })
     // force:false will click the link under the element
-    cy.getByTestId('checkbox-newname.eth', { timeout: 10000 }).click({
+    cy.getByTestId('checkbox-newname.xdc', { timeout: 10000 }).click({
       force: true
     })
-    cy.get('[data-testid="checkbox-newname.eth"] div').should(
+    cy.get('[data-testid="checkbox-newname.xdc"] div').should(
       'have.css',
       'border-top-color',
       ENABLED_COLOUR
@@ -65,7 +65,7 @@ describe('/address', () => {
   })
 
   it('can click select all and renew all', () => {
-    const name = `newname.eth`
+    const name = `newname.xdc`
     cy.visit(ROOT)
     cy.getByText('My Account').click({ force: true })
     cy.get(`[data-testid="expiry-date-${name}"]`, {
@@ -97,7 +97,7 @@ describe('/address', () => {
   })
 
   it('can select a single name and renew', () => {
-    const name = `newname.eth`
+    const name = `newname.xdc`
     cy.visit(ROOT)
     cy.getByText('My Account').click({ force: true })
     cy.get(`[data-testid="expiry-date-${name}"]`, {
