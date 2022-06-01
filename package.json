@@ -22,6 +22,7 @@
     "@portis/web3": "^2.0.0-beta.59",
     "@toruslabs/torus-embed": "^1.8.6",
     "@walletconnect/web3-provider": "^1.7.4",
+    "@yodaplus/react-ens-address": "^0.0.30",
     "assert": "npm:assert",
     "authereum": "^0.1.0",
     "bech32": "2.0.0",
@@ -172,7 +173,7 @@
     "resetMocks": false
   },
   "resolutions": {
-    "@ensdomains/ui": "^3.3.23",
+    "@ensdomains/ui": "https://github.com/yodaplus/ui.git#master",
     "ethers": "^5.5.4",
     "wrtc": "npm:@koush/wrtc"
   }

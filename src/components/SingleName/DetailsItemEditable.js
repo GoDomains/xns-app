@@ -42,7 +42,7 @@ import Pencil from '../Forms/Pencil'
 import DefaultInfo from '../Icons/Info'
 import DefaultPendingTx from '../PendingTx'
 import DefaultPricer from './Pricer'
-import DefaultAddressInput from '@ensdomains/react-ens-address'
+import DefaultAddressInput from '@yodaplus/react-ens-address'
 import CopyToClipboard from '../CopyToClipboard/'
 import { isOwnerOfParentDomain } from '../../utils/utils'
 
