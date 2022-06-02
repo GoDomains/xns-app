@@ -74,7 +74,7 @@ export default function DomainList({
             expiryDate={d?.expiryDate}
             labelName={d.domain.labelName}
             labelhash={d.domain.labelhash}
-            parent={d.domain.parent.name}
+            // parent={d.domain.parent.name}
             checkedBoxes={activeFilter === 'registrant' ? checkedBoxes : null}
             setCheckedBoxes={
               activeFilter === 'registrant' ? setCheckedBoxes : null

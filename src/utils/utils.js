@@ -263,9 +263,9 @@ export function normaliseOrMark(data, name, nested = false) {
     const domain = nested ? data.domain : data
     let normalised
     try {
-      if (domain?.id && !(hash(domain?.name) === domain?.id)) {
-        return { ...data, hasInvalidCharacter: true }
-      }
+      // if (domain?.id && !(hash(domain?.name) === domain?.id)) {
+      //   return { ...data, hasInvalidCharacter: true }
+      // }
       normalised = normalize(domain[name])
     } catch (e) {
       if (e.message.match(/Illegal char/)) {
