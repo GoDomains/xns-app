@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom'
 
 import { IS_MIGRATED } from '../../graphql/queries'
 
-import { isEmptyAddress } from '../../utils/records'
+// import { isEmptyAddress } from '../../utils/records'
 
 import NameRegister from './NameRegister'
 import SubDomains from './SubDomains'
@@ -20,7 +20,8 @@ function NameDetails({
   registrationOpen,
   tab,
   pathname,
-  readOnly = false
+  isNameWrapped = false,
+  isReadOnly = true
 }) {
   const [loading, setLoading] = useState(undefined)
   const {
@@ -102,7 +103,7 @@ function NameDetails({
               dnssecmode={dnssecmode}
               account={account}
               refetchIsMigrated={refetchIsMigrated}
-              readOnly={readOnly}
+              readOnly={isNameWrapped}
             />
           )
         }}
@@ -120,7 +121,7 @@ function NameDetails({
             loadingIsMigrated={loadingIsMigrated}
             isParentMigratedToNewRegistry={isParentMigratedToNewRegistry}
             loadingIsParentMigrated={loadingIsParentMigrated}
-            readOnly={readOnly}
+            readOnly={isNameWrapped}
           />
         )}
       />
@@ -134,7 +135,8 @@ function NameDetails({
             domain={domain}
             refetch={refetch}
             refetchIsMigrated={refetchIsMigrated}
-            readOnly={readOnly || isEmptyAddress(account)}
+            isNameWrapped={isNameWrapped}
+            isReadOnly={isReadOnly}
           />
         )}
       />
