@@ -69,7 +69,7 @@ const Price = ({
   return (
     <PriceContainer>
       <Value>
-        {ethPrice} ETH
+        {ethPrice} XDC
         {withPremium && (
           <USD>
             {withPremium}${priceInUsd}

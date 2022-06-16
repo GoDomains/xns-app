@@ -216,7 +216,7 @@ export default function LineGraph({
           {t('linegraph.title', {
             premiumInEth: c.premium
           })}{' '}
-          ETH($
+          XDC($
           {c.premiumInUsd})
         </Title>
         <span>
