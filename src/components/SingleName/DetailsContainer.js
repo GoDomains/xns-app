@@ -27,8 +27,8 @@ import NameClaimTestDomain from './NameClaimTestDomain'
 import DefaultLoader from '../Loader'
 import DefaultButton from '../Forms/Button'
 import DefaultAddressLink from '../Links/AddressLink'
-
 import { ReactComponent as DefaultOrangeExclamation } from '../Icons/OrangeExclamation.svg'
+import { ethToXDCAddress } from 'utils/utils'
 
 const Details = styled('section')`
   padding: 20px;
@@ -204,6 +204,7 @@ function DetailsContainer({
   const isExpired = domain.expiryTime < new Date()
   const domainOwner =
     domain.available || domain.owner === '0x0' ? null : domain.owner
+
   const registrant =
     domain.available || domain.registrant === '0x0' ? null : domain.registrant
 
@@ -216,6 +217,9 @@ function DetailsContainer({
     parseInt(domain.owner) === 0 &&
     domain.parent !== 'xdc' &&
     !domain.isDNSRegistrar
+
+  console.log('domain', domain)
+  console.log('account', account)
 
   return (
     <Details data-testid="name-details">
@@ -267,7 +271,7 @@ function DetailsContainer({
             <DetailsItemEditable
               domain={domain}
               keyName="registrant"
-              value={registrant}
+              value={ethToXDCAddress(registrant)}
               canEdit={isRegistrant && !isExpired && !readOnly}
               isExpiredRegistrant={isRegistrant && isExpired}
               type="address"
@@ -281,7 +285,7 @@ function DetailsContainer({
             <DetailsItemEditable
               domain={domain}
               keyName="Controller"
-              value={domainOwner}
+              value={ethToXDCAddress(domainOwner)}
               canEdit={
                 !readOnly &&
                 (isRegistrant || (isOwner && isMigratedToNewRegistry))

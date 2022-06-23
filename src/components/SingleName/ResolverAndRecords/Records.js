@@ -73,7 +73,11 @@ const RECORDS = [
 ]
 import TEXT_PLACEHOLDER_RECORDS from '../../../constants/textRecords'
 import { validateRecord } from '../../../utils/records'
-import { asyncThrottle, usePrevious } from '../../../utils/utils'
+import {
+  asyncThrottle,
+  ethToXDCAddress,
+  usePrevious
+} from '../../../utils/utils'
 import { isEthSubdomain, requestCertificate } from './Certificate'
 
 const COIN_PLACEHOLDER_RECORDS = ['ETH', ...COIN_LIST.slice(0, 3)]
