@@ -63,6 +63,7 @@ function getLang(lang) {
 
 const ActiveLanguage = styled('div')`
   color: #adbbcd;
+  background-color: #0058ff;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
