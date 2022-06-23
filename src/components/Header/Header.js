@@ -46,6 +46,7 @@ const Header = styled('header')`
   position: fixed;
   left: 0;
   top: 0;
+  background-color: #0058ff;
   width: 100%;
   z-index: 2;
   box-shadow: 0 4px 8px 0 rgba(230, 240, 247, 0.8);
@@ -63,10 +64,14 @@ const SearchHeader = styled(Search)`
     margin-top: 0;
     width: calc(100% - 200px);
   `}
+
+  button {
+    border-radius: 0px;
+  }
 `
 
 const Logo = styled(DefaultLogo)`
-  background: white;
+  background: #0058ff;
   position: relative;
   display: flex;
   width: 100%;
