@@ -10,6 +10,8 @@ import SearchDefault from '../components/SearchName/Search'
 import NoAccountsDefault from '../components/NoAccounts/NoAccountsModal'
 /* import bg from '../assets/heroBG.jpg' */
 import bg from '../assets/StorXBG.png'
+import rocket from '../assets/rocket.png'
+import storxLogo from '../assets/logo.png'
 import TextBubbleDefault from '../components/Icons/TextBubble'
 import QuestionMarkDefault from '../components/Icons/QuestionMark'
 import HowToUseDefault from '../components/HowToUse/HowToUse'
@@ -39,12 +41,32 @@ const NoAccounts = styled(NoAccountsDefault)``
 
 const Network = styled('div')`
   margin-bottom: 5px;
+  margin-top 10px;
 `
 const Name = styled('span')`
   margin-left: 5px;
   text-transform: none;
   display: inline-block;
   width: 100px;
+`
+const IconLogo = styled('img')`
+  height: 100px;
+  margin-left: 20px;
+`
+
+const TagLine = styled('div')`
+  color: #ffffff;
+  display: inline-block;
+  font-size: 50px;
+  width: 500px;
+  align-self: flex-end;
+`
+const NetworkLogoGrid = styled('div')`
+  display: flex;
+`
+const MidGrid = styled('div')`
+  margin-bottom: 10px;
+  display: flex;
 `
 
 const NetworkStatus = styled('div')`
@@ -74,6 +96,7 @@ const NetworkStatus = styled('div')`
 `
 
 const Nav = styled('div')`
+  margin-top 10px;
   display: flex;
   justify-content: center;
   ${mq.small`
@@ -130,6 +153,7 @@ const HowToUse = styled(HowToUseDefault)`
 const Hero = styled('section')`
   background: url(${bg});
   background-size: cover;
+  background-position: center;
   background-color: #001868;
   padding: 60px 20px 20px;
   position: relative;
@@ -255,6 +279,9 @@ const LogoLarge = styled(motion.img)`
     width: 223px;
   `}
 `
+const Rocket = styled(motion.img)`
+  margin: 0 auto 0;
+`
 
 const PermanentRegistrarLogo = styled(motion.h1)`
   font-family: Overpass;
@@ -317,21 +344,24 @@ export default ({ match }) => {
   return (
     <Hero>
       <HeroTop>
-        <NetworkStatus>
-          <Network>
-            {`${network} ${t('c.network')}`}
-            {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
-            {!isReadOnly && displayName && (
-              <Name data-testid="display-name">({displayName})</Name>
+        <NetworkLogoGrid>
+          <NetworkStatus>
+            <Network>
+              {`${network} ${t('c.network')}`}
+              {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
+              {!isReadOnly && displayName && (
+                <Name data-testid="display-name">({displayName})</Name>
+              )}
+            </Network>
+            {!isSafeApp && (
+              <NoAccounts
+                onClick={isReadOnly ? connectProvider : disconnectProvider}
+                buttonText={isReadOnly ? t('c.connect') : t('c.disconnect')}
+              />
             )}
-          </Network>
-          {!isSafeApp && (
-            <NoAccounts
-              onClick={isReadOnly ? connectProvider : disconnectProvider}
-              buttonText={isReadOnly ? t('c.connect') : t('c.disconnect')}
-            />
-          )}
-        </NetworkStatus>
+          </NetworkStatus>
+          <IconLogo src={storxLogo} />
+        </NetworkLogoGrid>
         <Nav>
           {accounts?.length > 0 && !isReadOnly && (
             <NavLink
@@ -356,10 +386,20 @@ export default ({ match }) => {
             src={ENSLogo}
             alt="ENS logo"
           /> */}
-          <PermanentRegistrarLogo
+          <MidGrid>
+            <TagLine>{t('c.tagLine')}</TagLine>
+            <Rocket
+              initial={animation.initial}
+              animate={animation.animate}
+              src={rocket}
+              alt="Rocket"
+            />
+          </MidGrid>
+
+          {/*   <PermanentRegistrarLogo
             initial={animation.initial}
             animate={animation.animate}
-          />
+          /> */}
           <Search />
         </>
       </SearchContainer>
