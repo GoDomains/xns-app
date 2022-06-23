@@ -8,7 +8,8 @@ import mq from 'mediaQuery'
 
 import SearchDefault from '../components/SearchName/Search'
 import NoAccountsDefault from '../components/NoAccounts/NoAccountsModal'
-import bg from '../assets/heroBG.jpg'
+/* import bg from '../assets/heroBG.jpg' */
+import bg from '../assets/StorXBG.png'
 import TextBubbleDefault from '../components/Icons/TextBubble'
 import QuestionMarkDefault from '../components/Icons/QuestionMark'
 import HowToUseDefault from '../components/HowToUse/HowToUse'
@@ -129,6 +130,7 @@ const HowToUse = styled(HowToUseDefault)`
 const Hero = styled('section')`
   background: url(${bg});
   background-size: cover;
+  background-color: #001868;
   padding: 60px 20px 20px;
   position: relative;
   display: flex;
@@ -172,6 +174,7 @@ const Search = styled(SearchDefault)`
   input {
     width: 100%;
     border-radius: 0px;
+    color:'
     ${mq.medium`
       border-radius: 6px 0 0 6px;
       font-size: 28px;
@@ -347,12 +350,12 @@ export default ({ match }) => {
       </HeroTop>
       <SearchContainer>
         <>
-          <LogoLarge
+          {/*  <LogoLarge
             initial={animation.initial}
             animate={animation.animate}
             src={ENSLogo}
             alt="ENS logo"
-          />
+          /> */}
           <PermanentRegistrarLogo
             initial={animation.initial}
             animate={animation.animate}
