@@ -14,7 +14,6 @@ import LanguageSwitcher from '../LanguageSwitcher'
 const SearchForm = styled('form')`
   display: flex;
   position: relative;
-
   &:before {
     content: '';
     position: absolute;
@@ -30,11 +29,13 @@ const SearchForm = styled('form')`
   input {
     padding: 20px 0 20px 55px;
     width: 100%;
+    border-radius: 15px 0px 0px 15px;
     border: none;
-    border-radius: 0;
     font-size: 18px;
+    color: white;
     font-family: Overpass;
     font-weight: 100;
+    background-color: #0058ff;
     ${mq.medium`
       width: calc(100% - 162px);
       font-size: 28px;
@@ -51,9 +52,10 @@ const SearchForm = styled('form')`
   }
 
   button {
-    ${p => (p && p.hasSearch ? 'background: #ff7f7f;' : 'background: #ff7f7f;')}
+    ${p => (p && p.hasSearch ? 'background: #02a5ff;' : 'background: #03c7ff;')}
     color: white;
     font-size: 22px;
+    border-radius: 0px 15px 15px 0px;
     font-family: Overpass;
     padding: 20px 0;
     height: 90px;

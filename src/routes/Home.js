@@ -147,6 +147,7 @@ const SearchContainer = styled('div')`
   display: flex;
   flex-direction: column;
   min-width: 100%;
+
   ${mq.medium`
     min-width: 60%;
   `}
@@ -173,7 +174,6 @@ const Search = styled(SearchDefault)`
 
   input {
     width: 100%;
-    border-radius: 0px;
     color:'
     ${mq.medium`
       border-radius: 6px 0 0 6px;
