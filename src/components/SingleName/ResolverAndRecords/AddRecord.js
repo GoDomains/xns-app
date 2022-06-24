@@ -23,7 +23,7 @@ const ToggleAddRecord = styled('span')`
   font-family: Open Sans;
   font-weight: bold;
   font-size: 14px;
-  color: #5284ff;
+  color: #0058ff;
   letter-spacing: 0.58px;
   text-align: center;
 
