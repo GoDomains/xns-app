@@ -47,7 +47,7 @@ function getButtonStyles({ type }) {
       `
     case 'hollow-primary':
       return `
-        color: #5384FE;
+        color: #0058ff;
         background: transparent;
         border: 2px solid #5384FE;
         &:visited {
@@ -89,7 +89,7 @@ function getButtonStyles({ type }) {
 function getButtonDefaultStyles(p) {
   return `
     color: white;
-    background: #5384FE;
+    background: #0058ff;
     padding: 10px 25px;
     border-radius: 25px;
     font-size: 14px;
@@ -98,7 +98,7 @@ function getButtonDefaultStyles(p) {
     text-transform: capitalize;
     letter-spacing: 1.5px;
     transition: 0.2s all;
-    border: 2px solid #5384FE;
+    border: 2px solid #0058ff;
     text-align: center;
 
     &:focus {

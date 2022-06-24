@@ -57,7 +57,7 @@ const IconLogo = styled('img')`
 const TagLine = styled('div')`
   color: #ffffff;
   display: inline-block;
-  font-size: 50px;
+  font-size: 52px;
   width: 500px;
   align-self: flex-end;
 `
@@ -281,6 +281,7 @@ const LogoLarge = styled(motion.img)`
 `
 const Rocket = styled(motion.img)`
   margin: 0 auto 0;
+  width: 32%;
 `
 
 const PermanentRegistrarLogo = styled(motion.h1)`
