@@ -33,7 +33,7 @@ const SearchForm = styled('form')`
     border: none;
     font-size: 18px;
     color: white;
-    font-family: Overpass;
+    font-family: Open Sans;
     font-weight: 100;
     background-color: #0058ff;
     ${mq.medium`
@@ -56,7 +56,7 @@ const SearchForm = styled('form')`
     color: white;
     font-size: 22px;
     border-radius: 0px 15px 15px 0px;
-    font-family: Overpass;
+    font-family: Open Sans;
     padding: 20px 0;
     height: 90px;
     width: 162px;

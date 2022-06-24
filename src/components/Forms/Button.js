@@ -94,7 +94,7 @@ function getButtonDefaultStyles(p) {
     border-radius: 25px;
     font-size: 14px;
     font-weight: 700;
-    font-family: Overpass;
+    font-family: Open Sans;
     text-transform: capitalize;
     letter-spacing: 1.5px;
     transition: 0.2s all;

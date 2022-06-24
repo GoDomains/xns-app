@@ -53,7 +53,7 @@ const SetReverseContainer = styled('div')`
 `
 
 const Message = styled('div')`
-  font-family: Overpass Mono;
+  font-family: Over San;
   font-weight: 700;
   font-size: 14px;
   color: ${p => (p.nameSet ? '#747f8c' : '#adbbcd')};
@@ -87,7 +87,7 @@ const Check = styled(DefaultCheck)`
 `
 
 const Explanation = styled('div')`
-  font-family: Overpass;
+  font-family: Open Sans;
   font-weight: 300;
   font-size: 14px;
   color: #2b2b2b;
@@ -100,6 +100,7 @@ const Explanation = styled('div')`
 
 const EditableNotSet = styled('div')`
   color: #5384fe;
+  font-family: Open Sans;
 `
 
 const ButtonsContainer = styled('div')`
