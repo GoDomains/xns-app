@@ -5,13 +5,13 @@ injectGlobal`
     box-sizing: border-box;
   }
   body {
-    font-family: Overpass;
+    font-family: Open Sans;
     background: #F0F6FA;
     margin: 0;
   }
 
   a {
-    color: #5284ff;
+    color: #0058ff;
     text-decoration: none;
     transition: 0.2s;
 
@@ -20,7 +20,7 @@ injectGlobal`
     }
 
     &:visited {
-      color: #5284ff
+      color: #0058ff
     } 
   }
 `
