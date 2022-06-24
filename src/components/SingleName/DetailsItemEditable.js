@@ -48,11 +48,15 @@ import { isOwnerOfParentDomain } from '../../utils/utils'
 
 const AddressInput = styled(DefaultAddressInput)`
   margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 17px;
 `
 
 const AddressLink = styled(DefaultAddressLink)`
   display: flex;
   align-items: center;
+  font-weight: 600;
+  font-size: 17px;
 `
 
 const Address = styled('span')`
@@ -60,6 +64,8 @@ const Address = styled('span')`
   align-items: center;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 600;
+  font-size: 17px;
 `
 
 const Info = styled(DefaultInfo)`
