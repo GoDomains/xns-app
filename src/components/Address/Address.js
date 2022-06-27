@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import { useTranslation, Trans } from 'react-i18next'
 import moment from 'moment'
 import { useAccount } from '../QueryAccount'
+import { ethToXDCAddress } from 'utils/utils'
 
 import {
   GET_FAVOURITES,
@@ -346,7 +347,7 @@ export default function Address({
       <AddressContainer>
         <TopBar>
           <SingleNameBlockies address={address} />
-          <Title>{address}</Title>
+          <Title>{ethToXDCAddress(address)}</Title>
           {etherScanAddr && (
             <EtherScanLink address={address}>
               {t('address.etherscanButton')}

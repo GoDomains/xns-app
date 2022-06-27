@@ -13,6 +13,7 @@ import RecordInput from '../../RecordInput'
 import DefaultBin from '../../../Forms/Bin'
 import { emptyAddress } from '../../../../utils/utils'
 import { trimRecord } from '../../../../utils/records'
+import { ethToXDCAddress } from 'utils/utils'
 
 const Bin = styled(DefaultBin)`
   align-self: center;
@@ -124,6 +125,13 @@ const Editable = ({
               })
             }}
             value={value === emptyAddress ? '' : value}
+            /*  value={
+              value === emptyAddress
+                ? ''
+                : key === 'ETH'
+                ? ethToXDCAddress(value)
+                : value
+            } */
             isValid={isValid && !isValidating}
             {...{ placeholder }}
           />
@@ -138,7 +146,11 @@ const Editable = ({
       ) : (
         <KeyValuesContent>
           <RecordsSubKey>{key}</RecordsSubKey>
-          <RecordLink textKey={key} value={value} name={domain?.name} />
+          <RecordLink
+            textKey={key} /* value={value} */
+            value={key === 'ETH' ? ethToXDCAddress(value) : value}
+            name={domain?.name}
+          />
         </KeyValuesContent>
       )}
     </KeyValueItem>
