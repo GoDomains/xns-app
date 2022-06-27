@@ -29,6 +29,7 @@ import DefaultButton from '../Forms/Button'
 import DefaultAddressLink from '../Links/AddressLink'
 
 import { ReactComponent as DefaultOrangeExclamation } from '../Icons/OrangeExclamation.svg'
+import { ethToXDCAddress } from 'utils/utils'
 
 const Details = styled('section')`
   padding: 20px;
@@ -267,7 +268,7 @@ function DetailsContainer({
             <DetailsItemEditable
               domain={domain}
               keyName="registrant"
-              value={registrant}
+              value={ethToXDCAddress(registrant)}
               canEdit={isRegistrant && !isExpired && !readOnly}
               isExpiredRegistrant={isRegistrant && isExpired}
               type="address"
@@ -281,7 +282,7 @@ function DetailsContainer({
             <DetailsItemEditable
               domain={domain}
               keyName="Controller"
-              value={domainOwner}
+              value={ethToXDCAddress(domainOwner)}
               canEdit={
                 !readOnly &&
                 (isRegistrant || (isOwner && isMigratedToNewRegistry))

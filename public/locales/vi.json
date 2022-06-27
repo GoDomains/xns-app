@@ -1,6 +1,6 @@
 {
   "address": {
-    "etherscanButton": "Xem chi tiết trên Etherscan",
+    "etherscanButton": "Xem chi tiết trên BlockScan",
     "filter": {
       "controller": "Địa chỉ quản lý",
       "registrant": "Địa chỉ đăng kí"

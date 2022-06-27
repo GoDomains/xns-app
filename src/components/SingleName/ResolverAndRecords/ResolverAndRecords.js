@@ -10,6 +10,7 @@ import ArtRecords from './ArtRecords'
 
 import ResolverMigration from './ResolverMigration'
 import DetailsItemEditable from '../DetailsItemEditable'
+import { ethToXDCAddress } from 'utils/utils'
 
 const MigrationWarningContainer = styled('div')`
   margin-bottom: 20px;
@@ -102,7 +103,7 @@ export default function ResolverAndRecords({
           <DetailsItemEditable
             keyName="Resolver"
             type="address"
-            value={domain.resolver}
+            value={ethToXDCAddress(domain.resolver)}
             canEdit={isOwner && isMigratedToNewRegistry && !readOnly}
             domain={domain}
             editButton={t('c.set')}

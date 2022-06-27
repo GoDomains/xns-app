@@ -3,6 +3,7 @@ import styled from '@emotion/styled/macro'
 import { ReactComponent as ExternalLinkIcon } from '../Icons/externalLink.svg'
 import { gql } from '@apollo/client'
 import { useQuery } from '@apollo/client'
+import { ethToXDCAddress } from 'utils/utils'
 
 const EtherScanLinkContainer = styled('a')`
   display: inline-block;
@@ -39,7 +40,10 @@ const EtherScanLink = ({ children, address, className }) => {
       data-testid="ether-scan-link-container"
       target="_blank"
       rel="noopener"
-      href={`https://${subdomain}etherscan.io/address/${address}`}
+      // href={`https://${subdomain}etherscan.io/address/${address}`}
+      href={`https://explorer.apothem.network/address/${ethToXDCAddress(
+        address
+      )}`}
       className={className}
     >
       {children}
