@@ -400,7 +400,7 @@ function DetailsContainer({
           <DetailsItemEditable
             domain={domain}
             keyName="Controller"
-            value={domain.owner}
+            value={ethToXDCAddress(domainOwner)}
             canEdit={
               !readOnly &&
               ((isOwner || isOwnerOfParent) && isMigratedToNewRegistry)

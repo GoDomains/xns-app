@@ -10,6 +10,7 @@ import NoAccountsModal from '../NoAccounts/NoAccountsModal'
 import { GET_REVERSE_RECORD } from '../../graphql/queries'
 import { connectProvider, disconnectProvider } from '../../utils/providerUtils'
 import { imageUrl } from '../../utils/utils'
+import { ethToXDCAddress } from '../../utils/utils'
 
 const NetworkInformationContainer = styled('div')`
   position: relative;
@@ -137,7 +138,7 @@ function NetworkInformation() {
             <Blockies address={accounts[0]} imageSize={45} />
           )}
           <Account data-testid="account" className="account">
-            <span>{displayName}</span>
+            <span>{ethToXDCAddress(displayName)}</span>
           </Account>
           <NetworkStatus>
             {network} {t('c.network')}

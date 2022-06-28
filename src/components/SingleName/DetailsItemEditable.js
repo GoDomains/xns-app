@@ -287,6 +287,7 @@ function getInputType(
       onResolve: ({ address }) => {
         if (address) {
           updateValue(address)
+          console.log('Check', address)
         } else {
           updateValue('')
         }

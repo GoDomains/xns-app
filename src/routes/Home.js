@@ -5,7 +5,7 @@ import styled from '@emotion/styled/macro'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import mq from 'mediaQuery'
-
+import { ethToXDCAddress } from '../utils/utils'
 import SearchDefault from '../components/SearchName/Search'
 import NoAccountsDefault from '../components/NoAccounts/NoAccountsModal'
 /* import bg from '../assets/heroBG.jpg' */
@@ -351,7 +351,9 @@ export default ({ match }) => {
               {`${network} ${t('c.network')}`}
               {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
               {!isReadOnly && displayName && (
-                <Name data-testid="display-name">({displayName})</Name>
+                <Name data-testid="display-name">
+                  ({ethToXDCAddress(displayName)})
+                </Name>
               )}
             </Network>
             {!isSafeApp && (

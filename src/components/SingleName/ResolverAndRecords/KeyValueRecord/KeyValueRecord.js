@@ -205,7 +205,13 @@ function ViewOnly({ textKey, value, remove, domain }) {
       {remove ? (
         <DeleteRecord>Delete Record</DeleteRecord>
       ) : (
-        <RecordLink textKey={textKey} value={value} name={domain?.name} />
+        <RecordLink
+          textKey={textKey}
+          /* value={value} */ value={
+            textKey === 'ETH' ? ethToXDCAddress(value) : value
+          }
+          name={domain?.name}
+        />
       )}
     </RecordsListItem>
   )
