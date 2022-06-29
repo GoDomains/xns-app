@@ -2,6 +2,7 @@ import {
   getAccounts,
   getNetwork,
   getNetworkId,
+  getNetworkName,
   isReadOnly
 } from '@ensdomains/ui'
 
@@ -15,6 +16,7 @@ import {
   isAppReadyReactive,
   isReadOnlyReactive,
   networkIdReactive,
+  networkNameReactive,
   networkReactive,
   reverseRecordReactive,
   subDomainFavouritesReactive,
@@ -149,6 +151,7 @@ export const setWeb3Provider = async provider => {
 
     networkIdReactive(networkId)
     networkReactive(await getNetwork())
+    networkNameReactive(await getNetworkName())
   })
 
   provider?.on('accountsChanged', async accounts => {
@@ -167,6 +170,8 @@ export default async reconnect => {
     if (!provider) throw 'Please install a wallet'
 
     const networkId = await getNetworkId()
+    const network = await getNetworkName()
+    console.log('🚀 ~ file: setup.js ~ line 172 ~ network', network)
 
     if (!isSupportedNetwork(networkId)) {
       globalErrorReactive({
@@ -178,6 +183,7 @@ export default async reconnect => {
 
     networkIdReactive(await getNetworkId())
     networkReactive(await getNetwork())
+    networkNameReactive(await getNetworkName())
 
     await setWeb3Provider(provider)
 

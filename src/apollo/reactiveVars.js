@@ -12,6 +12,8 @@ export const reverseRecordReactive = makeVar(null)
 
 export const accountsReactive = makeVar(null)
 
+export const networkNameReactive = makeVar(null)
+
 export const isReadOnlyReactive = makeVar(true)
 
 export const isRunningAsSafeAppReactive = makeVar(false)

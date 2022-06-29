@@ -8,10 +8,16 @@ import {
   favouritesReactive,
   subDomainFavouritesReactive,
   web3ProviderReactive,
-  delegatesReactive
+  delegatesReactive,
+  networkNameReactive
 } from '../reactiveVars'
 import getShouldDelegate from '../../api/delegate'
-import { getAccounts, getNetwork, getNetworkId } from '@ensdomains/ui'
+import {
+  getAccounts,
+  getNetwork,
+  getNetworkId,
+  getNetworkName
+} from '@ensdomains/ui'
 import { disconnect, connect } from '../../api/web3modal'
 import { getReverseRecord } from '../sideEffects'
 import { isRunningAsSafeApp } from 'utils/safeApps'
@@ -36,6 +42,15 @@ export const setWeb3ProviderLocalMutation = async provider => {
   })
 
   return provider
+}
+
+export const getNetworkNameMutation = async () => {
+  const networkName = await getNetworkName()
+  console.log(
+    '🚀 ~ file: mutations.js ~ line 49 ~ getNetworkNameMutation ~ networkName',
+    networkName
+  )
+  return networkNameReactive(networkName)
 }
 
 export const getNetworkMutation = async () => {
