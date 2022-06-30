@@ -4,6 +4,7 @@ import { ReactComponent as ExternalLinkIcon } from '../Icons/externalLink.svg'
 import { gql } from '@apollo/client'
 import { useQuery } from '@apollo/client'
 import { ethToXDCAddress } from 'utils/utils'
+import { fetchNetworkReactive } from 'apollo/reactiveVars'
 
 const EtherScanLinkContainer = styled('a')`
   display: inline-block;
@@ -34,14 +35,21 @@ const EtherScanLink = ({ children, address, className }) => {
   const {
     data: { network }
   } = useQuery(GET_ETHER_SCAN_LINK)
-  const subdomain = network?.toLowerCase() === 'main' ? '' : `${network}.`
+  // const subdomain = network?.toLowerCase() === 'main' ? '' : `${network}.`
+
+  const subdomain = fetchNetworkReactive()
+  console.log(
+    '🚀 ~ file: EtherScanLink.js ~ line 41 ~ EtherScanLink ~ subdomain',
+    subdomain
+  )
+
   return (
     <EtherScanLinkContainer
       data-testid="ether-scan-link-container"
       target="_blank"
       rel="noopener"
       // href={`https://${subdomain}etherscan.io/address/${address}`}
-      href={`https://explorer.apothem.network/address/${ethToXDCAddress(
+      href={`https://explorer.${subdomain}.network/address/${ethToXDCAddress(
         address
       )}`}
       className={className}

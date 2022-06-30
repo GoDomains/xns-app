@@ -35,7 +35,7 @@ export default {
       },
       network: {
         read() {
-          const network = networkReactive()
+          // const network = networkReactive()
           const networkName = networkNameReactive()
           if (!networkName) return 'Loading'
           return networkName === 'homestead' ? 'Main' : networkName

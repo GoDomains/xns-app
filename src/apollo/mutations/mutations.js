@@ -9,7 +9,8 @@ import {
   subDomainFavouritesReactive,
   web3ProviderReactive,
   delegatesReactive,
-  networkNameReactive
+  networkNameReactive,
+  fetchNetworkReactive
 } from '../reactiveVars'
 import getShouldDelegate from '../../api/delegate'
 import {
@@ -46,10 +47,6 @@ export const setWeb3ProviderLocalMutation = async provider => {
 
 export const getNetworkNameMutation = async () => {
   const networkName = await getNetworkName()
-  console.log(
-    '🚀 ~ file: mutations.js ~ line 49 ~ getNetworkNameMutation ~ networkName',
-    networkName
-  )
   return networkNameReactive(networkName)
 }
 
@@ -124,4 +121,26 @@ export const deleteSubDomainFavouriteMutation = domain => {
 
 export const setIsAppReady = isAppReady => {
   return
+}
+
+export async function fetchNetwork() {
+  const networkId = await getNetworkId()
+  var networkName = ''
+  switch (networkId) {
+    case 50:
+      networkName = `xinfin`
+      break
+    case 51:
+      networkName = `apothem`
+      break
+    default:
+      networkName = `unknown`
+  }
+
+  return networkName
+}
+
+export const getFetchNetworkMutation = async () => {
+  const networkName = await fetchNetwork()
+  return fetchNetworkReactive(networkName)
 }

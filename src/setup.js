@@ -17,6 +17,7 @@ import {
   isReadOnlyReactive,
   networkIdReactive,
   networkNameReactive,
+  fetchNetworkReactive,
   networkReactive,
   reverseRecordReactive,
   subDomainFavouritesReactive,
@@ -25,6 +26,7 @@ import {
 import { setupAnalytics } from './utils/analytics'
 import { getReverseRecord } from './apollo/sideEffects'
 import { safeInfo, setupSafeApp } from './utils/safeApps'
+import { fetchNetwork } from 'apollo/mutations/mutations'
 
 export const setFavourites = () => {
   favouritesReactive(
@@ -152,6 +154,7 @@ export const setWeb3Provider = async provider => {
     networkIdReactive(networkId)
     networkReactive(await getNetwork())
     networkNameReactive(await getNetworkName())
+    fetchNetworkReactive(await fetchNetwork())
   })
 
   provider?.on('accountsChanged', async accounts => {
@@ -184,6 +187,7 @@ export default async reconnect => {
     networkIdReactive(await getNetworkId())
     networkReactive(await getNetwork())
     networkNameReactive(await getNetworkName())
+    fetchNetworkReactive(await fetchNetwork())
 
     await setWeb3Provider(provider)
 
