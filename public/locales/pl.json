@@ -339,6 +339,7 @@
       "message": "Aby ręcznie zresetować program rozpoznawania nazw, kliknij ustaw i wprowadź adres niestandardowego programu do rozwiązywania problemów.",
       "placeholder": "Use the Public Resolver or enter the address of your custom resolver contract",
       "publicResolver": "Użyj Publicznego Resolvera",
+        "nonresolver":"Enter Xinfin address",
       "resolverAddressWarning": "Only contract address is allowed",
       "warning": "Używasz przestarzałej wersji publicznego resolwera. Kliknij, aby przeprowadzić migrację swojego resolwera i rekordów. Będziesz musiał potwierdzić dwie transakcje, aby przenieść zarówno swoje rekordy, jak i program rozpoznawania nazw."
     },

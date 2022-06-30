@@ -11,7 +11,7 @@ import {
 } from '../RecordsItem'
 import RecordInput from '../../RecordInput'
 import DefaultBin from '../../../Forms/Bin'
-import { emptyAddress } from '../../../../utils/utils'
+import { emptyAddress, xdcToEthAddress } from '../../../../utils/utils'
 import { trimRecord } from '../../../../utils/records'
 import { ethToXDCAddress } from 'utils/utils'
 
@@ -119,19 +119,31 @@ const Editable = ({
             type="text"
             isInvalid={!isValid && !isValidating}
             onChange={event => {
-              updateRecord({
+              /*  updateRecord({
                 ...record,
                 value: trimRecord(key, event.target.value)
-              })
+              }) */
+              // trimRecord used to remove whitespaces for address
+              if (key === 'ETH') {
+                updateRecord({
+                  ...record,
+                  value: trimRecord(key, xdcToEthAddress(event.target.value))
+                })
+              } else {
+                updateRecord({
+                  ...record,
+                  value: trimRecord(key, event.target.value)
+                })
+              }
             }}
-            value={value === emptyAddress ? '' : value}
-            /*  value={
+            // value={value === emptyAddress ? '' : value}
+            value={
               value === emptyAddress
                 ? ''
                 : key === 'ETH'
                 ? ethToXDCAddress(value)
                 : value
-            } */
+            }
             isValid={isValid && !isValidating}
             {...{ placeholder }}
           />
@@ -148,7 +160,7 @@ const Editable = ({
           <RecordsSubKey>{key}</RecordsSubKey>
           <RecordLink
             textKey={key} /* value={value} */
-            value={key === 'ETH' ? ethToXDCAddress(value) : value}
+            value={key === 'ETH' ? ethToXDCAddress(value).toLowerCase() : value}
             name={domain?.name}
           />
         </KeyValuesContent>
@@ -179,6 +191,7 @@ function Record(props) {
     if (value && parseInt(value, 16) !== 0 && !hasRecord) {
       setHasRecord(true)
     }
+    console.log('Check every record', record)
   }, [value, hasRecord, setHasRecord])
 
   return canEdit ? (
@@ -208,7 +221,7 @@ function ViewOnly({ textKey, value, remove, domain }) {
         <RecordLink
           textKey={textKey}
           /* value={value} */ value={
-            textKey === 'ETH' ? ethToXDCAddress(value) : value
+            textKey === 'ETH' ? ethToXDCAddress(value).toLowerCase() : value
           }
           name={domain?.name}
         />

@@ -138,7 +138,7 @@ function NetworkInformation() {
             <Blockies address={accounts[0]} imageSize={45} />
           )}
           <Account data-testid="account" className="account">
-            <span>{ethToXDCAddress(displayName)}</span>
+            <span>{ethToXDCAddress(displayName).toLowerCase()}</span>
           </Account>
           <NetworkStatus>
             {network} {t('c.network')}

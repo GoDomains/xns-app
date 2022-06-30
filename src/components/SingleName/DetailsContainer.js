@@ -268,7 +268,7 @@ function DetailsContainer({
             <DetailsItemEditable
               domain={domain}
               keyName="registrant"
-              value={ethToXDCAddress(registrant)}
+              value={ethToXDCAddress(registrant).toLowerCase()}
               canEdit={isRegistrant && !isExpired && !readOnly}
               isExpiredRegistrant={isRegistrant && isExpired}
               type="address"
@@ -282,7 +282,7 @@ function DetailsContainer({
             <DetailsItemEditable
               domain={domain}
               keyName="Controller"
-              value={ethToXDCAddress(domainOwner)}
+              value={ethToXDCAddress(domainOwner).toLowerCase()}
               canEdit={
                 !readOnly &&
                 (isRegistrant || (isOwner && isMigratedToNewRegistry))
@@ -400,7 +400,7 @@ function DetailsContainer({
           <DetailsItemEditable
             domain={domain}
             keyName="Controller"
-            value={ethToXDCAddress(domainOwner)}
+            value={ethToXDCAddress(domainOwner).toLowerCase()}
             canEdit={
               !readOnly &&
               ((isOwner || isOwnerOfParent) && isMigratedToNewRegistry)

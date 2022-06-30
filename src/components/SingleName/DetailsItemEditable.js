@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { useQuery, useMutation } from '@apollo/client'
 import { motion, AnimatePresence } from 'framer-motion'
 import EthVal from 'ethval'
-
+import { ethToXDCAddress, xdcToEthAddress } from 'utils/utils'
 import {
   GET_PUBLIC_RESOLVER,
   GET_RENT_PRICE,
@@ -254,7 +254,8 @@ function getInputType(
     expirationDate,
     rentPriceLoading,
     rentPrice,
-    placeholder
+    placeholder,
+    nonResolverPlaceholder
   }
 ) {
   if (keyName === 'Expiration Date') {
@@ -281,7 +282,7 @@ function getInputType(
       ? 'http://localhost:8545'
       : window.ethereum || window.web3
   if (type === 'address' && keyName !== 'Resolver') {
-    let option = {
+    /*  let option = {
       presetValue: presetValue || '',
       provider,
       onResolve: ({ address }) => {
@@ -291,16 +292,31 @@ function getInputType(
         } else {
           updateValue('')
         }
+        console.log('Option', option)
       },
       ensAddress
-    }
-    return <AddressInput {...option} />
+    } 
+     return <AddressInput {...option} /> */
+    return (
+      <Input
+        value={ethToXDCAddress(newValue)}
+        onChange={e => {
+          updateValue(xdcToEthAddress(e.target.value.trim()))
+        }}
+        valid={isValid}
+        invalid={isInvalid}
+        placeholder={keyName !== 'Resolver' ? nonResolverPlaceholder : ''}
+        large
+      />
+    )
   }
 
   return (
     <Input
-      value={newValue}
-      onChange={e => updateValue(e.target.value.trim())}
+      value={ethToXDCAddress(newValue)}
+      onChange={e => {
+        updateValue(xdcToEthAddress(e.target.value.trim()))
+      }}
       valid={isValid}
       invalid={isInvalid}
       placeholder={keyName === 'Resolver' ? placeholder : ''}
@@ -413,6 +429,7 @@ const Editable = ({
   const isRegistrant = !domain.available && domain.registrant === account
   const canDelete = ['Resolver'].includes(keyName)
   const placeholder = t('singleName.resolver.placeholder')
+  const nonResolverPlaceholder = t('singleName.resolver.nonresolver')
   const [mutation] = useMutation(mutationQuery, {
     onCompleted: data => {
       const txHash = Object.values(data)[0]
@@ -636,7 +653,8 @@ const Editable = ({
                 expirationDate,
                 rentPriceLoading,
                 rentPrice: getRentPrice,
-                placeholder
+                placeholder,
+                nonResolverPlaceholder
               })}
             </EditRecord>
             <Buttons>

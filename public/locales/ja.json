@@ -334,6 +334,7 @@
       "error": "移行に失敗しました",
       "message": "手動でリゾルバをリセットするには、「設定」をクリックしてカスタムリゾルバのアドレスを入力します",
       "placeholder": "Use the Public Resolver or enter the address of your custom resolver contract",
+        "nonresolver":"Enter Xinfin address",
       "publicResolver": "パプリックリゾルバを使う",
       "resolverAddressWarning": "Only contract address is allowed",
       "warning": "古いバージョンの公開リゾルバを使用している場合は、クリックしてリゾルバとレコードを移行してください。レコードとリゾルバの両方を移行するには、2つのトランザクションを確認する必要があります。"
