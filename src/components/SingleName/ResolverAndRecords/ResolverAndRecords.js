@@ -103,7 +103,7 @@ export default function ResolverAndRecords({
           <DetailsItemEditable
             keyName="Resolver"
             type="address"
-            value={ethToXDCAddress(domain.resolver)}
+            value={domain.resolver}
             canEdit={isOwner && isMigratedToNewRegistry && !readOnly}
             domain={domain}
             editButton={t('c.set')}

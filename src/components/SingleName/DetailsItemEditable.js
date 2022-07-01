@@ -313,9 +313,9 @@ function getInputType(
 
   return (
     <Input
-      value={ethToXDCAddress(newValue)}
+      value={newValue}
       onChange={e => {
-        updateValue(xdcToEthAddress(e.target.value.trim()))
+        updateValue(e.target.value.trim())
       }}
       valid={isValid}
       invalid={isInvalid}
