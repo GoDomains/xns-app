@@ -183,11 +183,21 @@ function SideNav({ match, isMenuOpen, toggleMenu }) {
             <span>{t('c.faq')}</span>
           </NavLink>
         </li>
-        <li>
+        {/*  <li>
           <ThirdPartyLink href={aboutPageURL()}>
-            <Info />
+          
             <span>{t('c.about')}</span>
           </ThirdPartyLink>
+        </li> */}
+        <li>
+          <NavLink
+            onClick={toggleMenu}
+            active={url === '/about' ? 1 : 0}
+            to="/about"
+          >
+            <Info />
+            <span>{t('c.about')}</span>
+          </NavLink>
         </li>
       </ul>
     </SideNavContainer>
