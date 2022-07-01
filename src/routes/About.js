@@ -85,6 +85,16 @@ function About() {
         This also supports importing in DNS names already owned by the user for
         use on XNS.
         <Answer />
+        <Answer>
+          Because of the hierarchal nature of XNS, anyone who owns a domain at
+          any level may configure subdomains - for themselves or others - as
+          desired. For instance, if Alice owns 'alice.xdc', she can create
+          'pay.alice.xdc' and configure it as she wishes
+        </Answer>
+        <Answer>
+          You can try XNS out for yourself now by using the XNS Manager App, or
+          by using any of the many XNS enabled applications on our homepage.
+        </Answer>
       </AboutContainer>
     </>
   )
