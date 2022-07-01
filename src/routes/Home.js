@@ -46,7 +46,7 @@ const Network = styled('div')`
 const Name = styled('span')`
   margin-left: 5px;
   text-transform: none;
-  display: inline-block;
+  display: block;
   width: 100px;
 `
 const IconLogo = styled('img')`
