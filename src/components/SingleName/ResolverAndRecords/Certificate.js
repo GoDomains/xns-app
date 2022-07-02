@@ -4,7 +4,7 @@ function createFetchUrl(name) {
 }
 
 function whitelisted() {
-  return ['app.xns.domains', 'ens.eth', 'ens.eth.link'].includes(
+  return ['app.xns.domains', 'xns.xdc', 'xns.xdc.link'].includes(
     window.location.host
   )
 }
