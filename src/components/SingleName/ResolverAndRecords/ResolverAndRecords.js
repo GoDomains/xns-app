@@ -10,6 +10,7 @@ import ArtRecords from './ArtRecords'
 
 import ResolverMigration from './ResolverMigration'
 import DetailsItemEditable from '../DetailsItemEditable'
+import { ethToXDCAddress } from 'utils/utils'
 
 const MigrationWarningContainer = styled('div')`
   margin-bottom: 20px;

@@ -63,6 +63,13 @@ const Renew = lazy(() =>
   )
 )
 
+const About = lazy(() =>
+  import(
+    /* webpackChunkName: "About", webpackPrefetch:true */
+    './routes/About'
+  )
+)
+
 // import TestRegistrar from './routes/TestRegistrar'
 // import Home from './routes/Home'
 // import SearchResults from './routes/SearchResults'
@@ -123,6 +130,7 @@ const App = () => {
         <Route path="/test-registrar" component={TestRegistrar} />
         <Route path="/favourites" component={Favourites} />
         <Route path="/faq" component={Faq} />
+        <Route path="/about" component={About} />
         <Route path="/my-bids" component={SearchResults} />
         <Route path="/how-it-works" component={SearchResults} />
         <Route path="/search/:searchTerm" component={SearchResults} />

@@ -14,7 +14,6 @@
     "@ensdomains/ens-validation": "^0.1.0",
     "@ensdomains/eth-ens-namehash": "^2.0.15",
     "@ensdomains/mock": "^2.1.46-beta",
-    "@ensdomains/react-ens-address": "^0.0.31",
     "@ensdomains/ui": "https://github.com/yodaplus/ui.git#final-production",
     "@ensdomains/web3modal": "https://github.com/yodaplus/web3modal.git#master",
     "@gnosis.pm/safe-apps-provider": "^0.9.2",

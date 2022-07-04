@@ -44,6 +44,9 @@ export const supportedAvatarProtocols = [
   'eip155'
 ]
 
+export const ethToXDCAddress = address => address.replace(/^0x/, 'xdc')
+export const xdcToEthAddress = address => address.replace(/^xdc/, '0x')
+
 export const addressUtils = {
   isChecksumAddress(address) {
     // Check each case

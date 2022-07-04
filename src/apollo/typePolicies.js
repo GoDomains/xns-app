@@ -10,7 +10,8 @@ import {
   globalErrorReactive,
   transactionHistoryReactive,
   namesReactive,
-  delegatesReactive
+  delegatesReactive,
+  networkNameReactive
 } from './reactiveVars'
 import { hasValidReverseRecord } from '../utils/utils'
 
@@ -34,8 +35,8 @@ export default {
       },
       network: {
         read() {
-          const network = networkReactive()
-          const networkName = network?.name
+          // const network = networkReactive()
+          const networkName = networkNameReactive()
           if (!networkName) return 'Loading'
           return networkName === 'homestead' ? 'Main' : networkName
         }

@@ -5,7 +5,7 @@ import styled from '@emotion/styled/macro'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import mq from 'mediaQuery'
-
+import { ethToXDCAddress } from '../utils/utils'
 import SearchDefault from '../components/SearchName/Search'
 import NoAccountsDefault from '../components/NoAccounts/NoAccountsModal'
 /* import bg from '../assets/heroBG.jpg' */
@@ -15,7 +15,7 @@ import storxLogo from '../assets/logo.png'
 import TextBubbleDefault from '../components/Icons/TextBubble'
 import QuestionMarkDefault from '../components/Icons/QuestionMark'
 import HowToUseDefault from '../components/HowToUse/HowToUse'
-import ENSLogo from '../components/HomePage/images/ENSLogo.svg'
+// import ENSLogo from '../components/HomePage/images/ENSLogo.svg'
 import { aboutPageURL } from '../utils/utils'
 import { connectProvider, disconnectProvider } from '../utils/providerUtils'
 import { gql } from '@apollo/client'
@@ -46,7 +46,7 @@ const Network = styled('div')`
 const Name = styled('span')`
   margin-left: 5px;
   text-transform: none;
-  display: inline-block;
+  display: block;
   width: 100px;
 `
 const IconLogo = styled('img')`
@@ -351,7 +351,9 @@ export default ({ match }) => {
               {`${network} ${t('c.network')}`}
               {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
               {!isReadOnly && displayName && (
-                <Name data-testid="display-name">({displayName})</Name>
+                <Name data-testid="display-name">
+                  ({ethToXDCAddress(displayName)})
+                </Name>
               )}
             </Network>
             {!isSafeApp && (

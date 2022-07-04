@@ -5,7 +5,7 @@ injectGlobal`
     box-sizing: border-box;
   }
   body {
-    font-family: Open Sans;
+    font-family: Open Sans, Overpass;
     background: #F0F6FA;
     margin: 0;
   }

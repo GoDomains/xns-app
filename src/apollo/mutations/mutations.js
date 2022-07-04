@@ -8,10 +8,17 @@ import {
   favouritesReactive,
   subDomainFavouritesReactive,
   web3ProviderReactive,
-  delegatesReactive
+  delegatesReactive,
+  networkNameReactive,
+  fetchNetworkReactive
 } from '../reactiveVars'
 import getShouldDelegate from '../../api/delegate'
-import { getAccounts, getNetwork, getNetworkId } from '@ensdomains/ui'
+import {
+  getAccounts,
+  getNetwork,
+  getNetworkId,
+  getNetworkName
+} from '@ensdomains/ui'
 import { disconnect, connect } from '../../api/web3modal'
 import { getReverseRecord } from '../sideEffects'
 import { isRunningAsSafeApp } from 'utils/safeApps'
@@ -36,6 +43,11 @@ export const setWeb3ProviderLocalMutation = async provider => {
   })
 
   return provider
+}
+
+export const getNetworkNameMutation = async () => {
+  const networkName = await getNetworkName()
+  return networkNameReactive(networkName)
 }
 
 export const getNetworkMutation = async () => {
@@ -109,4 +121,26 @@ export const deleteSubDomainFavouriteMutation = domain => {
 
 export const setIsAppReady = isAppReady => {
   return
+}
+
+export async function fetchNetwork() {
+  const networkId = await getNetworkId()
+  var networkName = ''
+  switch (networkId) {
+    case 50:
+      networkName = `xinfin`
+      break
+    case 51:
+      networkName = `apothem`
+      break
+    default:
+      networkName = `unknown`
+  }
+
+  return networkName
+}
+
+export const getFetchNetworkMutation = async () => {
+  const networkName = await fetchNetwork()
+  return fetchNetworkReactive(networkName)
 }

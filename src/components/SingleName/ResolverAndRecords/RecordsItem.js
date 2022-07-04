@@ -4,15 +4,12 @@ import styled from '@emotion/styled/macro'
 import { useMutation } from '@apollo/client'
 import { useTranslation } from 'react-i18next'
 import DefaultAddressInput from '@yodaplus/react-ens-address'
-
 import { SET_CONTENT, SET_CONTENTHASH, SET_ADDRESS } from 'graphql/mutations'
-
 import { validateRecord } from 'utils/records'
-import { emptyAddress } from 'utils/utils'
+import { emptyAddress, ethToXDCAddress } from 'utils/utils'
 import mq from 'mediaQuery'
 import { getOldContentWarning } from './warnings'
 import { getEnsAddress } from '../../../apollo/mutations/ens'
-
 import { DetailsItem, DetailsKey, DetailsValue } from '../DetailsItem'
 import Upload from '../../IPFS/Upload'
 import IpfsLogin from '../../IPFS/Login'
@@ -252,7 +249,6 @@ const RecordItemEditable = ({
             )}
             <CopyToClipBoard value={value} />
           </RecordsValue>
-
           {pending && !confirmed && txHash ? (
             <PendingTx
               txHash={txHash}
@@ -317,7 +313,7 @@ const RecordItemEditable = ({
           <>
             <EditRecord>
               {type === 'address' ? (
-                <AddressInput
+                /*  <AddressInput
                   provider={
                     window.ethereum || window.web3 || 'http://localhost:8545'
                   }
@@ -329,6 +325,13 @@ const RecordItemEditable = ({
                     }
                   }}
                   ensAddress={getEnsAddress()}
+                /> */
+                <Input
+                  value={ethToXDCAddress(newValue)}
+                  updateValue={newValue}
+                  valid={isValid}
+                  invalid={isInvalid}
+                  large
                 />
               ) : (
                 <DetailsItemInput
