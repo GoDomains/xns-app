@@ -56,9 +56,9 @@ function CalendarInvite({ noMargin, dropDownLinks = [], event, invalid }) {
         className={styles}
         buttonText={t('expiryNotification.reminder')}
         items={['Google', 'iCal']}
-        dropdownProps={{
+        /* dropdownProps={{
           prependChildren: dropDownLinks
-        }}
+        }} */
       />
     </AddToCalendarContainer>
   )
