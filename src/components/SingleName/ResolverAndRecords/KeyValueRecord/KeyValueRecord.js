@@ -106,8 +106,6 @@ const Editable = ({
   validating
 }) => {
   const { key, value } = record
-  console.log('key', key)
-  console.log('value', value)
   const isValid = validator(record)
   const isValidating = validating(record)
   return (
