@@ -119,11 +119,11 @@ const Editable = ({
             type="text"
             isInvalid={!isValid && !isValidating}
             onChange={event => {
-              /*  updateRecord({
+              updateRecord({
                 ...record,
                 value: trimRecord(key, event.target.value)
-              }) */
-              // trimRecord used to remove whitespaces for address
+              })
+              /*  // trimRecord used to remove whitespaces for address
               if (key === 'ETH') {
                 updateRecord({
                   ...record,
@@ -134,16 +134,16 @@ const Editable = ({
                   ...record,
                   value: trimRecord(key, event.target.value)
                 })
-              }
+              } */
             }}
-            // value={value === emptyAddress ? '' : value}
-            value={
+            value={value === emptyAddress ? '' : value}
+            /*  value={
               value === emptyAddress
                 ? ''
                 : key === 'ETH'
                 ? ethToXDCAddress(value)
                 : value
-            }
+            } */
             isValid={isValid && !isValidating}
             {...{ placeholder }}
           />
@@ -159,8 +159,9 @@ const Editable = ({
         <KeyValuesContent>
           <RecordsSubKey>{key}</RecordsSubKey>
           <RecordLink
-            textKey={key} /* value={value} */
-            value={key === 'ETH' ? ethToXDCAddress(value).toLowerCase() : value}
+            textKey={key}
+            value={value}
+            /*  value={key === 'ETH' ? ethToXDCAddress(value).toLowerCase() : value} */
             name={domain?.name}
           />
         </KeyValuesContent>
@@ -191,7 +192,6 @@ function Record(props) {
     if (value && parseInt(value, 16) !== 0 && !hasRecord) {
       setHasRecord(true)
     }
-    console.log('Check every record', record)
   }, [value, hasRecord, setHasRecord])
 
   return canEdit ? (
@@ -220,9 +220,11 @@ function ViewOnly({ textKey, value, remove, domain }) {
       ) : (
         <RecordLink
           textKey={textKey}
-          /* value={value} */ value={
+          value={
+            value
+          } /* value={
             textKey === 'ETH' ? ethToXDCAddress(value).toLowerCase() : value
-          }
+          } */
           name={domain?.name}
         />
       )}

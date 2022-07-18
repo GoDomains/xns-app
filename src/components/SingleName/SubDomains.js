@@ -36,6 +36,8 @@ function SubDomainsFromWeb3({ domain, canAddSubdomain }) {
           data.getSubDomains.subDomains.filter(subdomain => {
             return parseInt(subdomain.owner, 16) !== 0
           })
+        console.log('Check domain', domain.name)
+        console.log('Check', subdomains)
         const hasNoSubdomains = subdomains && subdomains.length === 0
         if (error) {
           console.log('error getting subdomains', error)

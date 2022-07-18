@@ -313,7 +313,14 @@ const RecordItemEditable = ({
           <>
             <EditRecord>
               {type === 'address' ? (
-                /*  <AddressInput
+                /* <Input
+                  value={ethToXDCAddress(newValue)}
+                  updateValue={newValue}
+                  valid={isValid}
+                  invalid={isInvalid}
+                  large
+                /> */
+                <AddressInput
                   provider={
                     window.ethereum || window.web3 || 'http://localhost:8545'
                   }
@@ -325,13 +332,6 @@ const RecordItemEditable = ({
                     }
                   }}
                   ensAddress={getEnsAddress()}
-                /> */
-                <Input
-                  value={ethToXDCAddress(newValue)}
-                  updateValue={newValue}
-                  valid={isValid}
-                  invalid={isInvalid}
-                  large
                 />
               ) : (
                 <DetailsItemInput

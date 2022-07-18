@@ -375,7 +375,8 @@ export default ({ match }) => {
             </NavLink>
           )}
           <NavLink to="/favourites">{t('c.favourites')}</NavLink>
-          <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink>
+          <NavLink to="/about">{t('c.about')}</NavLink>
+          {/*   <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink> */}
         </Nav>
         {/* <MainPageBannerContainer>
           <DAOBannerContent />
