@@ -282,7 +282,7 @@ function getInputType(
       ? 'http://localhost:8545'
       : window.ethereum || window.web3
   if (type === 'address' && keyName !== 'Resolver') {
-    /*  let option = {
+    let option = {
       presetValue: presetValue || '',
       provider,
       onResolve: ({ address }) => {
@@ -295,9 +295,9 @@ function getInputType(
         console.log('Option', option)
       },
       ensAddress
-    } 
-     return <AddressInput {...option} /> */
-    return (
+    }
+    return <AddressInput {...option} />
+    /* return (
       <Input
         value={ethToXDCAddress(newValue)}
         onChange={e => {
@@ -308,7 +308,7 @@ function getInputType(
         placeholder={keyName !== 'Resolver' ? nonResolverPlaceholder : ''}
         large
       />
-    )
+    ) */
   }
 
   return (
