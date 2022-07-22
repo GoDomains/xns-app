@@ -112,18 +112,21 @@ const Editable = ({
     <KeyValueItem editing={editing} hasRecord={true} noBorder>
       {editing ? (
         <KeyValuesContent editing={editing}>
-          <RecordsSubKey>{key}</RecordsSubKey>
+          <RecordsSubKey>
+            {/* {key} */}
+            {key === 'ETH' ? 'XDC' : key}
+          </RecordsSubKey>
           <RecordInput
             testId={`${key}-record-input`}
             hasBeenUpdated={hasChange(changedRecords, key)}
             type="text"
             isInvalid={!isValid && !isValidating}
             onChange={event => {
-              updateRecord({
+              /*   updateRecord({
                 ...record,
                 value: trimRecord(key, event.target.value)
-              })
-              /*  // trimRecord used to remove whitespaces for address
+              }) */
+              // trimRecord used to remove whitespaces for address
               if (key === 'ETH') {
                 updateRecord({
                   ...record,
@@ -134,16 +137,16 @@ const Editable = ({
                   ...record,
                   value: trimRecord(key, event.target.value)
                 })
-              } */
+              }
             }}
-            value={value === emptyAddress ? '' : value}
-            /*  value={
+            /* value={value === emptyAddress ? '' : value} */
+            value={
               value === emptyAddress
                 ? ''
                 : key === 'ETH'
                 ? ethToXDCAddress(value)
                 : value
-            } */
+            }
             isValid={isValid && !isValidating}
             {...{ placeholder }}
           />
@@ -157,11 +160,14 @@ const Editable = ({
         </KeyValuesContent>
       ) : (
         <KeyValuesContent>
-          <RecordsSubKey>{key}</RecordsSubKey>
+          <RecordsSubKey>
+            {/* {key} */}
+            {key === 'ETH' ? 'XDC' : key}
+          </RecordsSubKey>
           <RecordLink
             textKey={key}
-            value={value}
-            /*  value={key === 'ETH' ? ethToXDCAddress(value).toLowerCase() : value} */
+            /* value={value} */
+            value={key === 'ETH' ? ethToXDCAddress(value).toLowerCase() : value}
             name={domain?.name}
           />
         </KeyValuesContent>
@@ -207,24 +213,35 @@ function Record(props) {
       {...{ updateRecord, record }}
     />
   ) : (
-    <ViewOnly textKey={key} value={record?.value} domain={domain} />
+    <ViewOnly
+      // textKey={key}
+      // value={record?.value}
+      textKey={key === 'ETH' ? 'XDC' : key}
+      value={
+        record?.key === 'ETH' ? ethToXDCAddress(value).toLowerCase() : value
+      }
+      domain={domain}
+    />
   )
 }
 
 function ViewOnly({ textKey, value, remove, domain }) {
   return (
     <RecordsListItem>
-      <RecordsSubKey>{textKey}</RecordsSubKey>
+      <RecordsSubKey>
+        {/*  {textKey} */}
+        {textKey === 'ETH' ? 'XDC' : textKey}
+      </RecordsSubKey>
       {remove ? (
         <DeleteRecord>Delete Record</DeleteRecord>
       ) : (
         <RecordLink
-          textKey={textKey}
-          value={
+          textKey=/* {textKey} */ {textKey === 'ETH' ? 'XDC' : textKey}
+          /*  value={
             value
-          } /* value={
+          } */ value={
             textKey === 'ETH' ? ethToXDCAddress(value).toLowerCase() : value
-          } */
+          }
           name={domain?.name}
         />
       )}
