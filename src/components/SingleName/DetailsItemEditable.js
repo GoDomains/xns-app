@@ -254,8 +254,7 @@ function getInputType(
     expirationDate,
     rentPriceLoading,
     rentPrice,
-    placeholder,
-    nonResolverPlaceholder
+    placeholder
   }
 ) {
   if (keyName === 'Expiration Date') {
@@ -297,18 +296,6 @@ function getInputType(
       ensAddress
     }
     return <AddressInput {...option} />
-    /* return (
-      <Input
-        value={ethToXDCAddress(newValue)}
-        onChange={e => {
-          updateValue(xdcToEthAddress(e.target.value.trim()))
-        }}
-        valid={isValid}
-        invalid={isInvalid}
-        placeholder={keyName !== 'Resolver' ? nonResolverPlaceholder : ''}
-        large
-      />
-    ) */
   }
 
   return (
@@ -429,7 +416,6 @@ const Editable = ({
   const isRegistrant = !domain.available && domain.registrant === account
   const canDelete = ['Resolver'].includes(keyName)
   const placeholder = t('singleName.resolver.placeholder')
-  const nonResolverPlaceholder = t('singleName.resolver.nonresolver')
   const [mutation] = useMutation(mutationQuery, {
     onCompleted: data => {
       const txHash = Object.values(data)[0]
@@ -653,8 +639,7 @@ const Editable = ({
                 expirationDate,
                 rentPriceLoading,
                 rentPrice: getRentPrice,
-                placeholder,
-                nonResolverPlaceholder
+                placeholder
               })}
             </EditRecord>
             <Buttons>

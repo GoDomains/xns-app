@@ -335,7 +335,6 @@
       "message": "Nhấp đặt và thêm vào địa chỉ phân giải tuỳ chỉnh của bạn để tự tay đặt lại trình phân giải tuỳ chỉnh của bạn",
       "placeholder": "Use the Public Resolver or enter the address of your custom resolver contract",
       "publicResolver": "Dùng Trình phân giải Công khai",
-        "nonresolver":"Enter Xinfin address",
       "resolverAddressWarning": "Only contract address is allowed",
       "warning": "Bạn đang dùng một trình phân giải công khai phiên bản cũ, Nhấp vào để di chuyển trình phân giải và bản ghi. Bạn sẽ cần phải xác nhận 2 giao dịch để di chuyển cả bản ghi và trình phân giải"
     },
