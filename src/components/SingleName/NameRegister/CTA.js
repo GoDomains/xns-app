@@ -191,7 +191,7 @@ function getCTA({
           css={css`
             margin-right: 20px;
           `}
-          name={`${label}.xdc`}
+          name={`${label}.go`}
           startDatetime={moment()
             .utc()
             .local()
@@ -201,7 +201,7 @@ function getCTA({
         <LeftLink
           onClick={async () => {
             await Promise.all([refetch(), refetchIsMigrated()])
-            history.push(`/name/${label}.xdc`)
+            history.push(`/name/${label}.go`)
           }}
           data-testid="manage-name-button"
         >

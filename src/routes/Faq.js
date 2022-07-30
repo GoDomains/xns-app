@@ -89,14 +89,14 @@ function Faq() {
           put the hash in your XNS name's Content record. Then it can be
           resolved by XNS-aware browsers (e.g. Opera), browser extensions
           (Metamask), or any browser with ".link" or ".limo" appended to the end
-          (e.g. matoken.xdc.link or matoken.xdc.limo).
+          (e.g. matoken.go.link or matoken.go.limo).
           <br />
           If you want to redirect your XNS name to an existing website, you
           could write a html file containing JavaScript logic to redirect to
           your website, upload the file into ipfs using services like{' '}
           <a href="https://pinata.cloud/">IPFS Pinata</a>, then set the CID to
-          your contenthash. See the source code of depositcontract.xdc.link as
-          an example.
+          your contenthash. See the source code of depositcontract.go.link as an
+          example.
         </Section>
 
         <Section question="What is the maximum length of a name I can register?">
@@ -105,7 +105,7 @@ function Faq() {
 
         <Section question="Can you have names with emojis?">Yes.</Section>
 
-        <Section question="How much does it cost to register a .xdc name?">
+        <Section question="How much does it cost to register a .go name?">
           Currently, registration costs are set at the following prices:
           <ul>
             <li>5+ character .eth names: $5 in ETH per year.</li>
@@ -194,7 +194,7 @@ function Faq() {
           themselves as the Controller so they can update records on your
           behalf.
           <br />
-          The Registrant only exists on ".xdc" names and it allows you to change
+          The Registrant only exists on ".go" names and it allows you to change
           the Controller. If you transfer the Registrant to an address you don't
           own, you lose the ownership of the name.
         </Section>
@@ -221,7 +221,7 @@ function Faq() {
           If you click the "trash bin" icon on the address record, it will unset
           your address so that people can no longer look up your address with
           the name. You can also unset ownership of subdomains in this way, but
-          you cannot do so on ".xdc" addresses. Because ".xdc" names are
+          you cannot do so on ".go" addresses. Because ".go" names are
           ERC721-compliant NFTs, you cannot transfer them to an empty address
           (0x00000...). You can transfer it to a burn address (eg: 0x00001), but
           that does not erase the fact that you used to own the name. Also, the
@@ -230,8 +230,8 @@ function Faq() {
         </Section>
 
         <Section question="How do I transfer my name?">
-          For a ".xdc" name, transfer both the Registrant and the Controller to
-          the new Xinfin account. Since ".xdc" names are ERC721 compliant NFTs,
+          For a ".go" name, transfer both the Registrant and the Controller to
+          the new Xinfin account. Since ".go" names are ERC721 compliant NFTs,
           you can change the Registrant by simply transferring the NFT from any
           NFT compliant wallet/marketplace as well.
           <br />

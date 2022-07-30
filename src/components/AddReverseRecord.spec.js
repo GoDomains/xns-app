@@ -53,7 +53,7 @@ describe('getReverseRecord', () => {
           return {
             refetch: () => null,
             data: {
-              getReverseRecord: 'vitalik.xdc '
+              getReverseRecord: 'vitalik.go '
             }
           }
         case 'getNamesFromSubgraph':

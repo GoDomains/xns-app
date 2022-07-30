@@ -216,7 +216,7 @@ class Explainer extends Component {
           ))}
         </div>
         <div className="hook">
-          <p>alice.mywallet.xdc</p>
+          <p>alice.mywallet.go</p>
         </div>
       </BaseContainer>
     )

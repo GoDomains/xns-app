@@ -10,7 +10,7 @@ describe(
   },
   () => {
     it('can list a domain', () => {
-      const name = 'resolver.xdc'
+      const name = 'resolver.go'
       cy.visit(ROOT)
       cy.getByPlaceholderText('Search', { exact: false }).type('resolver')
       cy.wait(1500)
@@ -27,7 +27,7 @@ describe(
     //Visit a domain, check the owner, resolver, address, content exists
     it('can search for a domain', () => {
       cy.visit(ROOT)
-      cy.getByPlaceholderText('Search', { exact: false }).type('resolver.xdc')
+      cy.getByPlaceholderText('Search', { exact: false }).type('resolver.go')
       cy.wait(1500)
       cy.get('button')
         .contains('Search')
@@ -64,8 +64,8 @@ describe(
     })
 
     it('cannot register malformated name', () => {
-      cy.visit(`${ROOT}/search/ab xdc`)
-      cy.queryByText('Domain malformed. ab xdc is not a valid domain', {
+      cy.visit(`${ROOT}/search/ab go`)
+      cy.queryByText('Domain malformed. ab go is not a valid domain', {
         exact: false
       }).should('exist')
     })
@@ -81,13 +81,13 @@ describe(
         .click({ force: true })
       cy.wait(10000)
       cy.queryByText('Names', { exact: false }).should('exist')
-      cy.queryByText('notldispsecified.xdc', { exact: false }).should('exist')
+      cy.queryByText('notldispsecified.go', { exact: false }).should('exist')
     })
 
     it('should uri encode search term', () => {
       cy.visit(ROOT)
       cy.getByPlaceholderText('Search', { exact: false }).type(
-        '%E2%80%8Btest.xdc'
+        '%E2%80%8Btest.go'
       )
       cy.wait(10000)
       cy.get('button')
@@ -95,7 +95,7 @@ describe(
         .click({ force: true })
       cy.wait(10000)
       cy.queryByText(
-        'Domain malformed. %e2%80%8btest.xdc is not a valid domain.',
+        'Domain malformed. %e2%80%8btest.go is not a valid domain.',
         {
           exact: false
         }

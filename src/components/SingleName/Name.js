@@ -37,12 +37,12 @@ const RightBar = styled('div')`
 const Favourite = styled(DefaultFavourite)``
 
 function isRegistrationOpen(available, parent) {
-  return parent === 'xdc' && available
+  return parent === 'go' && available
 }
 
 function isDNSRegistrationOpen(domain) {
   const nameArray = domain.name?.split('.')
-  if (nameArray?.length !== 2 || nameArray?.[1] === 'xdc') {
+  if (nameArray?.length !== 2 || nameArray?.[1] === 'go') {
     return false
   }
   return domain.isDNSRegistrar && domain.owner === EMPTY_ADDRESS

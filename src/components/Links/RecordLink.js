@@ -63,7 +63,7 @@ const RecordLink = ({ textKey, value, name }) => {
   let url
   const { network } = useNetworkInfo()
   switch (textKey) {
-    case 'xdc.ens.delegate':
+    case 'go.xns.delegate':
     case 'url':
       url = `${value}`
       break

@@ -55,7 +55,7 @@ function About() {
         <Title>About Page</Title>
         <H2>
           Build a decentralized domain name system based on Xinfin blockchain to
-          map human-readable names like **vitalik.xdc** to machine-readable
+          map human-readable names like **vitalik.go** to machine-readable
           addresses.
         </H2>
         <Answer>
@@ -63,7 +63,7 @@ function About() {
           system based on the Xinfin blockchain.
         </Answer>
         <Answer>
-          It’s job is to map human-readable names like ‘alice.xdc’ to
+          It’s job is to map human-readable names like ‘alice.go’ to
           machine-readable identifiers such as Xinfin Chain addresses, other
           cryptocurrency addresses, content hashes, and metadata. XNS also
           supports ‘reverse resolution’, making it possible to associate
@@ -78,7 +78,7 @@ function About() {
           hierarchical names called domains, with the owner of a domain having
           full control over subdomains.
         </Answer>
-        Top-level domains, like ‘.xdc’ and ‘.test’, are owned by smart contracts
+        Top-level domains, like ‘.go’ and ‘.test’, are owned by smart contracts
         called registrars, which specify rules governing the allocation of their
         subdomains. Anyone may, by following the rules imposed by these
         registrar contracts, obtain ownership of a domain for their own use.
@@ -88,8 +88,8 @@ function About() {
         <Answer>
           Because of the hierarchal nature of XNS, anyone who owns a domain at
           any level may configure subdomains - for themselves or others - as
-          desired. For instance, if Alice owns 'alice.xdc', she can create
-          'pay.alice.xdc' and configure it as she wishes
+          desired. For instance, if Alice owns 'alice.go', she can create
+          'pay.alice.go' and configure it as she wishes
         </Answer>
         <Answer>
           You can try XNS out for yourself now by using the XNS Manager App, or
