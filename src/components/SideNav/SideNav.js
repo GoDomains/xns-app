@@ -199,6 +199,15 @@ function SideNav({ match, isMenuOpen, toggleMenu }) {
             <span>{t('c.about')}</span>
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            onClick={toggleMenu}
+            active={url === '/terms-of-service' ? 1 : 0}
+            to="/terms-of-service"
+          >
+            <span>Terms of Service</span>
+          </NavLink>
+        </li>
       </ul>
     </SideNavContainer>
   )
