@@ -215,7 +215,7 @@ function DetailsContainer({
   const showUnclaimableWarning =
     is2ld &&
     parseInt(domain.owner) === 0 &&
-    domain.parent !== 'xdc' &&
+    domain.parent !== 'go' &&
     !domain.isDNSRegistrar
 
   return (
@@ -263,7 +263,7 @@ function DetailsContainer({
         </GracePeriodWarningContainer>
       )}
       <OwnerFields outOfSync={outOfSync}>
-        {domain.parent === 'xdc' && domain.isNewRegistrar ? (
+        {domain.parent === 'go' && domain.isNewRegistrar ? (
           <>
             <DetailsItemEditable
               domain={domain}
@@ -298,7 +298,7 @@ function DetailsContainer({
               copyToClipboard={true}
             />
           </>
-        ) : domain.parent === 'xdc' && !domain.isNewRegistrar ? (
+        ) : domain.parent === 'go' && !domain.isNewRegistrar ? (
           <>
             <DetailsItem uneditable>
               <DetailsKey>{t('c.registrant')}</DetailsKey>

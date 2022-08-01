@@ -336,7 +336,6 @@
       "error": "Error migrando el resolucionador.",
       "message": "Para configurar el resolvedor manualmente, haz clic en (set) e intruduce la dirección del resolvedor.",
       "placeholder": "Use the Public Resolver or enter the address of your custom resolver contract",
-        "nonresolver":"Enter Xinfin address",
       "publicResolver": "Utilizar resolvedor público",
       "resolverAddressWarning": "Only contract address is allowed",
       "warning": "Estas utilizando una versión antigua del resolvedor público. Haz clic para migrar tu resolvedor y registros. Necesitarás confirmar dos transacciones para migrar ambas."

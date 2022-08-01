@@ -179,11 +179,7 @@ const SaveCancel = motion.custom(DefaultSaveCancel)
 
 function getMessages({ keyName, parent, deedOwner, isDeedOwner, t }) {
   let [newValue, newType] = getDefaultMessage(keyName, t)
-  if (
-    keyName === 'Owner' &&
-    parent === 'xdc' &&
-    parseInt(deedOwner, 16) !== 0
-  ) {
+  if (keyName === 'Owner' && parent === 'go' && parseInt(deedOwner, 16) !== 0) {
     newValue = t('singleName.messages.noresolver')
     if (isDeedOwner) {
       newValue += t('singleName.messages.notfinalise')
@@ -254,8 +250,7 @@ function getInputType(
     expirationDate,
     rentPriceLoading,
     rentPrice,
-    placeholder,
-    nonResolverPlaceholder
+    placeholder
   }
 ) {
   if (keyName === 'Expiration Date') {
@@ -297,18 +292,6 @@ function getInputType(
       ensAddress
     }
     return <AddressInput {...option} />
-    /* return (
-      <Input
-        value={ethToXDCAddress(newValue)}
-        onChange={e => {
-          updateValue(xdcToEthAddress(e.target.value.trim()))
-        }}
-        valid={isValid}
-        invalid={isInvalid}
-        placeholder={keyName !== 'Resolver' ? nonResolverPlaceholder : ''}
-        large
-      />
-    ) */
   }
 
   return (
@@ -429,7 +412,6 @@ const Editable = ({
   const isRegistrant = !domain.available && domain.registrant === account
   const canDelete = ['Resolver'].includes(keyName)
   const placeholder = t('singleName.resolver.placeholder')
-  const nonResolverPlaceholder = t('singleName.resolver.nonresolver')
   const [mutation] = useMutation(mutationQuery, {
     onCompleted: data => {
       const txHash = Object.values(data)[0]
@@ -653,8 +635,7 @@ const Editable = ({
                 expirationDate,
                 rentPriceLoading,
                 rentPrice: getRentPrice,
-                placeholder,
-                nonResolverPlaceholder
+                placeholder
               })}
             </EditRecord>
             <Buttons>

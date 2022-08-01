@@ -51,8 +51,8 @@ describe('saveLabel', () => {
 
 describe('saveName', () => {
   it('should save all labels to localStorage (2)', () => {
-    const name = 'vitalik.xdc'
-    const nameArray = ['vitalik', 'xdc']
+    const name = 'vitalik.go'
+    const nameArray = ['vitalik', 'go']
     const hashes = [
       'af2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc',
       '4f5b812789fc606be1b3b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0'
@@ -66,8 +66,8 @@ describe('saveName', () => {
   })
 
   it('should save all labels to localStorage (3)', () => {
-    const name = 'awesome.vitalik.xdc'
-    const nameArray = ['awesome', 'vitalik', 'xdc']
+    const name = 'awesome.vitalik.go'
+    const nameArray = ['awesome', 'vitalik', 'go']
     const hashes = [
       'd17d1d80d5d7a434b56ee59bc2ed8f0fd2a890dfba40fc63344b9c3654c935ee',
       'af2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc',
@@ -100,14 +100,14 @@ describe('encodeLabel', () => {
 
 describe('parseName', () => {
   it('should parse all the labels (2) and return the encoded string', () => {
-    const name = 'vitalik.xdc'
+    const name = 'vitalik.go'
     const parsedName = parseName(name)
     expect(parsedName).toEqual(name)
   })
 
   it('should parse all the labels (3) and return the encoded string', () => {
-    const name = `0x${blahblahHash}.vitalik.xdc`
-    const encodedName = `[${blahblahHash}].vitalik.xdc`
+    const name = `0x${blahblahHash}.vitalik.go`
+    const encodedName = `[${blahblahHash}].vitalik.go`
     const parsedName = parseName(name)
     expect(parsedName).toEqual(encodedName)
   })

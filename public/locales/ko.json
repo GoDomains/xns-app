@@ -334,7 +334,6 @@
       "error": "리졸버 마이그레이션 에러",
       "message": "리졸버를 수동으로 초기화하려면 설정을 클릭하고 등록할 리졸버의 주소를 입력하세요.",
       "placeholder": "Use the Public Resolver or enter the address of your custom resolver contract",
-        "nonresolver":"Enter Xinfin address",
       "publicResolver": "퍼블릭 리졸버 사용",
       "resolverAddressWarning": "Only contract address is allowed",
       "warning": "오래된 버전의 퍼블릭 리졸버를 사용하고 있습니다. 클릭하여 리졸버와 레코드를 변경하세요. 레코드와 리졸버를 변경하기 위해 두 번의 트랜잭션 승인이 필요합니다."

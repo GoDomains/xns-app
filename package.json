@@ -14,14 +14,14 @@
     "@ensdomains/ens-validation": "^0.1.0",
     "@ensdomains/eth-ens-namehash": "^2.0.15",
     "@ensdomains/mock": "^2.1.46-beta",
-    "@ensdomains/ui": "https://github.com/yodaplus/ui.git#final-production",
+    "@ensdomains/ui": "https://github.com/yodaplus/ui.git#go-domains",
     "@ensdomains/web3modal": "https://github.com/yodaplus/web3modal.git#master",
     "@gnosis.pm/safe-apps-provider": "^0.9.2",
     "@myetherwallet/mewconnect-web-client": "^2.2.0-beta.16",
     "@portis/web3": "^2.0.0-beta.59",
     "@toruslabs/torus-embed": "^1.8.6",
     "@walletconnect/web3-provider": "^1.7.4",
-    "@yodaplus/react-ens-address": "0.0.32",
+    "@yodaplus/react-ens-address": "0.0.34",
     "assert": "npm:assert",
     "authereum": "^0.1.0",
     "bech32": "2.0.0",
@@ -172,7 +172,7 @@
     "resetMocks": false
   },
   "resolutions": {
-    "@ensdomains/ui": "https://github.com/yodaplus/ui.git#final-production",
+    "@ensdomains/ui": "https://github.com/yodaplus/ui.git#go-domains",
     "ethers": "^5.5.4",
     "wrtc": "npm:@koush/wrtc"
   }

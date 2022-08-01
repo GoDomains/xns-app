@@ -4,7 +4,7 @@ function createFetchUrl(name) {
 }
 
 function whitelisted() {
-  return ['app.xns.domains', 'xns.xdc', 'xns.xdc.link'].includes(
+  return ['app.xns.domains', 'xns.go', 'xns.go.link'].includes(
     window.location.host
   )
 }
@@ -33,5 +33,5 @@ export function checkCertificate(name) {
 export function isEthSubdomain(name) {
   let labels = name.split('.')
   let suffix = labels[labels.length - 1]
-  return suffix === 'xdc' && name !== 'xdc'
+  return suffix === 'go' && name !== 'go'
 }

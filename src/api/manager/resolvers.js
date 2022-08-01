@@ -171,7 +171,7 @@ export const handleMultipleTransactions = async (
 async function getRegistrarEntry(name) {
   const registrar = getRegistrar()
   const nameArray = name.split('.')
-  if (nameArray.length > 3 || nameArray[1] !== 'xdc') {
+  if (nameArray.length > 3 || nameArray[1] !== 'go') {
     return {}
   }
 
@@ -269,7 +269,7 @@ async function getDNSEntryDetails(name) {
   const registrar = getRegistrar()
   const nameArray = name.split('.')
   const networkId = await getNetworkId()
-  if (nameArray.length !== 2 || nameArray[1] === 'xdc') return {}
+  if (nameArray.length !== 2 || nameArray[1] === 'go') return {}
 
   let tld = nameArray[1]
   let owner
@@ -309,8 +309,8 @@ function adjustForShortNames(node) {
   const nameArray = node.name.split('.')
   const { label, parent } = node
 
-  // return original node if is subdomain or not xdc
-  if (nameArray.length > 2 || parent !== 'xdc' || label.length > 6) return node
+  // return original node if is subdomain or not go
+  if (nameArray.length > 2 || parent !== 'go' || label.length > 6) return node
 
   //if the auctions are over
   if (new Date() > new Date(1570924800000)) {
@@ -345,7 +345,7 @@ const resolvers = {
     publicResolver: async () => {
       try {
         const ens = getENS()
-        const resolver = await ens.getAddress('resolver.xdc')
+        const resolver = await ens.getAddress('resolver.go')
         return {
           address: resolver,
           __typename: 'Resolver'
@@ -545,7 +545,7 @@ const resolvers = {
       }
 
       async function calculateIsPublicResolverReady() {
-        const publicResolver = await ens.getAddress('resolver.xdc')
+        const publicResolver = await ens.getAddress('resolver.go')
         return !OLD_RESOLVERS.map(a => a.toLowerCase()).includes(publicResolver)
       }
 
@@ -909,7 +909,7 @@ const resolvers = {
 
       // get public resolver
       try {
-        const publicResolver = await ens.getAddress('resolver.xdc')
+        const publicResolver = await ens.getAddress('resolver.go')
         const resolver = await ens.getResolver(name)
         const isOldContentResolver = calculateIsOldContentResolver(resolver)
 

@@ -102,7 +102,7 @@ export default function RegistryMigration({
           : dnssecmode
           ? dnssecMigrateMessage
           : defaultMessage}
-        {domain.parent !== 'xdc' && !dnssecmode && (
+        {domain.parent !== 'go' && !dnssecmode && (
           <SubWarning>{t('registrymigration.donotaccept')}</SubWarning>
         )}
       </WarningContent>

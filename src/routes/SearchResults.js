@@ -31,7 +31,7 @@ const useCheckValidity = (_searchTerm, isENSReady) => {
       setErrors([])
 
       if (_searchTerm.split('.').length === 1) {
-        searchTerm = _searchTerm + '.xdc'
+        searchTerm = _searchTerm + '.go'
       } else {
         searchTerm = _searchTerm
       }

@@ -28,13 +28,13 @@ describe(
         force: true
       })
 
-      cy.getByText('sub1.otherowner.xdc', { exact: true }).click({
+      cy.getByText('sub1.otherowner.go', { exact: true }).click({
         force: true
       })
 
       cy.getByText('Save', { timeout: 5000 }).click({ force: true })
 
-      cy.queryByText(`Primary XNS Name (reverse record): sub1.otherowner.xdc`, {
+      cy.queryByText(`Primary XNS Name (reverse record): sub1.otherowner.go`, {
         exact: false,
         timeout: 10000
       }).should('exist')
@@ -44,7 +44,7 @@ describe(
 
       cy.getByTestId('account', { exact: false, timeout: 10000 }).should(
         'have.text',
-        'sub1.otherowner.xdc'
+        'sub1.otherowner.go'
       )
     })
   }

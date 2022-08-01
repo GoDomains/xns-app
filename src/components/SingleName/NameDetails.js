@@ -65,15 +65,11 @@ function NameDetails({
   const outOfSync = dnssecmode && dnssecmode.outOfSync
   const isAnAbsolutePath = pathname.split('/').length > 3
 
-  if (domain.parent === 'xdc' && tab === 'register' && !isAnAbsolutePath) {
+  if (domain.parent === 'go' && tab === 'register' && !isAnAbsolutePath) {
     return <Redirect to={`${pathname}/register`} />
-  } else if (
-    domain.parent === 'xdc' &&
-    tab === 'details' &&
-    !isAnAbsolutePath
-  ) {
+  } else if (domain.parent === 'go' && tab === 'details' && !isAnAbsolutePath) {
     return <Redirect to={`${pathname}/details`} />
-  } else if (domain.parent !== 'xdc' && !isAnAbsolutePath) {
+  } else if (domain.parent !== 'go' && !isAnAbsolutePath) {
     //subdomain or dns
     return <Redirect to={`${pathname}/subdomains`} />
   }
