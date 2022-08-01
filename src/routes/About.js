@@ -10,19 +10,14 @@ const AboutContainer = styled('div')`
   padding: 20px 40px;
   background-color: white;
 `
-const H2 = styled(DefaultH2)`
-  margin-top: 20px;
-  margin-left: 20px;
-  ${mq.medium`
-    margin-left: 0;
-  `}
+const SubText = styled('p')``
+
+const Text = styled('p')`
+  margin: 0px;
 `
-const Question = styled('h3')`
-  font-size: 15px;
-  margin-right: 0.5em;
-  display: inline;
+const TextH = styled('h4')`
+  margin: 0px;
 `
-const Answer = styled('p')``
 
 function About() {
   const { t } = useTranslation()
@@ -30,71 +25,37 @@ function About() {
     document.title = 'XNS About'
   }, [])
 
-  const Section = ({ question, children }) => {
-    let slug
-    if (question) {
-      slug = slugify(question, {
-        lower: true
-      })
-    }
-    return (
-      <>
-        <Question id={slug}>{question}</Question>
-        <AnchorContainer href={`#${slug}`}>
-          <Anchor />
-        </AnchorContainer>
-
-        <Answer>{children}</Answer>
-      </>
-    )
-  }
-
   return (
     <>
       <AboutContainer>
         <Title>About Page</Title>
-        <H2>
-          Build a decentralized domain name system based on Xinfin blockchain to
-          map human-readable names like **vitalik.go** to machine-readable
-          addresses.
-        </H2>
-        <Answer>
-          The decentralized DNS is a distributed, open, and extensible naming
-          system based on the Xinfin blockchain.
-        </Answer>
-        <Answer>
-          It’s job is to map human-readable names like ‘alice.go’ to
-          machine-readable identifiers such as Xinfin Chain addresses, other
-          cryptocurrency addresses, content hashes, and metadata. XNS also
-          supports ‘reverse resolution’, making it possible to associate
-          metadata such as canonical names or interface descriptions with
-          Ethereum addresses.
-        </Answer>
-        <Answer>
-          Decentralized DNS has similar goals to DNS, the Internet’s Domain Name
-          Service, but has significantly different architecture due to the
-          capabilities and constraints provided by the Xinfin blockchain. Like
-          DNS, decentralized DNS operates on a system of dot-separated
-          hierarchical names called domains, with the owner of a domain having
-          full control over subdomains.
-        </Answer>
-        Top-level domains, like ‘.go’ and ‘.test’, are owned by smart contracts
-        called registrars, which specify rules governing the allocation of their
-        subdomains. Anyone may, by following the rules imposed by these
-        registrar contracts, obtain ownership of a domain for their own use.
-        This also supports importing in DNS names already owned by the user for
-        use on XNS.
-        <Answer />
-        <Answer>
-          Because of the hierarchal nature of XNS, anyone who owns a domain at
-          any level may configure subdomains - for themselves or others - as
-          desired. For instance, if Alice owns 'alice.go', she can create
-          'pay.alice.go' and configure it as she wishes
-        </Answer>
-        <Answer>
-          You can try XNS out for yourself now by using the XNS Manager App, or
-          by using any of the many XNS enabled applications on our homepage.
-        </Answer>
+        <h3>Go Globals with .GO Domains</h3>
+        <SubText>
+          GoDomain is first and foremost a Blockchain powered Registrar to offer
+          .go Domain for registration. Our core business is domain name
+          registration. Our control panel is designed to be easy-to-use and to
+          give you the best customer experience, whether or not you are crypto
+          -savvy! Backed by a team of industry veterans and local technical
+          professionals who ensure our customers always get the best
+        </SubText>
+        <SubText>
+          Choosing the right domain name for your business is a process that can
+          require a lot of thought, patience and consideration. In many cases,
+          your domain can and should simply be that of your company name, as it
+          is a clear reflection of you and your business. However, that may not
+          always be possible due to the availability of particular domain names
+          which means you may need to decide on something else.
+        </SubText>
+        <SubText>
+          A good domain name needs to be easy to remember, easy to spell and
+          generally the shorter it is, the better. The following should be taken
+          into consideration when choosing your new domain:
+        </SubText>
+        <TextH>Why Choose .Go Domain</TextH>
+        <Text>Is it easy to remember?</Text>
+        <Text>Is it easy to spell?</Text>
+        <Text> You can get Domain relevant to your business ?</Text>
+        <Text>With .GO Domain Your can get Your Business Global?</Text>
       </AboutContainer>
     </>
   )

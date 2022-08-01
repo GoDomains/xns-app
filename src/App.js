@@ -70,6 +70,20 @@ const About = lazy(() =>
   )
 )
 
+const TACForDomainRegistration = lazy(() =>
+  import(
+    /* webpackChunkName: "TACForDomainRegistration", webpackPrefetch:true */
+    './routes/TACForDomainRegistration'
+  )
+)
+
+const TermsofService = lazy(() =>
+  import(
+    /* webpackChunkName: "TermsofService", webpackPrefetch:true */
+    './routes/TermsofService'
+  )
+)
+
 // import TestRegistrar from './routes/TestRegistrar'
 // import Home from './routes/Home'
 // import SearchResults from './routes/SearchResults'
@@ -131,6 +145,11 @@ const App = () => {
         <Route path="/favourites" component={Favourites} />
         <Route path="/faq" component={Faq} />
         <Route path="/about" component={About} />
+        <Route
+          path="/tac-for-domain-registration"
+          component={TACForDomainRegistration}
+        />
+        <Route path="/terms-of-service" component={TermsofService} />
         <Route path="/my-bids" component={SearchResults} />
         <Route path="/how-it-works" component={SearchResults} />
         <Route path="/search/:searchTerm" component={SearchResults} />
