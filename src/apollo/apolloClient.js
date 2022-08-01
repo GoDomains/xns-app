@@ -23,7 +23,7 @@ const endpoints = {
   '4': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby',
   '5': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensgoerli',
   '50':
-    'https://graph-node.yodaplus.net:8000/subgraphs/name/xnsdomains/go-mainnet',
+    'https://graph-node.yodaplus.net:8000/subgraphs/name/xnsdomains/go-mainnet-test',
   '51':
     'https://graph-node-apothem.yodaplus.net:8000/subgraphs/name/xnsdomains/go-test'
 }
