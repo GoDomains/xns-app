@@ -68,7 +68,8 @@ function getCTA({
   history,
   t,
   ethUsdPrice,
-  account
+  account,
+  checkValue
 }) {
   console.log(isNameWrapped, isReadOnly)
   const CTAs = {
@@ -86,9 +87,27 @@ function getCTA({
         {mutate =>
           isAboveMinDuration && !isNameWrapped && !isReadOnly ? (
             hasSufficientBalance ? (
-              <Button data-testid="request-register-button" onClick={mutate}>
-                {t('register.buttons.request')}
-              </Button>
+              checkValue ? (
+                <>
+                  <Button
+                    data-testid="request-register-button"
+                    onClick={mutate}
+                  >
+                    {t('register.buttons.request')}
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Prompt>
+                    <OrangeExclamation />
+                    Check to indicate that you have read and agreed to GoDomains
+                    Terms of Service for Domain Name Registration
+                  </Prompt>
+                  <Button data-testid="request-register-button" type="disabled">
+                    {t('register.buttons.request')}
+                  </Button>
+                </>
+              )
             ) : (
               <>
                 <Prompt>
@@ -241,7 +260,8 @@ const CTA = ({
   price,
   years,
   premium,
-  ethUsdPrice
+  ethUsdPrice,
+  checkValue
 }) => {
   const { t } = useTranslation()
   const history = useHistory()
@@ -282,7 +302,8 @@ const CTA = ({
         history,
         t,
         ethUsdPrice,
-        account
+        account,
+        checkValue
       })}
     </CTAContainer>
   )

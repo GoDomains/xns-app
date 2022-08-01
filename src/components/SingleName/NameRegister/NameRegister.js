@@ -40,6 +40,12 @@ const PremiumWarning = styled('div')`
   padding: 1em;
   margin-bottom: 1em;
 `
+const TAC = styled('div')`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1em;
+`
 
 const NameRegister = ({
   domain,
@@ -52,6 +58,7 @@ const NameRegister = ({
 }) => {
   const { t } = useTranslation()
   const [secret, setSecret] = useState(false)
+  const [checkValue, setCheckValue] = useState(true)
   const { networkId } = useNetworkInfo()
   const [step, dispatch] = useReducer(
     registerReducer,
@@ -311,6 +318,24 @@ const NameRegister = ({
         waitPercentComplete={waitPercentComplete}
       />
       <Progress step={step} waitPercentComplete={waitPercentComplete} />
+      <TAC>
+        <input
+          type="checkbox"
+          large
+          checked={checkValue}
+          onClick={event => {
+            setCheckValue(event.target.checked)
+          }}
+          name="TAC"
+        />
+        <label for="TAC">
+          {' '}
+          I Agree to{' '}
+          <a href="/tac-for-domain-registration" target="_blank">
+            GoDomains Terms of Service for Domain Name Registration.
+          </a>
+        </label>
+      </TAC>
       <CTA
         hasSufficientBalance={hasSufficientBalance}
         waitTime={waitTime}
@@ -335,6 +360,7 @@ const NameRegister = ({
         years={years}
         premium={currentPremium}
         ethUsdPrice={!ethUsdPriceLoading && ethUsdPrice}
+        checkValue={checkValue}
       />
     </NameRegisterContainer>
   )
