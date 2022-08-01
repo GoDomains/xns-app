@@ -318,24 +318,28 @@ const NameRegister = ({
         waitPercentComplete={waitPercentComplete}
       />
       <Progress step={step} waitPercentComplete={waitPercentComplete} />
-      <TAC>
-        <input
-          type="checkbox"
-          large
-          checked={checkValue}
-          onClick={event => {
-            setCheckValue(event.target.checked)
-          }}
-          name="TAC"
-        />
-        <label for="TAC">
-          {' '}
-          I Agree to{' '}
-          <a href="/tac-for-domain-registration" target="_blank">
-            GoDomains Terms of Service for Domain Name Registration.
-          </a>
-        </label>
-      </TAC>
+      {step === 'PRICE_DECISION' && (
+        <>
+          <TAC>
+            <input
+              type="checkbox"
+              large
+              checked={checkValue}
+              onClick={event => {
+                setCheckValue(event.target.checked)
+              }}
+              name="TAC"
+            />
+            <label for="TAC">
+              {' '}
+              I Agree to{' '}
+              <a href="/tac-for-domain-registration" target="_blank">
+                GoDomains Terms of Service for Domain Name Registration.
+              </a>
+            </label>
+          </TAC>
+        </>
+      )}
       <CTA
         hasSufficientBalance={hasSufficientBalance}
         waitTime={waitTime}
