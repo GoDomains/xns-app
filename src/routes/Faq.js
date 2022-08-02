@@ -6,7 +6,7 @@ import mq from 'mediaQuery'
 import { H2 as DefaultH2, Title } from '../components/Typography/Basic'
 import Anchor from '../components/Icons/Anchor'
 import slugify from 'slugify'
-import ReverseRecordImageSrc from '../assets/reverseRecordImage.png'
+//import ReverseRecordImageSrc from '../assets/reverseRecordImage.png'
 // import {
 //   NonMainPageBannerContainer,
 //   DAOBannerContent
@@ -19,6 +19,14 @@ import ReverseRecordImageSrc from '../assets/reverseRecordImage.png'
 //     margin-left: 0;
 //   `}
 // `
+
+const Header = styled(Title)`
+  margin-bottom: 50px;
+  margin-left: 20px;
+  ${mq.medium`
+    margin-left: 0;
+  `}
+`
 
 const Question = styled('h3')`
   font-size: 15px;
@@ -72,7 +80,7 @@ function Faq() {
         <DAOBannerContent />
       </NonMainPageBannerContainer> */}
       <FaqContainer>
-        <Title>Frequently Ask Questions</Title>
+        <Header>Frequently Ask Questions</Header>
 
         <Section question="What is a Domain Name?">
           Your domain name is a key part of your online address, and is what
