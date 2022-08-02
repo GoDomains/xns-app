@@ -63,7 +63,7 @@ const Section = ({ question, children }) => {
 function Faq() {
   const { t } = useTranslation()
   useEffect(() => {
-    document.title = 'XNS Faq'
+    document.title = 'GoDomains Faq'
   }, [])
 
   return (

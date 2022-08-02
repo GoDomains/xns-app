@@ -13,8 +13,9 @@ export default function Renew(props) {
   return (
     <Banner>
       You are here because of a transaction you completed. The reason we sent
-      the transaction is to remind you that your XNS names will be expiring
-      soon. Please login to your wallet to be redirected to your list of names{' '}
+      the transaction is to remind you that your GODomains names will be
+      expiring soon. Please login to your wallet to be redirected to your list
+      of names{' '}
     </Banner>
   )
 }
