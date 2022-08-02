@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled/macro'
 import Years from './NameRegister/Years'
 import Price from './NameRegister/Price'
-import EthRegistrationGasPrice from './NameRegister/EthRegistrationGasPrice'
+//import EthRegistrationGasPrice from './NameRegister/EthRegistrationGasPrice'
 import { ReactComponent as DefaultOrangeExclamation } from '../Icons/OrangeExclamation.svg'
 import mq from 'mediaQuery'
 import { ReactComponent as ChainDefault } from '../Icons/chain.svg'
@@ -81,7 +81,7 @@ function PricerInner({
           underPremium={underPremium}
         />
       </PricingContainer>
-      {displayGas && gasPrice && (
+      {/* {displayGas && gasPrice && (
         <div>
           <EthRegistrationGasPrice
             price={price}
@@ -93,7 +93,7 @@ function PricerInner({
             underPremium={underPremium}
           />
         </div>
-      )}
+      )} */}
     </>
   )
 }
