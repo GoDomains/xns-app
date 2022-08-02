@@ -22,7 +22,7 @@ const TextH = styled('h4')`
 function About() {
   const { t } = useTranslation()
   useEffect(() => {
-    document.title = 'XNS About'
+    document.title = 'GoDomains About'
   }, [])
 
   return (

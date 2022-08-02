@@ -1,10 +1,10 @@
-# XNS Application
+# GoDomains Application
 
-XNS Application
+GoDomains Application
 
 # ⚠️ IMPORTANT NOTE TO CONTRIBUTORS ⚠️
 
-As work has begun on the next version of the XNS app, please do not submit PRs for
+As work has begun on the next version of the GoDomains app, please do not submit PRs for
 issues marked 'redesign' or 'post-redesign'. We will soon have info on how to
 contribute to the new app. Thanks for all your hard work!
 
@@ -31,7 +31,7 @@ yarn start:ipfs
 
 The main difference of the ipfs-build is that it uses HashRouter instead of BrowserRouter and makes sure all links are relative.
 
-The XNS app can be used with the Gnosis Safe web interface. The required steps are outline [here](./docs/gnosis_safe_app_support.md).
+The GoDomains app can be used with the Gnosis Safe web interface. The required steps are outline [here](./docs/gnosis_safe_app_support.md).
 
 ## Unit Testing
 
@@ -117,7 +117,6 @@ const Component = styled('div')`
   display: flex;
 `
 ```
-
 
 ### Media Queries
 
@@ -236,7 +235,7 @@ This should open up cypress. To run the tests click on 'Run n integration tests'
 
 The main package for the E2E tests is `xnsdomains/mock`, which exposes a script that will prepopulate ganache with XNS so you have everything setup to run Cypress on.
 
-The XNS app has end to end tests with Cypress. To run them you need to start ganache, run the seed script, run the app and then run cypress. This should start chrome and the Cypress GUI. Each time the test run, the script needs to be re-run and the app restarted for it to work.
+The GoDomains app has end to end tests with Cypress. To run them you need to start ganache, run the seed script, run the app and then run cypress. This should start chrome and the Cypress GUI. Each time the test run, the script needs to be re-run and the app restarted for it to work.
 
 ```bash
 ganache-cli
@@ -307,7 +306,7 @@ cd graph-node/docker
 docker-compose up
 ```
 
-### Deploy XNS contracts and update subgraph.yml
+### Deploy GoDomains contracts and update subgraph.yml
 
 ```
 cd xns-app
@@ -315,9 +314,9 @@ yarn preTest
 yarn subgraph
 ```
 
-`subgraph` job updates XNS contract addresses and updates environment from `mainnet` to `dev`
+`subgraph` job updates GoDomains contract addresses and updates environment from `mainnet` to `dev`
 
-### Deploy XNS subgraph
+### Deploy GoDomains subgraph
 
 ### Generate deployment code
 

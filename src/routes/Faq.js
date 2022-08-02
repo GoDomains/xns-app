@@ -7,18 +7,18 @@ import { H2 as DefaultH2, Title } from '../components/Typography/Basic'
 import Anchor from '../components/Icons/Anchor'
 import slugify from 'slugify'
 import ReverseRecordImageSrc from '../assets/reverseRecordImage.png'
-import {
-  NonMainPageBannerContainer,
-  DAOBannerContent
-} from '../components/Banner/DAOBanner'
+// import {
+//   NonMainPageBannerContainer,
+//   DAOBannerContent
+// } from '../components/Banner/DAOBanner'
 
-const H2 = styled(DefaultH2)`
-  margin-top: 50px;
-  margin-left: 20px;
-  ${mq.medium`
-    margin-left: 0;
-  `}
-`
+// const H2 = styled(DefaultH2)`
+//   margin-top: 50px;
+//   margin-left: 20px;
+//   ${mq.medium`
+//     margin-left: 0;
+//   `}
+// `
 
 const Question = styled('h3')`
   font-size: 15px;
@@ -63,7 +63,7 @@ const Section = ({ question, children }) => {
 function Faq() {
   const { t } = useTranslation()
   useEffect(() => {
-    document.title = 'XNS Faq'
+    document.title = 'GoDomains Faq'
   }, [])
 
   return (
@@ -72,246 +72,176 @@ function Faq() {
         <DAOBannerContent />
       </NonMainPageBannerContainer> */}
       <FaqContainer>
-        <Title>FAQ</Title>
-        <H2>Before You register</H2>
-        <Section question="Is XNS only for storing an Xinfin address?">
-          No, you can store the addresses of over 100 blockchains, a content
-          hash of a decentralized website, profile information such as an avatar
-          and Twitter handle, and more.
+        <Title>Frequently Ask Questions</Title>
+
+        <Section question="What is a Domain Name?">
+          Your domain name is a key part of your online address, and is what
+          your visitors will use to find you easily. For example, GoDomains
+          domain name is GoDomains.io Your domain name is unique to you; once
+          you have registered it, nobody else can register the same domain as
+          long as you continue to renew it. Everything on the internet is
+          located at a unique address which can be identified by a name or a
+          number. Your computer finds different pages by looking them up using
+          their unique numbers, but because these numbers would be hard to
+          remember, the Domain Name System or DNS assigns a unique domain name
+          to these numbers which we can use instead.
         </Section>
 
-        <Section question="Can I use an XNS name to point to my website?">
-          Though XNS can technically store anything, there aren't many third
-          party tools and applications which resolve IP addresses attached to
-          XNS.
-          <br />
-          Instead, we suggest hosting your static html/css/images on IPFS and
-          put the hash in your XNS name's Content record. Then it can be
-          resolved by XNS-aware browsers (e.g. Opera), browser extensions
-          (Metamask), or any browser with ".link" or ".limo" appended to the end
-          (e.g. matoken.go.link or matoken.go.limo).
-          <br />
-          If you want to redirect your XNS name to an existing website, you
-          could write a html file containing JavaScript logic to redirect to
-          your website, upload the file into ipfs using services like{' '}
-          <a href="https://pinata.cloud/">IPFS Pinata</a>, then set the CID to
-          your contenthash. See the source code of depositcontract.go.link as an
-          example.
+        <Section question="What is Blockchain Domain? How are Blockchain domain different from traditional Domain Names ?">
+          Blockchain Domains are new web extensions (like .com or .info)
+          launched as smart contracts on blockchains.Unlike traditional Domain
+          Names, Blockchain Domain name are stored in a wallet by the owner,
+          much like a cryptocurrency, Blockchain domain names are also smart
+          domain names which can provide forwarding to Website (IPFS), Wallet
+          Address. A blockchain domain is an on the blockchain. Blockchain
+          domains are designed to resolve your web address and wallet address
+          using smart contracts.
         </Section>
 
-        <Section question="What is the maximum length of a name I can register?">
-          There is no limit on the name length.
+        <Section question="How are BlockChain Domains created ?">
+          Blockchain Domains are built on the Crypto Name Service (CNS) — a set
+          of smart contracts that determines how blockchain domains are created
+          and utilized. Every CNS domain is issued as an ERC-721 token, also
+          known as a non-fungible token (NFT). NFTs are unique, indivisible
+          tokens and are often used to represent one-of-a-kind digital items.
+          The use of the ERC-721 standard makes it easy for developers to
+          integrate Blockchain based Domains into other applications, allowing
+          users to manage their crypto domain ownership from compatible
+          cryptocurrency wallets, exchanges, and marketplaces.
         </Section>
 
-        <Section question="Can you have names with emojis?">Yes.</Section>
+        <Section question="Is GoDomain extensions supported across all browser ?">
+          No, Blockchain based domains are not natively supported on all
+          browsers, You require XDCPay for resolving these domains, This can be
+          added as an extensions or add-ons, although this is almost certain to
+          change in the near future.
+        </Section>
 
-        <Section question="How much does it cost to register a .go name?">
-          Currently, registration costs are set at the following prices:
+        <Section question="How much does it cost to register domain name in GoDomains?">
+          GoDomains is still in Beta phase, Hence the Welcome package is
+          currently applicable to all Domains, Prices are as mentioned below
           <ul>
-            <li>5+ character .eth names: $5 in ETH per year.</li>
-            <li>4 character .eth names: $160 in ETH per year.</li>
-            <li>3 character .eth names $640 in ETH per year.</li>
+            <li>2 Letter Domain Names : 250 USD$</li>
+            <li>3 Letter Domain Names : 100 </li>
+            <li>4 Letter Domain Names : 50 </li>
+            <li>5+ Letter Domain Names : 10 </li>
           </ul>
-          3 and 4 character names have 'premium' pricing to reflect the small
-          number of these names available.
+          (This is subjected to change)
+        </Section>
+
+        <Section question="Can I host my website using GoDomains?">
+          Since GoDomains are designed on smart contract, Hosting option is
+          currently limited to Interplanetary File System (IPFS).
+        </Section>
+
+        <Section question="How can I register my domain?">
+          From the home page enter the Domain Name you wish to Register and then
+          click on search, The system will query from the list of domain names
+          options available for registration, You follows the steps as mentioned
+          and your domain name would be registered in simple steps
+        </Section>
+
+        <Section question="Are GoDomains only for Crypto Users?">
+          At the moment, the vast majority of these domains are used for
+          crypto-related things. In addition, you have to use cryptocurrency to
+          buy them, so from that point of view ― yes. A small but growing number
+          of websites and services unrelated to crypto are starting to take
+          advantage of these domains as well.
+        </Section>
+
+        <Section question="What happen with my domain when it expires? Can I get it back?">
+          Its suggested that you renew your domain name at least 15 to 30 days
+          prior to domain expiry. In case the user forgets to renew the domain
+          name it will be lost and available for fresh registration to any one
+          on first come basis.
+        </Section>
+
+        <Section question="How many domains can I register with you?">
+          We do not have such limitations. You can register as many domains as
+          you want.
+        </Section>
+
+        <Section question="What Domain extensions are the options currently available on GoDomains for registration">
+          Currently GoDomain has options for .go extension only, However this is
+          going to change soon and we would supporting multiple domain names
+        </Section>
+
+        <Section question="How long does it take to register my domain?">
+          The process of domain registration at GoDomains takes a minutes
+          provided you already have all the information required, Domain
+          Details, Funds and Wallet Connection.
+        </Section>
+
+        <Section question="Can I transfer my blockchain domains?">
+          Yes, GoDomain reside in your wallet like crypto tokens, You can easily
+          transfer it from one wallet to another.
+        </Section>
+
+        <Section question="Can I register a domain name without hosting it?">
+          Yes, You can, Your domain name would reside with you till the time you
+          renew it, You can decide to host contents of map URL at a later date
+          using the control panel This is called domain parking.
+        </Section>
+
+        <Section question="Can I invest in GoDomain extensions ?">
+          There’s no way to tell what the future value of any specific domain
+          will be. In past people bought good domains and then sold them for
+          millions several years later, some people are purchasing this new type
+          of domain hoping that they will catch on. Since buying a domain only
+          requires a small investment, this is seen as a good investment
+          strategy by some.
           <br />
-          Also, if the name was previously owned by someone but recently
-          released, it has a temporary decreasing premium to prevent squatters
-          snatching up names.
+          Of course, to actually make a use of your domain and build a website,
+          you need to choose a hosting service that will support your needs. In
+          case you want to create a website, you shouldn’t leave your domain
+          parked for too long.
         </Section>
 
-        <Section question="How much gas does it cost to register and extend registration?">
-          It depends on the gas price. You can check the historical registration
-          and extending transaction costs
-          <a href="https://explore.duneanalytics.com/public/dashboards/48pBVvSxRNVjSE8Ing1uOrCtjD4r3WmV0v5KpS05">
-            {' '}
-            here{' '}
-          </a>
-          . "Transaction cost (USD)" query will tell you how much it costs to
-          register (commit + registerWithConfig) and extend registration.
-          <br />
-          Please bear in mind that "registerWithConfig" combines 3 transactions
-          (register, set resolver and set eth address) hence the gas cost is
-          relatively expensive.
+        <Section question="What are some advantage of Blockchain Based Domain Name">
+          <ul>
+            <li>
+              <strong>Highly Secure: </strong>GoDomains are minted on
+              blockchain, which is well-known for being extremely secure and
+              resistant to brute-force attacks.
+            </li>
+            <li>
+              <strong>Easy to use: </strong>GoDomain provide us to use User
+              Interface, It provide a single point of access to multiple
+              solutions like forwarding crypto address, redirection of website
+              etc
+            </li>
+            <li>
+              <strong>Censorship Resistant: </strong>GoDomain aer Blockchain
+              Native, Which makes them immune to arbitrary takedowns and
+              regional blocking.
+            </li>
+            <li>
+              <strong>Holistic Access to DApps: </strong>GoDomains provide
+              native support for decentralised apps, making them more
+              accessible.
+            </li>
+          </ul>
         </Section>
 
-        <Section question="Can I register names other than .eth?">
-          Yes, you can import into XNS any DNS name with the required DNSSEC.
-          <br />
-          Please refer to our{' '}
-          <a href="https://docs.xns.domains/dns-registrar-guide">guide</a> for
-          more detail.
-        </Section>
-
-        <H2>When you register</H2>
-
-        <Section question="At step 1, the transaction was slow so I speeded up">
-          Our app cannot currently detect that you sped up the transaction.
-          Please refresh the page and start from step 1 again.
-        </Section>
-
-        <Section question="I am stuck at step 2">
-          At times, the counter waits for up to a minute at the end of step 2 to
-          make sure that the Ethereum blockchain has progressed. If this
-          continues for more than 5 min after moving to step 2, please contact
-          us on Discord.
-          <br />
-          Note that if you leave it at step 2 for more than 7 days, it gets
-          reset and you have to start from step 1 again.
-        </Section>
-
-        <Section question="My transaction at step 3 failed">
-          This happens occasionally when the USD price changes and you haven't
-          registered with enough XDC. Please try again from step 3.
-          <br />
-          Please also be noted that the registration step will expire if you
-          don't complete within 24 hrs and you have to start from step 1 again.
-        </Section>
-
-        <Section question="I cannot see the names I registered on OpenSea nor on my wallet">
-          This occasionally happens when OpenSea is under a heavy load. You may
-          also not find your name under the NFT section of your wallet, as many
-          wallets fetch metadata from OpenSea.
-          <br />
-          As long as you can see your registered name under "My Account" on our
-          site or your XDC address under the name section, your name is
-          registered successfully.
-        </Section>
-
-        <Section question="Is it safe to refresh the page, close the browser, or switch to different browser/machine?">
-          It is safe to refresh the page or close the browser once step 1
-          transaction is complete. However you cannot switch to different
-          devices or machines because it needs a locally stored “secret” which
-          will be used at step 3. Please also do not delete browser history
-          during the registration.
-        </Section>
-
-        <H2>After you register</H2>
-
-        <Section question="What is the difference between the Registrant and Controller?">
-          If your Xinfin address is set as the Controller you can change the
-          resolver and add/edit records. Some dapps (eg: Fleek, OpXNSea) set
-          themselves as the Controller so they can update records on your
-          behalf.
-          <br />
-          The Registrant only exists on ".go" names and it allows you to change
-          the Controller. If you transfer the Registrant to an address you don't
-          own, you lose the ownership of the name.
-        </Section>
-
-        <Section question="What is a Resolver?">
-          A Resolver is a smart contract that holds records. Names are set by
-          default to the Public Resolver managed by the XNS team and has all the
-          standard XNS record types. You can set your Resolver to a custom
-          resolver contract if you,d like.
-        </Section>
-
-        <Section question="What is a Primary XNS Name record?">
-          A Primary XNS Name record (formerly Reverse Record) makes your Xinfin
-          address point to an XNS name. This allows dapps to find and display
-          your XNS name when you connect to them with your Ethereum account.
-          This can only be set by you so it is not set automatically upon
-          registration.
-          <br />
-          To set the Primary XNS Name record, please click "My account", and
-          select "Primary XNS Name".
-        </Section>
-
-        <Section question="How do I unregister my name?">
-          If you click the "trash bin" icon on the address record, it will unset
-          your address so that people can no longer look up your address with
-          the name. You can also unset ownership of subdomains in this way, but
-          you cannot do so on ".go" addresses. Because ".go" names are
-          ERC721-compliant NFTs, you cannot transfer them to an empty address
-          (0x00000...). You can transfer it to a burn address (eg: 0x00001), but
-          that does not erase the fact that you used to own the name. Also, the
-          name will not become available for registration again until the
-          registration period and grace period runs out.
-        </Section>
-
-        <Section question="How do I transfer my name?">
-          For a ".go" name, transfer both the Registrant and the Controller to
-          the new Xinfin account. Since ".go" names are ERC721 compliant NFTs,
-          you can change the Registrant by simply transferring the NFT from any
-          NFT compliant wallet/marketplace as well.
-          <br />
-          Note that transferring the ownership (aka the Registrant) of the name
-          does not change the controller nor records, so the recipient may need
-          to update them once received. If the recipient is not experienced or
-          you prefer your address not to be associated to the transferring
-          names, it may be a good idea for you to set the XDC Address record to
-          their Xinfin address, set the controller, then transfer the name.
-          <br />
-          For subdomains, there are no registrants unless the subdomain is
-          customised to be ERC721 compliant. Simply set the controller to the
-          new address (after setting the record to the new address).
-        </Section>
-
-        <Section question="Why are some of my subdomains shown as a jumble of characters?">
-          XNS names are stored as a hash on-chain so we have to decode the name
-          using a list of possible names, and it shows in the hashed format if
-          we don't have it on our list. You can still access and manage the name
-          if you search for the name directly in the search bar.
-        </Section>
-
-        <Section question="How do I find the labelhash/namehash of a name?">
-          Please refer to our{' '}
-          <a href="https://docs.xns.domains/contract-api-reference/name-processing#how-do-i-find-the-labelhash-namehash-of-a-name">
-            developer documentation page.
-          </a>
-        </Section>
-
-        <H2>When you extend your registration</H2>
-
-        <Section question="How do I receive an extension reminder?">
-          Click the "Remind me" button on the name's page or your address page
-          so that you can set a calendar reminder or email reminder. Note that
-          you have to set calendar reminders per name, whereas you only need to
-          set email reminders per the address of the owner. Also note that you
-          can register a name for multiple years, removing the need to extend
-          each year.
-        </Section>
-
-        <Section question="What happens if I forget to extend the registration of a name?">
-          After your name expires, there is a 90 day grace period in which the
-          owner can't edit the records but can still re-register the name. After
-          the grace period, the name is released for registration by anyone with
-          a temporary premium which decreases over a 28 days period. The
-          released name continues to resolve your XDC address until the new
-          owner overwrites it.
-        </Section>
-
-        <Section question="Where can I see the list of names to be released">
-          You can see the list at the "XNS Names to be released" section of{' '}
-          <a href="https://dune.xyz/makoto/xns-released-to-be-released-names">
-            {' '}
-            the Dune Analytics dashboard
-          </a>{' '}
-          .
-        </Section>
-
-        <Section question="I lost access to the Xinfin account that owns a name I registered. Can I still extend its registration period?">
-          Any Xinfin account can pay to extend the registration of any XNS name,
-          though doing so from an account that's not the owner will not change
-          ownership of the name. Just go to the name's page and click "Extend".
-        </Section>
-
-        <Section question="I registered names before 2019 May. Can I have my deposit back?">
-          Yes, you can get your deposit back from
-          <a href="https://reclaim.xns.domains"> reclaim.xns.domains </a>{' '}
-          whether you extended the registration of the name or not.
-          <br />
-          Please remember that the amount you will receive is the amount of the
-          second-highest bidder (unless you were the only bidder). For example,
-          if you bid 1 ETH and the second highest bidder bid 0.1 ETH, you
-          deposited 0.1 ETH and you have already received the remaining (0.9
-          ETH) when you finailsed the auction. Therefore you can now only
-          reclaim 0.1 ETH back. Please read the{' '}
-          <a href="https://medium.com/the-ethereum-name-service/a-beginners-guide-to-buying-an-xns-domain-3ccac2bdc770">
-            {' '}
-            the initial guide back in 2017{' '}
-          </a>{' '}
-          for more detail.
+        <Section question="What are some disadvantage of Blockchain Based Domain Name">
+          <ul>
+            <li>
+              <strong>Default Support: </strong>Blockchain based Domain are
+              still in nascent stage, Hence it would take a while to penetrate
+              the default market.
+            </li>
+            <li>
+              <strong>Not supported by all browsers: </strong>As Blockchain
+              based domains are still in nascent stage, Default support in all
+              popular browsers such as Opera and Brave support them natively,
+              Chrome, Firefox, and Edge require an add-on to access them.
+            </li>
+            <li>
+              <strong>Specific Hosting: </strong>To host a website using an
+              GoDomains, you will need to use a hosting service that uses
+              InterPlanetary File System (IPFS).
+            </li>
+          </ul>
         </Section>
       </FaqContainer>
     </>

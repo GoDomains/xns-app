@@ -88,7 +88,7 @@
     "steps": {
       "addtext": {
         "text": "Klicken Sie auf 'mehr erfahren', um etwas über den Prozess zu lesen.",
-        "title": "Erstellen Sie einen Text-Eintrag bei Ihrem Domain-Registrar und klicken Sie dann auf Aktualisieren. Der Text-Eintrag sollte Ihre Ethereum-Adresse in folgendem Format enthalten:"
+        "title": "Erstellen Sie einen Text-Eintrag bei Ihrem Domain-Registrar und klicken Sie dann auf Aktualisieren. Der Text-Eintrag sollte Ihre Xinfin-Adresse in folgendem Format enthalten:"
       },
       "enable": {
         "text": "Klicken Sie auf 'mehr erfahren', um etwas über den Prozess zu lesen.",
@@ -97,13 +97,13 @@
       "manage": {
         "text1": "Da Sie der Besitzer sind, können Sie jetzt Ihren Namen verwalten. ",
         "text2": "Da Sie nicht der Besitzer sind, können Sie den Namen nur im Manager ansehen.",
-        "title": "Glückwunsch! Sie haben diese DNS-Domain erfolgreich zum XNS-Register hinzugefügt."
+        "title": "Glückwunsch! Sie haben diese DNS-Domain erfolgreich zum GoDomains-Register hinzugefügt."
       },
       "proof": {
         "text1": "Die Adresse, die im DNS-TXT-Eintrag erscheint, ist die gleiche Adresse.",
-        "text2": "Wenn Sie diese Domain besitzen, ändern Sie den TXT-Eintrag so, dass er Ihre Ethereum-Adresse enthält, und aktualisieren Sie diese Seite, um die DNSSEC-Verifizierung erneut durchzuführen.",
-        "title1": "Sie sind der Besitzer dieser Adresse. Tragen Sie jetzt Ihre Domain in das XNS-Register ein.",
-        "title2": "Sie scheinen nicht der DNS-Besitzer dieser Domain zu sein, aber jeder kann diese Domain zum XNS-Register hinzufügen."
+        "text2": "Wenn Sie diese Domain besitzen, ändern Sie den TXT-Eintrag so, dass er Ihre Xinfin-Adresse enthält, und aktualisieren Sie diese Seite, um die DNSSEC-Verifizierung erneut durchzuführen.",
+        "title1": "Sie sind der Besitzer dieser Adresse. Tragen Sie jetzt Ihre Domain in das GoDomains-Register ein.",
+        "title2": "Sie scheinen nicht der DNS-Besitzer dieser Domain zu sein, aber jeder kann diese Domain zum GoDomains-Register hinzufügen."
       }
     },
     "viewinmanager": "Im Manager anschauen"
@@ -128,12 +128,12 @@
     "announcements": {
     },
     "howtouse": {
-      "body": "Die XNS App ist eine grafische Oberfläche für nicht-technische Nutzer. Es ermöglicht Ihnen, Namen zu suchen, ihre Adressen oder Ressourcen, auf die verwiesen wird, zu verwalten und Subdomains für Namen zu erstellen.",
-      "title": "Wie man XNS benutzt"
+      "body": "Die GoDomains App ist eine grafische Oberfläche für nicht-technische Nutzer. Es ermöglicht Ihnen, Namen zu suchen, ihre Adressen oder Ressourcen, auf die verwiesen wird, zu verwalten und Subdomains für Namen zu erstellen.",
+      "title": "Wie man GoDomains benutzt"
     },
     "whatisens": {
-      "body": "Der Ethereum Name Service ist ein verteiltes, offenes und erweiterbares System zur Namensauflösung, basierend auf der Ethereum Blockchain. Mit XNS muss man keine langen Adressen mehr kopieren oder eintippen.",
-      "title": "Was ist XNS"
+      "body": "Der GoDomains Name Service ist ein verteiltes, offenes und erweiterbares System zur Namensauflösung, basierend auf der Xinfin Blockchain. Mit GoDomains muss man keine langen Adressen mehr kopieren oder eintippen.",
+      "title": "Was ist GoDomains"
     }
   },
   "howtouse": {
@@ -142,7 +142,7 @@
       "title": "Bevorzugte Namen speichern"
     },
     "manage": {
-      "text": "Zeigen Sie mit Domains auf Ihre Ethereum-Adressen, übertragen Sie den Besitz an andere Personen und vieles mehr.",
+      "text": "Zeigen Sie mit Domains auf Ihre Xinfin-Adressen, übertragen Sie den Besitz an andere Personen und vieles mehr.",
       "title": "Namen verwalten"
     },
     "register": {
@@ -220,7 +220,7 @@
     ]
   },
   "registrymigration": {
-    "donotaccept": "*Wenn Sie mit XNS-Namen handeln, akzeptieren Sie diesen Namen nicht!",
+    "donotaccept": "*Wenn Sie mit GoDomains-Namen handeln, akzeptieren Sie diesen Namen nicht!",
     "messages": {
       "controller": "Dieser Name wird durch einen Smart Contract kontrolliert und kann nicht automatisch migriert werden. Bitte deployen Sie Ihren Smart Contract erneut, um den neuen Registrar zu verwenden, bevor Sie den neuen Controller festlegen",
       "default": "Dieser Name muss in das neue Register migriert werden. Nur die Elterndomain dieses Namens ({{parent}}) kann dies tun.",
@@ -231,12 +231,12 @@
   "reminder": {
     "everywhere": "everywhere",
     "release": {
-      "description": "Register {{name}} at https://app.xns.domains/name/{{name}}/register",
+      "description": "Register {{name}} at https://app.GoDomains.domains/name/{{name}}/register",
       "title": "Register {{name}}"
     },
     "renewal": {
-      "description": "Your XNS name is expiring soon, please renew it",
-      "title": "Renew your XNS domain {{name}}"
+      "description": "Your GoDomains name is expiring soon, please renew it",
+      "title": "Renew your GoDomains domain {{name}}"
     }
   },
   "search": {
@@ -296,7 +296,7 @@
     },
     "learnmore": {
       "step1": {
-        "text": "Once you register your name, Go to 'My Account' page and set a reverse record. This allows dapps to find and display your XNS name when you connect to them with your Ethereum account. ",
+        "text": "Once you register your name, Go to 'My Account' page and set a reverse record. This allows dapps to find and display your GoDomains name when you connect to them with your Xinfin account. ",
         "title": "1. Set a reverse record"
       },
       "step2": {
@@ -304,7 +304,7 @@
         "title": "2. Set other records"
       },
       "step3": {
-        "text": "You can host your static html/css/images on IPFS and put the hash in your XNS name's Content record. Then it can be resolved by XNS-aware browsers (e.g. Opera), browser extensions (Metamask), or any browser with '.link' appended to the end (e.g. xns.eth.link).",
+        "text": "You can host your static html/css/images on IPFS and put the hash in your GoDomains name's Content record. Then it can be resolved by GoDomains-aware browsers (e.g. Opera), browser extensions (Metamask), or any browser with '.link' appended to the end (e.g. GoDomains.eth.link).",
         "title": "3. Set a content hash of a decentralized website"
       },
       "title": "Erfahren Sie, wie Sie Ihren Namen verwalten können."
@@ -321,11 +321,11 @@
       "closeEdit": "Close Add/Edit Records",
       "messages": {
         "explanation": "The Reverse Resolution translates an address into a name. It allows Dapps to show in their interfaces '{{name}}' rather than the long address '{{account}}'. If you would like to set up your reverse for a different account, please switch accounts in your dapp browser",
-        "explanation2": "You can only select names you set this Ethereum Address as.",
-        "noForwardRecordAavilable": "You either do not own any XNS names, or your XNS names have no ETH records set to this address.",
+        "explanation2": "You can only select names you set this Xinfin Address as.",
+        "noForwardRecordAavilable": "You either do not own any GoDomains names, or your GoDomains names have no ETH records set to this address.",
         "notSet": "Reverse record: not set",
         "reverseRecordRemoval": "Are you sure you want to delete the reverse record?",
-        "selectPlaceholder": "Select your XNS name",
+        "selectPlaceholder": "Select your GoDomains name",
         "setTo": "Reverse record: Set to ",
         "setToDifferent": "Reverse record: Set to a different name:"
       },
