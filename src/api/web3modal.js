@@ -25,34 +25,34 @@ const option = {
       options: {
         infuraId: INFURA_ID
       }
-    },
-    walletlink: {
-      package: () => import('walletlink'),
-      packageFactory: true,
-      options: {
-        appName: 'Xinfin name service',
-        jsonRpcUrl: `https://mainnet.infura.io/v3/${INFURA_ID}`
-      }
-    },
-    mewconnect: {
-      package: () => import('@myetherwallet/mewconnect-web-client'),
-      packageFactory: true,
-      options: {
-        rpc: `https://mainnet.infura.io/v3/${INFURA_ID}`,
-        description: ''
-      }
-    },
-    portis: {
-      package: () => import('@portis/web3'),
-      packageFactory: true,
-      options: {
-        id: PORTIS_ID
-      }
-    },
-    torus: {
-      package: () => import('@toruslabs/torus-embed'),
-      packageFactory: true
     }
+    // walletlink: {
+    //   package: () => import('walletlink'),
+    //   packageFactory: true,
+    //   options: {
+    //     appName: 'Xinfin name service',
+    //     jsonRpcUrl: `https://mainnet.infura.io/v3/${INFURA_ID}`
+    //   }
+    // },
+    // mewconnect: {
+    //   package: () => import('@myetherwallet/mewconnect-web-client'),
+    //   packageFactory: true,
+    //   options: {
+    //     rpc: `https://mainnet.infura.io/v3/${INFURA_ID}`,
+    //     description: ''
+    //   }
+    // },
+    // portis: {
+    //   package: () => import('@portis/web3'),
+    //   packageFactory: true,
+    //   options: {
+    //     id: PORTIS_ID
+    //   }
+    // },
+    // torus: {
+    //   package: () => import('@toruslabs/torus-embed'),
+    //   packageFactory: true
+    // }
   }
 }
 
