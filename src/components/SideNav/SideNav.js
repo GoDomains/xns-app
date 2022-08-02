@@ -79,7 +79,7 @@ const NavLink = styled(Link)`
   span {
     transition: 0.2s;
     margin-left: 10px;
-    font-size: 22px;
+    font-size: 18px;
     color: ${p => (p.active ? '#03c7ff' : '#C7D3E3')};
   }
 
