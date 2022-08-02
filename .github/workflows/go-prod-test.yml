@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches:
-      - go-prod
+      - go-prod-test
 jobs:
   build:
     runs-on: ubuntu-latest
