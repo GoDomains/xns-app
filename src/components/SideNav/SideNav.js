@@ -63,7 +63,6 @@ const NavLink = styled(Link)`
   align-items: center;
   justify-content: center;
   font-weight: 200;
-  font-size: 22px;
   color: ${p => (p.active ? '#03c7ff' : '#C7D3E3')};
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -79,7 +78,16 @@ const NavLink = styled(Link)`
 
   span {
     transition: 0.2s;
-    margin-left: 15px;
+    margin-left: 10px;
+    font-size: 22px;
+    color: ${p => (p.active ? '#03c7ff' : '#C7D3E3')};
+  }
+
+  p {
+    transition: 0.2s;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 0;
     color: ${p => (p.active ? '#03c7ff' : '#C7D3E3')};
   }
 
@@ -205,7 +213,8 @@ function SideNav({ match, isMenuOpen, toggleMenu }) {
             active={url === '/terms-of-service' ? 1 : 0}
             to="/terms-of-service"
           >
-            <span>Terms of Service</span>
+            <Info />
+            <p>Terms of Service</p>
           </NavLink>
         </li>
       </ul>
