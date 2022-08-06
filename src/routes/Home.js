@@ -16,6 +16,7 @@ import bg from '../assets/BG.png'
 import bgc from '../assets/BGColor.png'
 // import rocket from '../assets/NewRocket.png'
 import storxLogo from '../assets/StorxLogo.png'
+import goDomainsLogo from '../assets/goDomainsLogo.png'
 import TextBubbleDefault from '../components/Icons/TextBubble'
 import QuestionMarkDefault from '../components/Icons/QuestionMark'
 import HowToUseDefault from '../components/HowToUse/HowToUse'
@@ -373,7 +374,7 @@ export default ({ match }) => {
                 />
               )}
             </NetworkStatus>
-            <IconLogo src={storxLogo} />
+            <IconLogo src={goDomainsLogo} />
           </NetworkLogoGrid>
           <Nav>
             {accounts?.length > 0 && !isReadOnly && (
