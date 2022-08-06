@@ -3,7 +3,7 @@ import styled from '@emotion/styled/macro'
 import { Link } from 'react-router-dom'
 import mq from 'mediaQuery'
 
-import ENSLogo from '../assets/logo.png'
+import ENSLogo from '../assets/goDomainsLogo.png'
 import LogoTyped from '../assets/TypeLogo'
 
 const IconLogo = styled('img')`
