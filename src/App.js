@@ -141,7 +141,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={Home} layout={HomePageLayout} />
-        {/* <Route path="/test-registrar" component={TestRegistrar} />
+        <Route path="/test-registrar" component={TestRegistrar} />
         <Route path="/favourites" component={Favourites} />
         <Route path="/faq" component={Faq} />
         <Route path="/about" component={About} />
@@ -157,7 +157,7 @@ const App = () => {
         <Route path="/address/:address/:domainType" component={Address} />
         <Route path="/address/:address" component={Address} />
         <Route path="/renew" component={Renew} />
-        <Route path="*" component={Error404} /> */}
+        <Route path="*" component={Error404} />
       </Switch>
     </Router>
   )
