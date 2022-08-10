@@ -2,21 +2,21 @@ import ReactGA from 'react-ga'
 import { getNetworkId } from '@ensdomains/ui'
 
 const TrackingID = {
-  live: 'UA-138903307-1',
-  dev: 'UA-138903307-2'
+  live: 'UA-237091328-4',
+  dev: 'UA-237091328-4'
 }
 
 function isProduction() {
-  return window.location.host === 'app.xns.domains'
+  return window.location.host === 'https://godomain.yodaplus.net/'
 }
 
 function isDev() {
-  return window.location.host === 'ensappdev.surge.sh'
+  return window.location.host === 'http://localhost:3000/'
 }
 
 async function isMainnet() {
   const id = await getNetworkId()
-  return id === 1
+  return id === 50
 }
 
 export function setUtm() {
@@ -38,7 +38,7 @@ export const setupAnalytics = () => {
   } else {
     ReactGA.initialize(TrackingID.dev)
     ReactGA.plugin.require('ecommerce', { debug: true })
-    console.log('Analytics setup for dev with ', TrackingID.dev)
+    console.log('Analytics setup for go-dev with ', TrackingID.dev)
   }
 
   setUtm()
