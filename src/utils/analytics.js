@@ -2,8 +2,8 @@ import ReactGA from 'react-ga'
 import { getNetworkId } from '@ensdomains/ui'
 
 const TrackingID = {
-  live: 'UA-237091328-4',
-  dev: 'UA-237091328-4'
+  live: 'G-0EQKW29W5N',
+  dev: 'G-0EQKW29W5N'
 }
 
 function isProduction() {
@@ -38,7 +38,10 @@ export const setupAnalytics = () => {
   } else {
     ReactGA.initialize(TrackingID.dev)
     ReactGA.plugin.require('ecommerce', { debug: true })
-    console.log('Analytics setup for go-dev with ', TrackingID.dev)
+    console.log(
+      'Analytics setup for godomain.yodaplus.net using GA4 ',
+      TrackingID.dev
+    )
   }
 
   setUtm()
