@@ -82,6 +82,116 @@ function Faq() {
       <FaqContainer>
         <Header>Frequently Ask Questions</Header>
 
+        <Section question="How to connect my Wallet">
+          <ol>
+            <li>Set your wallet to XDC Mainnet.</li>
+            <li>Open website, godomains.io.</li>
+            <li>
+              If you have the latest XDCPay installed in your browser and no
+              other extension or any other wallet connected, the DApp will
+              instantly detect and connect.
+            </li>
+            <li>
+              It will show the Network name and your wallet address, once
+              connected.
+            </li>
+            <li>
+              In case, not connected, click on connect, and choose XDCPay.
+            </li>
+          </ol>
+        </Section>
+        <Section question="Why is my wallet not connecting? ">
+          <ul>
+            <li>
+              Make sure your XDC Pay is updated to latest version, you can
+              install by clicking on{' '}
+              <a
+                href="https://chrome.google.com/webstore/detail/xdcpay/bocpokimicclpaiekenaeelehdjllofo"
+                target="_blank"
+              >
+                {' '}
+                link
+              </a>
+              .
+            </li>
+            <li>
+              Turn off all other browser extensions (Wallets) except for your
+              wallet.
+            </li>
+            <li>
+              To confirm you're using the latest version, you can remove and
+              re-add the extension (be sure to save your recovery phrase
+              first!).
+            </li>
+            <li>
+              Clear your cache and restart your browser. Make sure you're
+              running the latest version of your browser.
+            </li>
+            <li>Set your wallet to XDC Mainnet, refresh the page. </li>
+          </ul>
+        </Section>
+        <Section question="How can I resolve my domain name/IPFS content?">
+          <ol>
+            <li>
+              If you have XDCPay installed, your IPFS content gets resolved
+              automatically.
+            </li>
+            <li>Using the extension GoDOMAINS Content Resolver.</li>
+          </ol>
+        </Section>
+        <Section question="How can I resolve my domain name/IPFS content?">
+          <ol>
+            <li>Install GoDomain Content Resolver extension.</li>
+            <li>Enable GoDomain Content Resolver from your extension.</li>
+            <li>
+              Make sure to disable your XDCPay wallet/other Wallets for the
+              extension to work.
+            </li>
+            <li>
+              Search your domain name in the search bar in
+              format(https://domainName.go).
+            </li>
+            <li>It will redirect you to the IPFS link.</li>
+            <li>
+              In case no IPFS hash content is available it is redirected to 404,
+              Not found Page.
+            </li>
+          </ol>
+        </Section>
+        <Section question="How can I resolve my domain name/IPFS content?">
+          <ol>
+            <li>Install GoDomain ContentResolver extension.</li>
+            <li>Enable GoDomain ContentResolver from your extension.</li>
+            <li>
+              Make sure to <b>disable your XDCPay wallet/other Wallets</b> for
+              the extension to work.
+            </li>
+            <li>
+              Search your domain name in the search bar in format{' '}
+              <b> (https://domainName.go)</b>.
+            </li>
+            <li>It will redirect you to the IPFS link.</li>
+            <li>
+              In case no IPFS hash content is available it is redirected to 404,
+              Not found Page.
+            </li>
+          </ol>
+        </Section>
+        <Section question="How does GoDOMAINS Content Resolver works?">
+          <ol>
+            <li>
+              When domainName.go is entered into the search bar, we get domains,
+              subdomains, TLD (removing 'http://' and trailing '/').
+            </li>
+            <li>
+              The name is then resolved to IPFS hash from our Registry contract.
+            </li>
+            <li>
+              Finally, it is redirected to IPFS hash content on IPFS gateway
+              ("https://gateway.ipfs.io/ipfs/" + ipfsHash).
+            </li>
+          </ol>
+        </Section>
         <Section question="What is a Domain Name?">
           Your domain name is a key part of your online address, and is what
           your visitors will use to find you easily. For example, GoDomains
@@ -129,10 +239,9 @@ function Faq() {
           GoDomains is still in Beta phase, Hence the Welcome package is
           currently applicable to all Domains, Prices are as mentioned below
           <ul>
-            <li>2 Letter Domain Names : 250 USD$</li>
-            <li>3 Letter Domain Names : 100 </li>
-            <li>4 Letter Domain Names : 50 </li>
-            <li>5+ Letter Domain Names : 10 </li>
+            <li>3 Letter Domain Names : 30 USD</li>
+            <li>4 Letter Domain Names : 20 USD</li>
+            <li>5+ Letter Domain Names : 10 USD</li>
           </ul>
           (This is subjected to change)
         </Section>

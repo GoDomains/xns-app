@@ -23,11 +23,12 @@ const endpoints = {
   '4': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby',
   '5': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensgoerli',
   '50':
-    'https://graph-node.yodaplus.net:8000/subgraphs/name/xnsdomains/go-mainnet-test',
+    'https://graph-node-xinfin.yodaplus.net:8000/subgraphs/name/xnsdomains/go-final-test1',
   '51':
     'https://graph-node-apothem.yodaplus.net:8000/subgraphs/name/xnsdomains/go-test'
 }
-
+//ECS: http://graphnode-mainnet.yodaplus.net:8000/subgraphs/name/xnsdomains/xns-mainnet
+//EC2: http://graph-node-xinfin.yodaplus.net:8000/subgraphs/name/xnsdomains/go-final-test1
 function getGraphQLAPI() {
   const network = networkIdReactive()
 

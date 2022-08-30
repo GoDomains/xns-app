@@ -390,10 +390,12 @@ export default ({ match }) => {
                 {t('c.mynames')}
               </NavLink>
             )}
-            <NavLink to="/favourites">{t('c.favourites')}</NavLink>
+            <NavLink to="/faq">{t('c.faq')}</NavLink>
+            {/*  <NavLink to="/favourites">{t('c.favourites')}</NavLink>  */}
             <NavLink to="/about">{t('c.about')}</NavLink>
-              <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink>
-          </Nav> */}
+            <NavLink to="/terms-of-service">Terms of Service</NavLink>
+            {/*   <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink> */}
+          </Nav>
           {/* <MainPageBannerContainer>
           <DAOBannerContent />
         </MainPageBannerContainer> */}

@@ -147,7 +147,7 @@
       "title": "Manage names"
     },
     "register": {
-      "text": "Register .eth names for $5/year. Extend your name registration at any time.",
+      "text": "Register .go names. Extend your name registration at any time.",
       "title": "Register names"
     },
     "search": {
@@ -324,7 +324,7 @@
       "messages": {
         "explanation": "This designates one of your GoDomains names to represent your Xinfin account and act as your cross-platform web3 username and profile. You can only have one Primary GoDomains Name per Xinfin account and can change it at any time.",
         "explanation2": "Only GoDomains names that point to your Xinfin account can be set as your Primary GoDomains Name.",
-        "noForwardRecordAavilable": "No GoDomains names have their ETH Address records set to this address.",
+        "noForwardRecordAavilable": "No GoDomains names have their XDC Address records set to this address.",
         "notSet": "Primary GoDomains Name (reverse record): not set",
         "reverseRecordRemoval": "Are you sure you want to delete your Primary GoDomains Name record?",
         "selectPlaceholder": "Select one of your GoDomains names",
