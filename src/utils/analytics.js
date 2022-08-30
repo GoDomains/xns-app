@@ -7,16 +7,16 @@ const TrackingID = {
 }
 
 function isProduction() {
-  return window.location.host === 'app.xns.domains'
+  return window.location.host === 'https://godomain.yodaplus.net/'
 }
 
 function isDev() {
-  return window.location.host === 'ensappdev.surge.sh'
+  return window.location.host === 'http://localhost:3000/'
 }
 
 async function isMainnet() {
   const id = await getNetworkId()
-  return id === 1
+  return id === 50
 }
 
 export function setUtm() {
