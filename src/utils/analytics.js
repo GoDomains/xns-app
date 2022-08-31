@@ -2,8 +2,8 @@ import ReactGA from 'react-ga'
 import { getNetworkId } from '@ensdomains/ui'
 
 const TrackingID = {
-  live: 'UA-237091328-4',
-  dev: 'UA-237091328-4'
+  live: 'G-19BC3CGS4S',
+  dev: 'G-19BC3CGS4S'
 }
 
 function isProduction() {
@@ -38,7 +38,10 @@ export const setupAnalytics = () => {
   } else {
     ReactGA.initialize(TrackingID.dev)
     ReactGA.plugin.require('ecommerce', { debug: true })
-    console.log('Analytics setup for go-dev with ', TrackingID.dev)
+    console.log(
+      'Analytics setup for goDomains.io using GTAG with ',
+      TrackingID.dev
+    )
   }
 
   setUtm()

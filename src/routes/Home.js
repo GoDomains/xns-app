@@ -64,7 +64,9 @@ const TagLine = styled('div')`
   display: inline-block;
   font-size: 52px;
   width: 500px;
-  align-self: flex-end;
+  text-align: center;
+  margin-top: 20px;
+  align-self: center;
 `
 const NetworkLogoGrid = styled('div')`
   display: flex;
@@ -72,6 +74,9 @@ const NetworkLogoGrid = styled('div')`
 const MidGrid = styled('div')`
   margin-bottom: 10px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `
 
 const NetworkStatus = styled('div')`
@@ -342,21 +347,21 @@ export default ({ match }) => {
   const { url } = match
   const { t } = useTranslation()
 
-  const {
-    data: { accounts }
-  } = useQuery(GET_ACCOUNT)
+  // const {
+  //   data: { accounts }
+  // } = useQuery(GET_ACCOUNT)
 
-  const {
-    data: { network, displayName, isReadOnly, isSafeApp }
-  } = useQuery(HOME_DATA, {
-    variables: { address: accounts?.[0] }
-  })
+  // const {
+  //   data: { network, displayName, isReadOnly, isSafeApp }
+  // } = useQuery(HOME_DATA, {
+  //   variables: { address: accounts?.[0] }
+  // })
 
   return (
     <HeroBGC>
       <Hero>
         <HeroTop>
-          <NetworkLogoGrid>
+          {/* <NetworkLogoGrid>
             <NetworkStatus>
               <Network>
                 {`${network} ${t('c.network')}`}
@@ -375,8 +380,8 @@ export default ({ match }) => {
               )}
             </NetworkStatus>
             <IconLogo src={goDomainsLogo} />
-          </NetworkLogoGrid>
-          <Nav>
+          </NetworkLogoGrid> */}
+          {/* <Nav>
             {accounts?.length > 0 && !isReadOnly && (
               <NavLink
                 active={url === '/address/' + accounts[0]}
@@ -389,7 +394,6 @@ export default ({ match }) => {
             {/*  <NavLink to="/favourites">{t('c.favourites')}</NavLink>  */}
             <NavLink to="/about">{t('c.about')}</NavLink>
             <NavLink to="/terms-of-service">Terms of Service</NavLink>
-
             {/*   <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink> */}
           </Nav>
           {/* <MainPageBannerContainer>
@@ -405,20 +409,20 @@ export default ({ match }) => {
             alt="ENS logo"
           /> */}
             <MidGrid>
-              <TagLine>{t('c.tagLine')}</TagLine>
               <Rocket
                 initial={animation.initial}
                 animate={animation.animate}
-                src={rocket}
+                src={goDomainsLogo}
                 alt="Rocket"
               />
+              <TagLine>We will be live soon</TagLine>
             </MidGrid>
 
             {/*   <PermanentRegistrarLogo
             initial={animation.initial}
             animate={animation.animate}
           /> */}
-            <Search />
+            {/* <Search /> */}
           </>
         </SearchContainer>
       </Hero>
