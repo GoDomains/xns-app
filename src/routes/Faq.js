@@ -139,10 +139,10 @@ function Faq() {
             <li>Using the extension GoDOMAINS Content Resolver.</li>
           </ol>
         </Section>
-        <Section question="How can I resolve my domain name/IPFS content?">
+        <Section question="How to Use GoDOMAINS Content Resolver Extension?">
           <ol>
-            <li>Install GoDomain ContentResolver extension.</li>
-            <li>Enable GoDomain ContentResolver from your extension.</li>
+            <li>Install GoDOMAINS Content Resolver extension.</li>
+            <li>Enable GoDOMAINS Content Resolver from your extension.</li>
             <li>
               Make sure to <b>disable your XDCPay wallet/other Wallets</b> for
               the extension to work.
