@@ -41,7 +41,7 @@ const useCheckValidity = (_searchTerm, isENSReady) => {
         _parsed = validateName(searchTerm)
         setParsed(_parsed)
       }
-      document.title = `StorX Search: ${searchTerm}`
+      document.title = `GOdomains Search: ${searchTerm}`
 
       if (type === 'unsupported') {
         setErrors(['unsupported'])
