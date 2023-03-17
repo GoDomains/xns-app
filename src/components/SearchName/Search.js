@@ -13,6 +13,9 @@ import LanguageSwitcher from '../LanguageSwitcher'
 
 const SearchForm = styled('form')`
   display: flex;
+  width: 50%;
+  left: 25%;
+
   position: relative;
   &:before {
     content: '';
@@ -29,13 +32,13 @@ const SearchForm = styled('form')`
   input {
     padding: 20px 0 20px 55px;
     width: 100%;
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 50px 50px 50px 50px;
     border: none;
     font-size: 18px;
     color: white;
     font-family: Open Sans;
     font-weight: 100;
-    background-color: #0058ff;
+    background: rgba(255, 255, 255, 0.18);
     ${mq.medium`
       width: calc(100% - 162px);
       font-size: 28px;
@@ -55,7 +58,9 @@ const SearchForm = styled('form')`
     ${p => (p && p.hasSearch ? 'background: #02a5ff;' : 'background: #03c7ff;')}
     color: white;
     font-size: 22px;
-    border-radius: 0px 15px 15px 0px;
+    background-color: white;
+    opacity: 0.5;
+    border-radius: 0px 50px 50px 0px;
     font-family: Open Sans;
     padding: 20px 0;
     height: 90px;
@@ -128,13 +133,13 @@ function Search({ history, className, style }) {
         }
       }}
     >
+      <LanguageSwitcher />
       <input
         placeholder={t('search.placeholder')}
         ref={el => (input = el)}
         onChange={handleParse}
         autoCapitalize="off"
       />
-      <LanguageSwitcher />
       <button
         disabled={!hasSearch}
         type="submit"

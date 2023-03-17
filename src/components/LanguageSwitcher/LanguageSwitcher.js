@@ -63,7 +63,8 @@ function getLang(lang) {
 
 const ActiveLanguage = styled('div')`
   color: #adbbcd;
-  background-color: #0058ff;
+  border-radius: 50px 0 0 50px;
+  background: rgba(255, 255, 255, 0.18);
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -80,8 +81,8 @@ const ActiveLanguage = styled('div')`
 `
 
 const LanguageSwitcherContainer = styled('div')`
-  background: white;
   position: relative;
+  border-radius: 50px 0 0 50px;
 `
 
 const Dropdown = styled(motion.div)`

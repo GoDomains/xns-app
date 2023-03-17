@@ -1,0 +1,114 @@
+.banner {
+  width: 100%;
+  min-height: 100vh;
+  img {
+    width: 100%;
+    max-height: 100%;
+  }
+  .content {
+    position: absolute;
+    top: 150px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    text-align: center;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    h1 {
+      // font-family: "konnect_boldbold";
+      font-weight: 700;
+      font-size: 5vw;
+      line-height: 5.556vw;
+      margin: 0 0 16px;
+      text-align: center;
+      color: #ffffff;
+    }
+    p {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 24px;
+      text-align: center;
+      color: #ffffff;
+      margin: 0 0 60px;
+    }
+    .search-area {
+      width: 42.5vw;
+      background: rgb(255 255 255 / 18%);
+      padding: 12px 12px 12px 23px;
+      border-radius: 6.944vw;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        padding: 0;
+        cursor: pointer;
+        &.language {
+          width: 30px;
+          background: transparent;
+          border: none;
+          img {
+            width: 100%;
+          }
+        }
+        &.find {
+          line-height: 52px;
+          border: none;
+          background: #aaea03;
+          border-radius: 100px;
+          color: #ffffff;
+          font-size: 16px;
+          padding: 0 42px;
+        }
+      }
+      input[type='text'] {
+        line-height: 30px;
+        background: transparent;
+        border: none;
+        width: calc(100% - 100px);
+        font-weight: 400;
+        font-size: 16px;
+        outline: none;
+        color: #ffffff;
+        padding-left: 18px;
+      }
+    }
+    ul.option-area {
+      padding: 0;
+      margin: 90px 0 0;
+      display: inline-flex;
+      width: 100%;
+      justify-content: center;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 30px;
+        span.icon {
+          width: 6.944vw;
+          height: 6.944vw;
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.24) 0%,
+            rgba(255, 255, 255, 0.12) 100%
+          );
+          box-shadow: 0px 48px 60px rgba(115, 131, 139, 0.12);
+          border-radius: 2.5vw;
+          margin-bottom: 1.806vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        p {
+          font-size: 1.667vw;
+          line-height: 1.667vw;
+          text-align: center;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

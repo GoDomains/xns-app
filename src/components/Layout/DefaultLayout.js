@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react'
 
-import Header from '../Header/Header'
+import Header from '../Header/HeaderNew'
 import Container from './Container'
 import SideNav from '../SideNav/SideNav'
 import Main from './Main'
+import Banner from '../Banner'
+import LayoutBanner from '../LayoutBanner/LayoutBanner'
 
 const DefaultLayout = ({ children }) => (
   <Fragment>

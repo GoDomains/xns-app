@@ -8,26 +8,19 @@ import mq from 'mediaQuery'
 import { ethToXDCAddress } from '../utils/utils'
 import SearchDefault from '../components/SearchName/Search'
 import NoAccountsDefault from '../components/NoAccounts/NoAccountsModal'
-/* import bg from '../assets/heroBG.jpg' */
-// import bg from '../assets/StorXBG.png'
-import rocket from '../assets/rocket.png'
-// import storxLogo from '../assets/logo.png'
 import bg from '../assets/BG.png'
-import bgc from '../assets/BGColor.png'
-// import rocket from '../assets/NewRocket.png'
-// import storxLogo from '../assets/StorxLogo.png'
-import goDomainsLogo from '../assets/goDomainsLogo.png'
+
+import goDomainsLogo from '../assets/new-logo.svg'
 import TextBubbleDefault from '../components/Icons/TextBubble'
 import QuestionMarkDefault from '../components/Icons/QuestionMark'
 import HowToUseDefault from '../components/HowToUse/HowToUse'
-// import ENSLogo from '../components/HomePage/images/ENSLogo.svg'
-import { aboutPageURL } from '../utils/utils'
 import { connectProvider, disconnectProvider } from '../utils/providerUtils'
 import { gql } from '@apollo/client'
-import {
-  MainPageBannerContainer,
-  DAOBannerContent
-} from '../components/Banner/DAOBanner'
+
+import Footer from '../components/Footer/Footer'
+import StatisticSteps from '../components/StatisticSteps/StatisticSteps'
+import Banner from '../components/Banner'
+import HeaderNew from '../components/Header/HeaderNew'
 
 const HeroTop = styled('div')`
   display: grid;
@@ -75,8 +68,11 @@ const MidGrid = styled('div')`
 `
 
 const NetworkStatus = styled('div')`
+  position: absolute;
+  top: 10px;
+  z-index: 5;
   color: white;
-  font-weight: 200;
+  font-weight: 400;
   text-transform: capitalize;
   display: none;
   ${mq.small`
@@ -171,7 +167,6 @@ const Hero = styled('section')`
   `}
 `
 const HeroBGC = styled('section')`
-  background: url(${bgc});
   background-size: cover;
   background-position: center;
 `
@@ -354,74 +349,47 @@ export default ({ match }) => {
 
   return (
     <HeroBGC>
-      <Hero>
-        <HeroTop>
-          <NetworkLogoGrid>
-            <NetworkStatus>
-              <Network>
-                {`${network} ${t('c.network')}`}
-                {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
-                {!isReadOnly && displayName && (
-                  <Name data-testid="display-name">
-                    ({ethToXDCAddress(displayName)})
-                  </Name>
-                )}
-              </Network>
-              {!isSafeApp && (
-                <NoAccounts
-                  onClick={isReadOnly ? connectProvider : disconnectProvider}
-                  buttonText={isReadOnly ? t('c.connect') : t('c.disconnect')}
-                />
-              )}
-            </NetworkStatus>
-            <IconLogo src={goDomainsLogo} />
-          </NetworkLogoGrid>
-          <Nav>
-            {accounts?.length > 0 && !isReadOnly && (
-              <NavLink
-                active={url === '/address/' + accounts[0]}
-                to={'/address/' + accounts[0]}
-              >
-                {t('c.mynames')}
-              </NavLink>
+      <HeaderNew />
+      <Banner />
+      <NetworkLogoGrid>
+        <NetworkStatus>
+          <Network>
+            {`${network} ${t('c.network')}`}
+            {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
+            {!isReadOnly && displayName && (
+              <Name data-testid="display-name">
+                ({ethToXDCAddress(displayName)})
+              </Name>
             )}
-            <NavLink to="/faq">{t('c.faq')}</NavLink>
-            {/*  <NavLink to="/favourites">{t('c.favourites')}</NavLink>  */}
-            <NavLink to="/about">{t('c.about')}</NavLink>
-            <NavLink to="/terms-of-service">Terms of Service</NavLink>
-
-            {/*   <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink> */}
-          </Nav>
-          {/* <MainPageBannerContainer>
-          <DAOBannerContent />
-        </MainPageBannerContainer> */}
-        </HeroTop>
-        <SearchContainer>
-          <>
-            {/*  <LogoLarge
-            initial={animation.initial}
-            animate={animation.animate}
-            src={ENSLogo}
-            alt="ENS logo"
-          /> */}
-            <MidGrid>
-              <TagLine>{t('c.tagLine')}</TagLine>
-              <Rocket
-                initial={animation.initial}
-                animate={animation.animate}
-                src={rocket}
-                alt="Rocket"
-              />
-            </MidGrid>
-
-            {/*   <PermanentRegistrarLogo
-            initial={animation.initial}
-            animate={animation.animate}
-          /> */}
-            <Search />
-          </>
-        </SearchContainer>
-      </Hero>
+          </Network>
+          {!isSafeApp && (
+            <NoAccounts
+              onClick={isReadOnly ? connectProvider : disconnectProvider}
+              buttonText={isReadOnly ? t('c.connect') : t('c.disconnect')}
+            />
+          )}
+        </NetworkStatus>
+      </NetworkLogoGrid>
+      <Nav>
+        {accounts?.length > 0 && !isReadOnly && (
+          <NavLink
+            active={url === '/address/' + accounts[0]}
+            to={'/address/' + accounts[0]}
+          >
+            {t('c.mynames')}
+          </NavLink>
+        )}
+        <NavLink to="/faq">{t('c.faq')}</NavLink>
+        <NavLink to="/about">{t('c.about')}</NavLink>
+        <NavLink to="/terms-of-service">Terms of Service</NavLink>
+      </Nav>
+      <SearchContainer>
+        <>
+          <Search />
+          <StatisticSteps />
+        </>
+      </SearchContainer>
+      <Footer />
     </HeroBGC>
   )
 }
