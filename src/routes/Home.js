@@ -383,12 +383,7 @@ export default ({ match }) => {
         <NavLink to="/about">{t('c.about')}</NavLink>
         <NavLink to="/terms-of-service">Terms of Service</NavLink>
       </Nav>
-      <SearchContainer>
-        <>
-          <Search />
-          <StatisticSteps />
-        </>
-      </SearchContainer>
+      <StatisticSteps />
       <Footer />
     </HeroBGC>
   )

@@ -26,13 +26,11 @@ const SearchForm = styled('form')`
     display: block;
     width: 27px;
     height: 27px;
-    background: url(${searchIcon}) no-repeat;
   }
 
   input {
     padding: 20px 0 20px 55px;
     width: 100%;
-    border-radius: 50px 50px 50px 50px;
     border: none;
     font-size: 18px;
     color: white;
@@ -56,7 +54,8 @@ const SearchForm = styled('form')`
 
   button {
     ${p => (p && p.hasSearch ? 'background: #02a5ff;' : 'background: #03c7ff;')}
-    color: white;
+    color: black;
+    font-weight: 200;
     font-size: 22px;
     background-color: white;
     opacity: 0.5;
