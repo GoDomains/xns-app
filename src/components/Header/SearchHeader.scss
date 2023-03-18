@@ -1,0 +1,22 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  .search-container {
+    background: linear-gradient(330.4deg, #44bcf0 4.54%, #7298f8 59.2%);
+    display: flex;
+    .logo {
+      //background-color: red;
+      width: 25%;
+      img {
+        padding: 20px 50px 0px 40px;
+        width: 100%;
+      }
+    }
+    .search-header {
+      width: 75%;
+    }
+  }
+}

@@ -1,7 +1,6 @@
 import React from 'react'
 import './Banner.scss'
 import BannerImage from '../../assets/banner.png'
-import Language from '../../assets/language.svg'
 import StatisticSteps from '../StatisticSteps/StatisticSteps'
 import SearchContainer, { Search } from '../SearchName/Search'
 
@@ -10,17 +9,29 @@ function banner(props) {
     <div className="banner">
       <img src={BannerImage} alt="" />
       <div className="content">
-        <h1>
-          Decentralized Domains <br />
-          for Web3 Ecosystem
-        </h1>
+        <div className="Iam">
+          <h1>Decentralized Domains</h1>
+          <div className="subtitle">
+            <div class="innerIam">
+              <b>for your web3 ecosystem</b>
+              <br />
+              <b>for blockchain</b>
+              <br />
+              <b>for a custom .go address</b>
+              <br />
+            </div>
+          </div>
+        </div>
+        <br />
         <p>Give your crypto wallet address a human readable address!</p>
-        <SearchContainer>
-          <>
-            <Search />
-            <StatisticSteps />
-          </>
-        </SearchContainer>
+        <div className="home-search">
+          <SearchContainer>
+            <>
+              <Search />
+              <StatisticSteps />
+            </>
+          </SearchContainer>
+        </div>
         <ul className="option-area">
           <li>
             <span className="icon">

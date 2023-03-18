@@ -1,17 +1,15 @@
 import React from 'react'
 import './HeaderNew.scss'
 import Logo from '../../assets/new-logo.svg'
-import useHomeData from '../Banner/useHomeData'
-import { ethToXDCAddress } from '../../utils/utils'
-import NoAccounts from '../NoAccounts/NoAccounts'
-import { connectProvider, disconnectProvider } from '../../utils/providerUtils'
 
-function Header() {
+function HeaderNew() {
   return (
     <header>
       <div className="container">
         <div className="logo">
-          <img src={Logo} alt="" />
+          <a href="/">
+            <img src={Logo} alt="" />
+          </a>
         </div>
         <div className="nav-block">
           <ul className="h-nav">
@@ -31,4 +29,4 @@ function Header() {
   )
 }
 
-export default Header
+export default HeaderNew

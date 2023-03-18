@@ -13,8 +13,6 @@ import LanguageSwitcher from '../LanguageSwitcher'
 const SearchForm = styled('form')`
   display: flex;
   width: 100%;
-  border-radius: 50px 0px 0px 50px;
-  overflow: hidden;
 
   position: relative;
   &:before {
@@ -59,7 +57,7 @@ const SearchForm = styled('form')`
     font-size: 22px;
     background-color: white;
     opacity: 0.5;
-    border-radius: 0px 50px 50px 0px;
+
     font-family: Open Sans;
     padding: 20px 0;
     height: 90px;
@@ -132,13 +130,13 @@ function Search({ history, className, style }) {
         }
       }}
     >
-      <LanguageSwitcher />
       <input
         placeholder={t('search.placeholder')}
         ref={el => (input = el)}
         onChange={handleParse}
         autoCapitalize="off"
       />
+      <LanguageSwitcher />
       <button
         disabled={!hasSearch}
         type="submit"
@@ -152,7 +150,7 @@ function Search({ history, className, style }) {
 
 const SearchWithRouter = withRouter(Search)
 
-const SearchContainer = ({ searchDomain, className, style }) => {
+const DefaultSearchContainer = ({ searchDomain, className, style }) => {
   return (
     <SearchWithRouter
       searchDomain={searchDomain}
@@ -164,4 +162,4 @@ const SearchContainer = ({ searchDomain, className, style }) => {
 
 export { SearchWithRouter as Search }
 
-export default SearchContainer
+export default DefaultSearchContainer

@@ -63,7 +63,7 @@ function getLang(lang) {
 
 const ActiveLanguage = styled('div')`
   color: #adbbcd;
-  border-radius: 50px 0 0 50px;
+
   background: rgba(255, 255, 255, 0.18);
   text-transform: uppercase;
   display: flex;
@@ -82,7 +82,6 @@ const ActiveLanguage = styled('div')`
 
 const LanguageSwitcherContainer = styled('div')`
   position: relative;
-  border-radius: 50px 0 0 50px;
 `
 
 const Dropdown = styled(motion.div)`
@@ -94,7 +93,7 @@ const Dropdown = styled(motion.div)`
   overflow-y: auto;
   overflow-x: hidden;
   margin-top: 20px;
-  border-radius: 8px;
+
   box-shadow: -4px 18px 70px 0 rgba(108, 143, 167, 0.32);
   width: 230px;
   z-index: 2;
@@ -121,7 +120,6 @@ const Dropdown = styled(motion.div)`
 `
 
 const Ball = styled('div')`
-  border-radius: 50%;
   background: white;
   width: 10px;
   height: 10px;

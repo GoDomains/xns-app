@@ -4,6 +4,7 @@ import styled from '@emotion/styled/macro'
 import mq from 'mediaQuery'
 
 import { H2 as DefaultH2, Title } from '../components/Typography/Basic'
+import AboutUs from '../components/AboutUs/AboutUs'
 
 const AboutContainer = styled('div')`
   margin: 1em;
@@ -27,6 +28,7 @@ function About() {
 
   return (
     <>
+      <AboutUs />
       <AboutContainer>
         <Title>About Page</Title>
         <h3>Go Globals with .GO Domains</h3>
