@@ -63,6 +63,16 @@
             text-transform: uppercase;
           }
         }
+        h4 {
+          font-weight: 200;
+          font-size: 18px;
+          line-height: 28px;
+          color: slategrey;
+          margin: 0 0 16px 0;
+          z-index: 1;
+          position: relative;
+          white-space: pre-line;
+        }
       }
     }
   }

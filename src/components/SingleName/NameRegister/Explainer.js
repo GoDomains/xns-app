@@ -7,6 +7,9 @@ import Step from './Step'
 import Button from '../../Forms/Button'
 import { ReactComponent as Bell } from '../../Icons/Bell.svg'
 import { ReactComponent as Tick } from '../../Icons/GreyCircleTick.svg'
+import RequestRegister from '../../../assets/request-register.svg'
+import Wait from '../../../assets/wait.svg'
+import RegisterComplete from '../../../assets/register-complete.svg'
 
 import { requestPermission, hasPermission } from './notification'
 
@@ -100,6 +103,7 @@ const Explainer = ({ step, waitPercentComplete, waitTime }) => {
           }
           title={t('register.step1.title')}
           text={t('register.step1.text') + ' ' + t('register.step1.text2')}
+          image={RequestRegister}
         />
         <Step
           number={2}
@@ -118,6 +122,7 @@ const Explainer = ({ step, waitPercentComplete, waitTime }) => {
             .humanize()}` //add back localization of moment*/
           }
           text={t('register.step2.text')}
+          image={Wait}
         />
         <Step
           number={3}
@@ -126,6 +131,7 @@ const Explainer = ({ step, waitPercentComplete, waitTime }) => {
           }
           title={t('register.step3.title')}
           text={t('register.step3.text')}
+          image={RegisterComplete}
         />
       </Steps>
     </>

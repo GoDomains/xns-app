@@ -289,7 +289,7 @@ function AboutUs() {
       <div className="container">
         <h3>
           <span>About</span>
-          GoDomains Includes
+          Why GoDomains?
         </h3>
         <div className="item-row">
           {ProblemsData.map((data, i) => (
