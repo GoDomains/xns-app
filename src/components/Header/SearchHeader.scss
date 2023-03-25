@@ -1,9 +1,5 @@
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
+.search-header {
+  padding: 0;
   .search-container {
     background: linear-gradient(330.4deg, #44bcf0 4.54%, #7298f8 59.2%);
     display: flex;

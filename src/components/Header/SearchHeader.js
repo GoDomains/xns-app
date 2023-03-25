@@ -6,7 +6,7 @@ import DefaultSearchContainer, { Search } from '../SearchName/SearchDefault'
 
 function SearchHeader() {
   return (
-    <header>
+    <header className="search-header">
       <div className="search-container">
         <div className="logo">
           <a href="/">
@@ -17,7 +17,6 @@ function SearchHeader() {
           <DefaultSearchContainer>
             <>
               <Search />
-              <StatisticSteps />
             </>
           </DefaultSearchContainer>
         </div>
