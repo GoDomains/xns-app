@@ -13,7 +13,9 @@ import RegisterComplete from '../../../assets/register-complete.svg'
 
 import { requestPermission, hasPermission } from './notification'
 import Modal from 'react-modal'
-import LottieAnimation from './LottieAnimation'
+import Step1Animation from './Step1Animation'
+import Step2Animation from './Step2Animation'
+import Step3Animation from './Step3Animation'
 
 const Steps = styled('section')`
   display: grid;
@@ -91,63 +93,53 @@ const Explainer = ({ step, waitPercentComplete, waitTime }) => {
     REVEAL_SENT: t('register.titles.1'),
     REVEAL_CONFIRMED: t('register.titles.2')
   }
-  console.log(
-    'STEP1==>',
-    step === 'PRICE_DECISION' ? 0 : step === 'COMMIT_SENT' ? 50 : 100
-  )
-  console.log(
-    'condition--->',
-    step === 'PRICE_DECISION' ? 0 : step === 'COMMIT_SENT' ? 50 : 100,
-    '11111',
-    step === 'PRICE_DECISION' || step === 'COMMIT_SENT'
+
+  const isOpenThirdModal = () => {
+    console.log(
+      'Final step==>',
+      step === 'REVEAL_CONFIRMED' ? 100 : step === 'REVEAL_SENT' ? 50 : false
+    )
+    return step === 'REVEAL_CONFIRMED'
+      ? false
+      : step === 'REVEAL_SENT'
+      ? 50
+      : false
+  }
+
+  const isOpenSecondModal = () => {
+    return step === 'PRICE_DECISION' || step === 'COMMIT_SENT'
       ? 0
       : step === 'COMMIT_CONFIRMED'
       ? waitPercentComplete
-      : 100,
-    '22222',
-    step === 'REVEAL_CONFIRMED' ? 100 : step === 'REVEAL_SENT' ? 50 : 0
-  )
+      : false
+  }
 
-  const isOpenModal = () => {
-    console.log(
-      'isOpenModal-->',
-      ((step === 'PRICE_DECISION' ? 0 : step === 'COMMIT_SENT' ? 50 : false) &&
-        (step === 'PRICE_DECISION'
-          ? 0
-          : step === 'COMMIT_SENT'
-          ? 50
-          : false)) ||
-        (step === 'PRICE_DECISION' || step === 'COMMIT_SENT'
-          ? 0
-          : step === 'COMMIT_CONFIRMED'
-          ? waitPercentComplete
-          : false)
-    )
-    return (
-      ((step === 'PRICE_DECISION' ? 0 : step === 'COMMIT_SENT' ? 50 : false) &&
-        (step === 'PRICE_DECISION'
-          ? 0
-          : step === 'COMMIT_SENT'
-          ? 50
-          : false)) ||
-      (step === 'PRICE_DECISION' || step === 'COMMIT_SENT'
-        ? 0
-        : step === 'COMMIT_CONFIRMED'
-        ? waitPercentComplete
-        : false)
-    )
+  const isOpenFirstModal = () => {
+    return step === 'PRICE_DECISION' ? 0 : step === 'COMMIT_SENT' ? 50 : false
   }
   return (
     <>
       <Header>
         <Modal
-          isOpen={isOpenModal()}
-          // onAfterOpen={afterOpenModal}
-          // onRequestClose={closeModal}
+          isOpen={isOpenFirstModal()}
           style={customStyles}
-          contentLabel="Example Modal"
+          contentLabel="Step 1 Modal"
         >
-          <LottieAnimation />
+          <Step1Animation />
+        </Modal>
+        <Modal
+          isOpen={isOpenSecondModal()}
+          style={customStyles}
+          contentLabel="Step 2 Modal"
+        >
+          <Step2Animation />
+        </Modal>
+        <Modal
+          isOpen={isOpenThirdModal()}
+          style={customStyles}
+          contentLabel="Step 3 Modal"
+        >
+          <Step3Animation />
         </Modal>
         <div>
           <h2>{titles[step]}</h2>

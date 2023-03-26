@@ -1,13 +1,12 @@
 import React from 'react'
 
-function LottieAnimation() {
+function FinalAnimation() {
   return (
     <div style={{ width: '300px', height: '300px' }}>
       <lottie-player
-        src="https://assets7.lottiefiles.com/packages/lf20_ikaawl5v.json"
-        mode="bounce"
+        src="https://assets1.lottiefiles.com/packages/lf20_dt0twxk1.json"
         background="transparent"
-        speed="1.5"
+        speed="1"
         loop
         autoplay
       />
@@ -15,4 +14,4 @@ function LottieAnimation() {
   )
 }
 
-export default LottieAnimation
+export default FinalAnimation
