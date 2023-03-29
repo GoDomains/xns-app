@@ -9,6 +9,7 @@ import setup from './setup'
 import { clientReactive, networkIdReactive } from './apollo/reactiveVars'
 import { setupClient } from './apollo/apolloClient'
 import Loader from './components/Loader'
+import './index.css'
 
 setup(false)
 window.addEventListener('load', async () => {

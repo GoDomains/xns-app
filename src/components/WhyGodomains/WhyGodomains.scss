@@ -1,0 +1,57 @@
+.problems {
+  .why-box {
+    padding: 0px 50px 0px 50px;
+  }
+  h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 68px;
+    text-align: center;
+    color: #1e1810;
+    margin: 0 0 40px;
+
+    span {
+      display: block;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #aaea03;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+  }
+  .item-row {
+    display: flex;
+    justify-content: space-between;
+    .sultion-item {
+      padding: 30px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 25%;
+      img {
+        height: 108px;
+        margin-bottom: 30px;
+      }
+      h4 {
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 30px;
+        text-align: center;
+        margin: 0 0 12px;
+        color: #1e1810;
+      }
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: #5f5f7d;
+        margin: 0;
+      }
+    }
+  }
+}

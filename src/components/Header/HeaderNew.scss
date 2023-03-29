@@ -1,119 +1,13 @@
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 2;
-  padding: 36px 0;
   .container {
-    padding: 0 5%;
     z-index: 1;
-    @media screen and (min-width: 1024px) {
-      display: flex;
-      justify-content: space-between;
-    }
-
     .logo {
       width: 298px;
-      margin-left: 220px;
       img {
         width: 100%;
-      }
-    }
-    .nav-block {
-      justify-content: flex-end;
-      width: 50%;
-      display: flex;
-      align-items: center;
-      ul {
-        &.h-nav {
-          display: flex;
-          padding: 0;
-          margin: 0;
-          li {
-            list-style: none;
-            display: flex;
-            padding: 0 14px;
-            position: relative;
-            margin: 0 2px;
-            a {
-              display: block;
-              text-decoration: none;
-              color: #fff;
-              font-size: 18px;
-              &:hover {
-                &::after {
-                  content: '';
-                  position: absolute;
-                  height: 2px;
-                  background: #fff;
-                  left: 0;
-                  right: 0;
-                  bottom: -10px;
-                  z-index: 1;
-                }
-              }
-            }
-            button {
-              font-weight: 600;
-              font-size: 16px;
-              line-height: 52px;
-              text-align: center;
-              text-transform: uppercase;
-
-              color: #ffffff;
-              padding: 0 27px;
-            }
-          }
-        }
-      }
-    }
-    .action-block {
-      display: flex;
-      ul {
-        &.h-nav {
-          display: flex;
-          padding: 0;
-          margin: 0;
-          align-items: center;
-          li {
-            list-style: none;
-            display: flex;
-            padding: 0 14px;
-            position: relative;
-            margin: 0 2px;
-            a {
-              display: block;
-              text-decoration: none;
-              color: #fff;
-              font-size: 18px;
-              &:hover {
-                &::after {
-                  content: '';
-                  position: absolute;
-                  height: 2px;
-                  background: #fff;
-                  left: 0;
-                  right: 0;
-                  bottom: -10px;
-                  z-index: 1;
-                }
-              }
-            }
-            button {
-              font-weight: 600;
-              font-size: 16px;
-              line-height: 52px;
-              text-align: center;
-              text-transform: uppercase;
-              color: #ffffff;
-              padding: 0 27px;
-              background: #aaea03;
-              border-radius: 100px;
-              border: none;
-            }
-          }
-        }
+        margin-left: 40px;
+        margin-top: 20px;
       }
     }
   }

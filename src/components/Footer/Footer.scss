@@ -8,6 +8,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
   }
   .f-logo {
     width: 374px;
@@ -17,41 +24,43 @@
   }
   p {
     padding: 48px 0 36px;
-    font-size: 18px;
+    font-size: 16px;
+    text-align: center;
     line-height: 30px;
     color: #ffffff;
-    max-width: 950px;
     margin: 0;
-    text-align: center;
     a {
       text-decoration: none;
       cursor: pointer;
       color: #252ff2;
     }
   }
+  .copyright {
+    text-align: center;
+  }
   ul {
     padding: 0;
     margin: 0;
     &.social {
+      padding-top: 20px;
       display: flex;
-      align-items: center;
-      width: auto;
+      justify-content: space-around;
       li {
         list-style: none;
+        text-align: right;
+        font-size: 12px;
         a {
           text-decoration: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 48px;
-          width: 48px;
-          border: 1px solid #ffffff;
-          border-radius: 50%;
         }
         & + li {
           margin-left: 12px;
         }
       }
     }
+  }
+  .animation {
+    text-align: right;
+    float: right;
+    padding-left: 30px;
   }
 }

@@ -3,13 +3,14 @@
   min-height: 100vh;
 
   img {
+    position: absolute;
+    top: 0;
     width: 100%;
     max-height: 100%;
   }
 
   .content {
     position: absolute;
-    top: 150px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -22,9 +23,9 @@
     h1 {
       // font-family: "konnect_boldbold";
       font-weight: 700;
-      font-size: 5vw;
+      font-size: 4vw;
       line-height: 5.556vw;
-      margin: 0 0 16px;
+      margin: 0;
       text-align: center;
       color: #ffffff;
     }
@@ -34,7 +35,7 @@
       font-size: 24px;
       line-height: 24px;
       text-align: center;
-      color: #ffffff;
+      color: lightgrey;
       margin: 0 0 60px;
     }
 
@@ -44,144 +45,9 @@
       width: 50%;
     }
 
-    .Iam {
-      font: normal 40px/50px Montserrat, sans-serif;
-      color: #999;
-      margin-bottom: 30px;
-    }
-
-    .Iam h1 {
-      height: 50px;
-      margin-right: 0.3em;
-    }
-
-    .Iam .subtitle {
-      overflow: hidden;
-      position: relative;
-      height: 74px;
-      top: 40px;
-    }
-
-    .Iam .innerIam {
-      display: inline-block;
-      color: #ffb703;
-      position: relative;
-      white-space: nowrap;
-      top: 0;
-      left: 0;
-      font-size: 65px;
-      line-height: 74px;
-
-      /*animation*/
-      -webkit-animation: move 5s;
-      -moz-animation: move 5s;
-      -ms-animation: move 5s;
-      -o-animation: move 5s;
-      animation: move 5s;
-      /*animation-iteration-count*/
-      -webkit-animation-iteration-count: infinite;
-      -moz-animation-iteration-count: infinite;
-      -ms-animation-iteration-count: infinite;
-      -o-animation-iteration-count: infinite;
-      animation-iteration-count: infinite;
-      /*animation-delay*/
-      -webkit-animation-delay: 1s;
-      -moz-animation-delay: 1s;
-      -ms-animation-delay: 1s;
-      -o-animation-delay: 1s;
-      animation-delay: 1s;
-    }
-
-    @keyframes move {
-      0% {
-        top: 0px;
-      }
-      20% {
-        top: -75px;
-      }
-      40% {
-        top: -150px;
-      }
-      60% {
-        top: -225px;
-      }
-      80% {
-        top: -300px;
-      }
-    }
-
-    @-webkit-keyframes move {
-      0% {
-        top: 0px;
-      }
-      20% {
-        top: -75px;
-      }
-      40% {
-        top: -150px;
-      }
-      60% {
-        top: -225px;
-      }
-      80% {
-        top: -300px;
-      }
-    }
-    @-moz-keyframes move {
-      0% {
-        top: 0px;
-      }
-      20% {
-        top: -75px;
-      }
-      40% {
-        top: -150px;
-      }
-      60% {
-        top: -225px;
-      }
-      80% {
-        top: -300px;
-      }
-    }
-    @-o-keyframes move {
-      0% {
-        top: 0px;
-      }
-      20% {
-        top: -75px;
-      }
-      40% {
-        top: -150px;
-      }
-      60% {
-        top: -225px;
-      }
-      80% {
-        top: -300px;
-      }
-    }
-    @keyframes move {
-      0% {
-        top: 0px;
-      }
-      20% {
-        top: -75px;
-      }
-      40% {
-        top: -150px;
-      }
-      60% {
-        top: -225px;
-      }
-      80% {
-        top: -300px;
-      }
-    }
-
     ul.option-area {
       padding: 0;
-      margin: 150px 0 0;
+      margin: 120px 0 0;
       display: inline-flex;
       width: 100%;
       justify-content: center;
@@ -191,7 +57,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 0 30px;
+        padding: 20px 30px;
 
         span.icon {
           width: 6.944vw;
@@ -210,7 +76,7 @@
         }
 
         p {
-          font-size: 1.667vw;
+          font-size: 1.2vw;
           line-height: 1.667vw;
           text-align: center;
           color: #ffffff;

@@ -11,16 +11,6 @@ function banner(props) {
       <div className="content">
         <div className="Iam">
           <h1>Decentralized Domains</h1>
-          <div className="subtitle">
-            <div class="innerIam">
-              <b>for your web3 ecosystem</b>
-              <br />
-              <b>for blockchain</b>
-              <br />
-              <b>for a custom .go address</b>
-              <br />
-            </div>
-          </div>
         </div>
         <br />
         <p>Give your crypto wallet address a human readable address!</p>
@@ -48,7 +38,7 @@ function banner(props) {
                 />
               </svg>
             </span>
-            <p>Install XDC Pay</p>
+            <p style={{ 'font-size': '10px' }}>Install XDC Pay</p>
           </li>
           <li>
             <span className="icon">

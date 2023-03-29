@@ -11,19 +11,6 @@ function HeaderNew() {
             <img src={Logo} alt="" />
           </a>
         </div>
-        <div className="nav-block">
-          <ul className="h-nav">
-            <li>
-              <a href="/faq">FAQ</a>
-            </li>
-            <li>
-              <a href="/about">About Us</a>
-            </li>
-            <li>
-              <a href="/terms-of-service">Terms of Service</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </header>
   )

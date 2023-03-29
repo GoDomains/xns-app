@@ -18,6 +18,8 @@ import { gql } from '@apollo/client'
 
 import Footer from '../components/Footer/Footer'
 import StatisticSteps from '../components/StatisticSteps/StatisticSteps'
+import WhyGodomains from '../components/WhyGodomains/WhyGodomains'
+import Numbers from '../components/Numbers/Numbers'
 import Banner from '../components/Banner'
 import HeaderNew from '../components/Header/HeaderNew'
 
@@ -59,7 +61,9 @@ const TagLine = styled('div')`
   align-self: flex-end;
 `
 const NetworkLogoGrid = styled('div')`
+  justify-content: space-between;
   display: flex;
+  z-index: 5;
 `
 const MidGrid = styled('div')`
   margin-bottom: 10px;
@@ -67,9 +71,9 @@ const MidGrid = styled('div')`
 `
 
 const NetworkStatus = styled('div')`
-  position: absolute;
-  top: 10px;
   z-index: 5;
+  margin-right: 20px;
+  margin-top: 10px;
   color: white;
   font-weight: 400;
   text-transform: capitalize;
@@ -348,9 +352,9 @@ export default ({ match }) => {
 
   return (
     <HeroBGC>
-      <HeaderNew />
-      <Banner />
       <NetworkLogoGrid>
+        <HeaderNew />
+
         <NetworkStatus>
           <Network>
             {`${network} ${t('c.network')}`}
@@ -369,20 +373,10 @@ export default ({ match }) => {
           )}
         </NetworkStatus>
       </NetworkLogoGrid>
-      <Nav>
-        {accounts?.length > 0 && !isReadOnly && (
-          <NavLink
-            active={url === '/address/' + accounts[0]}
-            to={'/address/' + accounts[0]}
-          >
-            {t('c.mynames')}
-          </NavLink>
-        )}
-        <NavLink to="/faq">{t('c.faq')}</NavLink>
-        <NavLink to="/about">{t('c.about')}</NavLink>
-        <NavLink to="/terms-of-service">Terms of Service</NavLink>
-      </Nav>
-      <StatisticSteps />
+      <Banner />
+
+      <WhyGodomains />
+      <Numbers />
       <Footer />
     </HeroBGC>
   )
