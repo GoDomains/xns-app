@@ -20,7 +20,6 @@ const AddressInput = styled(DefaultAddressInput)`
 `
 
 const ToggleAddRecord = styled('span')`
-  font-family: Open Sans;
   font-weight: bold;
   font-size: 14px;
   color: #0058ff;
@@ -56,7 +55,7 @@ const Select = styled(DefaultSelect)`
 
 const RecordsTitle = styled('h3')`
   /* Pointers: */
-  font-family: Open Sans;
+
   font-weight: 700;
   font-size: 12px;
   color: #adbbcd;

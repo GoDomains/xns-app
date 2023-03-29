@@ -293,7 +293,6 @@ const Rocket = styled(motion.img)`
 `
 
 const PermanentRegistrarLogo = styled(motion.h1)`
-  font-family: Open Sans;
   font-weight: 800;
   font-size: 18px;
   text-transform: uppercase;

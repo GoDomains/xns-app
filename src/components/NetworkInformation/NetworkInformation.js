@@ -72,7 +72,6 @@ const Account = styled('div')`
   color: #adbbcd;
   font-size: 16px;
   font-weight: 200;
-  font-family: Open Sans;
   width: 140px;
   white-space: nowrap;
   overflow: hidden;

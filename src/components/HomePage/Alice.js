@@ -25,7 +25,6 @@ const BaseContainer = styled('div')`
   }
 
   .bg-string {
-    font-family: Open Sans;
     position: relative;
     color: #5284ff;
     font-size: 26px;

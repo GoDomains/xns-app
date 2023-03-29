@@ -25,7 +25,6 @@ const RecordsHeader = styled('div')`
 `
 
 const RecordsTitle = styled('h3')`
-  font-family: Open Sans;
   font-weight: 700;
   font-size: 12px;
   color: #adbbcd;

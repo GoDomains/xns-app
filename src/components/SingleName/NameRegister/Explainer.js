@@ -35,7 +35,6 @@ const Header = styled('div')`
   margin-bottom: 20px;
 
   h2 {
-    font-family: Open Sans;
     font-weight: 300;
     font-size: 18px;
     color: #2b2b2b;
@@ -53,7 +52,7 @@ const Header = styled('div')`
   p {
     margin: 0;
     font-weight: 400;
-    font-family: Open Sans;
+
     font-size: 14px;
     color: #adbbcd;
     letter-spacing: 0;

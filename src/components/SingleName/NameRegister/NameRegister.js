@@ -48,7 +48,6 @@ const TAC = styled('div')`
 `
 
 const H1 = styled('h1')`
-  font-family: Open Sans;
   font-weight: 300;
   font-size: 25px;
   color: #2b2b2b;

@@ -66,7 +66,6 @@ const Values = styled('ul')`
 const Value = styled('li')`
   font-size: 12px;
   font-weight: bold;
-  font-family: Open Sans;
   display: flex;
   justify-content: space-between;
   color: ${({ old }) => (old ? 'grey' : 'black')};
