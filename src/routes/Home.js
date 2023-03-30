@@ -46,7 +46,7 @@ const NoAccounts = styled(NoAccountsDefault)``
 
 const Network = styled('div')`
   margin-bottom: 5px;
-  margin-top 10px;
+  margin-top: 10px;
 `
 const Name = styled('span')`
   margin-left: 5px;
@@ -101,7 +101,7 @@ const NetworkStatus = styled('div')`
 `
 
 const Nav = styled('div')`
-  margin-top 10px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   ${mq.small`
@@ -208,11 +208,10 @@ const Search = styled(SearchDefault)`
 
   input {
     width: 100%;
-    color:'
-    ${mq.medium`
+    color: ${mq.medium`
       border-radius: 6px 0 0 6px;
       font-size: 28px;
-    `}
+    `};
   }
 
   button {
