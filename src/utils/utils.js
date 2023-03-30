@@ -137,7 +137,7 @@ export const parseSearchTerm = async term => {
     return 'invalid'
   }
   console.log('** parseSearchTerm', { ens })
-  const address = await ens.getOwner(tld)
+  // const address = await ens.getOwner(tld)
   return _parseSearchTerm(term, true)
 }
 
