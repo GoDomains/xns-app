@@ -38,7 +38,7 @@ function banner(props) {
                 />
               </svg>
             </span>
-            <p style={{ 'font-size': '10px' }}>Install XDC Pay</p>
+            <p>Install XDC Pay</p>
           </li>
           <li>
             <span className="icon">

@@ -1,5 +1,11 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: local('MontSerrat-Local'),
+    url('./fonts/Montserrat-Light.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Trebuchet MS';
+  font-family: Montserrat;
 }

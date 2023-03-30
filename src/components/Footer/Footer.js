@@ -25,17 +25,17 @@ export default function Footer() {
           </p>
           <ul className="social">
             <li>
-              <a href="">
+              <a href="/faq">
                 <h2> FAQ </h2>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/terms-of-service">
                 <h2> Terms & Conditions </h2>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/about">
                 <h2> About Us </h2>
               </a>
             </li>
