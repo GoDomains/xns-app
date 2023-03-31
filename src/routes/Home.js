@@ -24,6 +24,7 @@ import Banner from '../components/Banner'
 import Testimonials from '../components/Testimonials/Testimonials'
 import Blog from '../components/Blog/Blog'
 import HeaderNew from '../components/Header/HeaderNew'
+import SearchFooter from '../components/SearchFooter/SearchFooter'
 
 const HeroTop = styled('div')`
   display: grid;
@@ -380,6 +381,7 @@ export default ({ match }) => {
       <Numbers />
       <Testimonials />
       <Blog />
+      <SearchFooter />
       <Footer />
     </HeroBGC>
   )
