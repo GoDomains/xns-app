@@ -134,7 +134,6 @@ function Search({ history, className, style }) {
         onChange={handleParse}
         autoCapitalize="off"
       />
-      <LanguageSwitcher />
       <button
         disabled={!hasSearch}
         type="submit"

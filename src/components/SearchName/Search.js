@@ -8,7 +8,6 @@ import { parseSearchTerm } from '../../utils/utils'
 import '../../api/subDomainRegistrar'
 import { withRouter } from 'react-router'
 import mq from 'mediaQuery'
-import LanguageSwitcher from '../LanguageSwitcher'
 
 const SearchForm = styled('form')`
   display: flex;
@@ -29,7 +28,7 @@ const SearchForm = styled('form')`
   }
 
   input {
-    padding: 20px 0 20px 55px;
+    padding: 10px 0 10px 40px;
     width: 100%;
     border: none;
     font-size: 18px;
@@ -55,12 +54,12 @@ const SearchForm = styled('form')`
     ${p => (p && p.hasSearch ? 'background: #02a5ff;' : 'background: #03c7ff;')}
     color: black;
     font-weight: 200;
-    font-size: 22px;
+    font-size: 28px;
     background-color: white;
     opacity: 0.5;
     border-radius: 0px 50px 50px 0px;
     padding: 20px 0;
-    height: 90px;
+    height: 75px;
     width: 162px;
     border: none;
     display: none;
@@ -130,7 +129,6 @@ function Search({ history, className, style }) {
         }
       }}
     >
-      <LanguageSwitcher />
       <input
         placeholder={t('search.placeholder')}
         ref={el => (input = el)}

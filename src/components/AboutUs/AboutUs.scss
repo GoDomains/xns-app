@@ -1,5 +1,5 @@
 .includes {
-  padding: 120px 0 60px;
+  padding: 0px 0 60px;
   h3 {
     text-align: center;
     font-weight: 600;
@@ -32,8 +32,8 @@
       margin: 15px;
       filter: url(#goo) drop-shadow(0px 0px 90px rgba(119, 118, 156, 0.12));
       .box {
-        width: 29.375vw;
-        height: 514px;
+        width: 22vw;
+        height: 400px;
         background: #ffffff;
         clip-path: polygon(
           0% 15%,
@@ -43,7 +43,7 @@
           100% 15%,
           50% 0%
         );
-        padding: 7.5vw 20px;
+        padding: 5.5vw 20px;
         box-shadow: 0px 0px 90px rgba(119, 118, 156, 0.12);
         display: flex;
         flex-direction: column;
@@ -67,20 +67,21 @@
           }
         }
         svg {
-          width: 90px;
+          width: 50px;
           margin-bottom: 24px;
         }
         h4 {
           font-weight: 700;
-          font-size: 2.5vw;
+          font-size: 1.2vw;
           line-height: 3.056vw;
           margin: 0 0 12px;
           text-align: center;
-          padding: 0 60px;
+          padding: 0;
         }
         p {
           font-weight: 400;
-          font-size: 18px;
+          font-size: 13px;
+          padding: 0 10px 0 10px;
           line-height: 28px;
           color: #5f5f7d;
           text-align: center;

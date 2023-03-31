@@ -37,7 +37,6 @@ function WhyGodomains() {
     <div className="problems">
       <div className="container why-box">
         <h3>
-          <span>Problems</span>
           Why You Need Blockchain <br /> Domain
         </h3>
         <div className="item-row">
@@ -45,7 +44,6 @@ function WhyGodomains() {
             <div className="sultion-item" key={i}>
               <img src={data.image} alt="" />
               <h4>{data.title}</h4>
-              <p>{data.description}</p>
             </div>
           ))}
         </div>

@@ -3,7 +3,7 @@ import './Numbers.scss'
 
 const ProblemsData = [
   {
-    title: '163',
+    title: '9374',
     description: 'Total Domains Sold'
   },
   {
@@ -25,7 +25,7 @@ function Numbers() {
     <div className="stastics">
       <div className="container number-box">
         <h3>
-          <span>stastics</span>
+          <span>statistics</span>
           GoDomains by the Numbers
         </h3>
         <div className="item-row">

@@ -243,7 +243,7 @@
   },
   "search": {
     "button": "Search",
-    "placeholder": "Search names or addresses"
+    "placeholder": "Search your domain"
   },
   "searchErrors": {
     "domainMalformed": {

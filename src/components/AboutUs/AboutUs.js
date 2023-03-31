@@ -5,8 +5,8 @@ const ProblemsData = [
   {
     image: (
       <svg
-        width="90"
-        height="90"
+        width="50"
+        height="50"
         viewBox="0 0 90 90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -37,8 +37,8 @@ const ProblemsData = [
   {
     image: (
       <svg
-        width="90"
-        height="90"
+        width="50"
+        height="50"
         viewBox="0 0 90 90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +83,8 @@ const ProblemsData = [
   {
     image: (
       <svg
-        width="90"
-        height="90"
+        width="50"
+        height="50"
         viewBox="0 0 90 90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -145,8 +145,8 @@ const ProblemsData = [
   {
     image: (
       <svg
-        width="90"
-        height="90"
+        width="50"
+        height="50"
         viewBox="0 0 90 90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -192,8 +192,8 @@ const ProblemsData = [
   {
     image: (
       <svg
-        width="90"
-        height="90"
+        width="50"
+        height="50"
         viewBox="0 0 90 90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -287,10 +287,7 @@ function AboutUs() {
   return (
     <div className="includes">
       <div className="container">
-        <h3>
-          <span>About</span>
-          Why GoDomains?
-        </h3>
+        <h3>Why GoDomains?</h3>
         <div className="item-row">
           {ProblemsData.map((data, i) => (
             <>
@@ -299,7 +296,7 @@ function AboutUs() {
                 key={i}
               >
                 <div className="box">
-                  {data.image}
+                  <div>{data.image}</div>
                   <h4>{data.title}</h4>
                   <p>{data.description}</p>
                 </div>

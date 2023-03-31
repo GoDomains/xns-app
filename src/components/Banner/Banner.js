@@ -9,7 +9,7 @@ function banner(props) {
     <div className="banner">
       <img src={BannerImage} alt="" />
       <div className="content">
-        <div className="Iam">
+        <div>
           <h1>Decentralized Domains</h1>
         </div>
         <br />

@@ -41,8 +41,8 @@
 
     .home-search {
       position: absolute;
-      left: 26%;
-      width: 50%;
+      left: 30%;
+      width: 40%;
     }
 
     ul.option-area {
@@ -57,18 +57,18 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 20px 30px;
+        padding: 20px 50px;
 
         span.icon {
-          width: 6.944vw;
-          height: 6.944vw;
+          width: 5vw;
+          height: 5vw;
           background: linear-gradient(
             180deg,
             rgba(255, 255, 255, 0.24) 0%,
             rgba(255, 255, 255, 0.12) 100%
           );
           box-shadow: 0px 48px 60px rgba(115, 131, 139, 0.12);
-          border-radius: 2.5vw;
+          border-radius: 2.2vw;
           margin-bottom: 1.806vw;
           display: flex;
           justify-content: center;
@@ -76,7 +76,7 @@
         }
 
         p {
-          font-size: 1.2vw;
+          font-size: 1vw;
           line-height: 1.667vw;
           text-align: center;
           color: #ffffff;

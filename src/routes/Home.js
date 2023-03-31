@@ -21,6 +21,8 @@ import StatisticSteps from '../components/StatisticSteps/StatisticSteps'
 import WhyGodomains from '../components/WhyGodomains/WhyGodomains'
 import Numbers from '../components/Numbers/Numbers'
 import Banner from '../components/Banner'
+import Testimonials from '../components/Testimonials/Testimonials'
+import Blog from '../components/Blog/Blog'
 import HeaderNew from '../components/Header/HeaderNew'
 
 const HeroTop = styled('div')`
@@ -376,6 +378,8 @@ export default ({ match }) => {
 
       <WhyGodomains />
       <Numbers />
+      <Testimonials />
+      <Blog />
       <Footer />
     </HeroBGC>
   )
