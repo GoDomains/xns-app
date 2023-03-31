@@ -8,7 +8,7 @@ function SearchFooter() {
       <div className="container">
         <div className="box">
           <h4>one step away</h4>
-          <h3>Just Type your Domain Name</h3>
+          <h3>Own your domain, Search now!</h3>
           <div className="search-footer">
             <SearchContainer>
               <>
