@@ -2,8 +2,8 @@ import ReactGA from 'react-ga'
 import { getNetworkId } from '@ensdomains/ui'
 
 const TrackingID = {
-  live: 'G-19BC3CGS4S',
-  dev: 'G-19BC3CGS4S'
+  live: 'G-0EQKW29W5N',
+  dev: 'G-0EQKW29W5N'
 }
 
 function isProduction() {
