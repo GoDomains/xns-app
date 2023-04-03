@@ -79,7 +79,7 @@ const Account = styled('div')`
 `
 
 const AccountContainer = styled('div')`
-  padding: 10px 10px 10px 65px;
+  padding: 10px 10px 10px 20px;
   position: relative;
   ${mq.medium`
     transform: translate(-25px, 5px);

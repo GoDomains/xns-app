@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/client'
 import NetworkInformation from '../NetworkInformation/NetworkInformation'
 import Heart from '../Icons/Heart'
 import File from '../Icons/File'
+import { ReactComponent as TncIcon } from '../../assets/tnc-side.svg'
 import { aboutPageURL, hasNonAscii } from '../../utils/utils'
 // import SpeechBubble from '../Icons/SpeechBubble'
 import { ReactComponent as FaqIcon } from '../../assets/faqIcon.svg'
@@ -213,8 +214,8 @@ function SideNav({ match, isMenuOpen, toggleMenu }) {
             active={url === '/terms-of-service' ? 1 : 0}
             to="/terms-of-service"
           >
-            <Info />
-            <p>Terms of Service</p>
+            <TncIcon />
+            <span>Terms </span>
           </NavLink>
         </li>
       </ul>

@@ -1,5 +1,9 @@
 import React from 'react'
 import './Blog.scss'
+import Article1 from '../../assets/article1.webp'
+import Article2 from '../../assets/article2.webp'
+import Article3 from '../../assets/article3.webp'
+import Article4 from '../../assets/article4.webp'
 import Ethereum from '../../assets/ethe.png'
 import Polygon from '../../assets/poly.png'
 import Solana from '../../assets/sola.png'
@@ -8,32 +12,43 @@ import { Link } from 'react-router-dom'
 
 const reviewData = [
   {
-    image: Ethereum,
-    title: 'Build using ',
+    image: Article1,
+    time: '5 min read ',
     subTitle: 'Ethereum',
-    description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore'
+    link:
+      'https://medium.com/@godomains/big-tech-giants-are-afraid-of-crypto-domains-877fa1d3c612',
+    image: Article1,
+    description: 'Big Tech Giants Are Afraid of Crypto Domains'
   },
   {
     image: Polygon,
-    title: 'Build using',
+    time: '5 min read',
     subTitle: 'Polygon',
+    link:
+      'https://medium.com/@godomains/domains-as-assets-the-new-way-of-investing-in-the-world-of-crypto-a91f3a21f6b5',
+    image: Article2,
     description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore'
+      'Domains-As-Assets: The New Way of Investing in the World of Crypto'
   },
   {
     image: Solana,
-    title: 'Build using',
+    time: '3 min read',
     subTitle: 'Solana',
+    link:
+      'https://medium.com/@godomains/blockchain-domains-demystified-traditional-domains-vs-blockchain-domains-f52070a35f5d',
+    image: Article3,
     description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore'
+      'Blockchain Domains Demystified: Traditional Domains vs. Blockchain Domains'
   },
   {
     image: Binance,
-    title: 'Build using',
+    time: '2 min read',
     subTitle: 'Binance',
+    link:
+      'https://medium.com/@godomains/businesses-can-now-register-their-trademark-blockchain-domains-with-godomains-e2eef5d3174c',
+    image: Article4,
     description:
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore'
+      'Businesses can now register their trademark blockchain domains with Godomains.'
   }
 ]
 
@@ -48,10 +63,11 @@ function Blog() {
               <div className="item" key={i}>
                 <img src={data.image} alt="" />
                 <div className="details">
-                  <h4>{data.title}</h4>
-                  <h5>{data.subTitle}</h5>
-                  <p>{data.description}</p>
-                  <Link to={''}>Learn more</Link>
+                  <h4>{data.time}</h4>
+                  <div className="description">
+                    <p>{data.description}</p>
+                  </div>
+                  <a href={data.link}>Read</a>
                 </div>
               </div>
             </>

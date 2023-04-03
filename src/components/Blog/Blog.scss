@@ -64,6 +64,9 @@
       .details {
         padding: 0 18px;
       }
+      .description {
+        height: 100px;
+      }
 
       p {
         font-weight: 400;
@@ -78,6 +81,7 @@
         margin-bottom: 18px;
         z-index: 1;
         position: relative;
+        border-radius: 18px 18px 0 0;
       }
       h4 {
         font-weight: 600;

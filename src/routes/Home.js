@@ -25,6 +25,7 @@ import Testimonials from '../components/Testimonials/Testimonials'
 import Blog from '../components/Blog/Blog'
 import HeaderNew from '../components/Header/HeaderNew'
 import SearchFooter from '../components/SearchFooter/SearchFooter'
+import Navigation from '../components/Navigation/Navigation'
 
 const HeroTop = styled('div')`
   display: grid;
@@ -380,6 +381,7 @@ export default ({ match }) => {
 
       <WhyGodomains />
       <Numbers />
+      <Navigation />
       <Testimonials />
       <Blog />
       <SearchFooter />

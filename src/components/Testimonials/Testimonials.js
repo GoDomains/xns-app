@@ -22,6 +22,13 @@ const reviewData = [
     subTitle: 'Fondateur : VRTeam Designs',
     description:
       'I wanted a decentralized domain, the whole process of getting one was super smooth on GoDomains'
+  },
+  {
+    image: 'https://randomuser.me/api/portraits/women/39.jpg',
+    title: 'Maya Manders',
+    subTitle: 'Fondateur : CreativeCo.',
+    description:
+      'GoDomains is truly an amazing platform. The prices are reasonable as well.'
   }
 ]
 

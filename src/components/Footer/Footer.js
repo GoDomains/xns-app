@@ -6,6 +6,7 @@ import Twitter from '../../assets/Twitter.svg'
 import Facebook from '../../assets/Facebook.svg'
 import Instagram from '../../assets/Instagram.svg'
 import FooterAnimation from './FooterAnimation'
+import Medium from '../../assets/Medium.svg'
 
 export default function Footer() {
   return (
@@ -23,23 +24,40 @@ export default function Footer() {
             -savvy! Backed by a team of industry veterans and local technical
             professionals who ensure our customers always get the best
           </p>
-          <ul className="social">
+          <ul className="social-media">
             <li>
-              <a href="/faq">
-                <h2> FAQ </h2>
+              <a href="https://medium.com/@godomains">
+                <img src={Medium} alt="" />
               </a>
             </li>
             <li>
-              <a href="/terms-of-service">
-                <h2> Terms & Conditions </h2>
+              <a href="https://twitter.com/godomainsio/">
+                <img src={Twitter} alt="" />
               </a>
             </li>
             <li>
-              <a href="/about">
-                <h2> About Us </h2>
+              <a href="">
+                <img src={Facebook} alt="" />
               </a>
             </li>
           </ul>
+          {/*           <ul className="social"> */}
+          {/*             <li> */}
+          {/*               <a href="/faq"> */}
+          {/*                 <h2> FAQ </h2> */}
+          {/*               </a> */}
+          {/*             </li> */}
+          {/*             <li> */}
+          {/*               <a href="/terms-of-service"> */}
+          {/*                 <h2> Terms </h2> */}
+          {/*               </a> */}
+          {/*             </li> */}
+          {/*             <li> */}
+          {/*               <a href="/about"> */}
+          {/*                 <h2> About </h2> */}
+          {/*               </a> */}
+          {/*             </li> */}
+          {/*           </ul> */}
         </div>
         <p className="copyright">
           Copyright © 2022 <a href="#">Godomains.com</a> | All rights reserved.

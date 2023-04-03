@@ -8,6 +8,7 @@ import { parseSearchTerm } from '../../utils/utils'
 import '../../api/subDomainRegistrar'
 import { withRouter } from 'react-router'
 import mq from 'mediaQuery'
+import Language from '../../assets/globe.svg'
 
 const SearchForm = styled('form')`
   display: flex;
@@ -28,17 +29,13 @@ const SearchForm = styled('form')`
   }
 
   input {
-    padding: 10px 0 10px 40px;
+    padding-left: 20px;
     width: 100%;
     border: none;
     font-size: 18px;
     color: white;
     font-weight: 100;
-    background: rgba(255, 255, 255, 0.18);
-    ${mq.medium`
-      width: calc(100% - 162px);
-      font-size: 28px;
-    `}
+    background: transparent;
 
     &:focus {
       outline: 0;
@@ -50,22 +47,23 @@ const SearchForm = styled('form')`
     }
   }
 
+  .search-icon img {
+    position: unset;
+    padding: 4px 0 0 5px;
+    width: 40px;
+  }
+
   button {
-    ${p => (p && p.hasSearch ? 'background: #02a5ff;' : 'background: #03c7ff;')}
-    color: black;
-    font-weight: 200;
-    font-size: 28px;
-    background-color: white;
-    opacity: 0.5;
-    border-radius: 0px 50px 50px 0px;
-    padding: 20px 0;
-    height: 75px;
-    width: 162px;
-    border: none;
-    display: none;
-    ${mq.medium`
-      display: block;
-    `}
+    ${p => (p && p.hasSearch ? 'background: #AAEA03;' : 'background: #AAEA03;')}
+    width: 140px;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 12px 12px 12px 12px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       ${p => (p && p.hasSearch ? 'cursor: pointer;' : 'cursor: default;')}
@@ -129,6 +127,9 @@ function Search({ history, className, style }) {
         }
       }}
     >
+      <div className="search-icon">
+        <img src={Language} alt="" />
+      </div>
       <input
         placeholder={t('search.placeholder')}
         ref={el => (input = el)}
