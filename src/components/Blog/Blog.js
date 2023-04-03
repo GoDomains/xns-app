@@ -41,10 +41,7 @@ function Blog() {
   return (
     <div className="buy-domain">
       <div className="container blog-box">
-        <h3>
-          Buy Now. <br />
-          Sell Later for a Profit.
-        </h3>
+        <h3>Buy Now. Sell Later for a Profit.</h3>
         <div className="item-row">
           {reviewData.map((data, i) => (
             <>

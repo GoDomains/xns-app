@@ -29,9 +29,7 @@ function Testimonials() {
   return (
     <div className="includes-users">
       <div className="container testimonial-box">
-        <h3>
-          What our users say about <br /> GoDomains!
-        </h3>
+        <h3>What our users say about GoDomains!</h3>
         <div className="item-row">
           {reviewData.map((data, i) => (
             <>

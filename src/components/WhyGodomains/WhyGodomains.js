@@ -36,9 +36,7 @@ function WhyGodomains() {
   return (
     <div className="problems">
       <div className="container why-box">
-        <h3>
-          Why You Need Blockchain <br /> Domain
-        </h3>
+        <h3>Why You Need Blockchain Domain</h3>
         <div className="item-row">
           {ProblemsData.map((data, i) => (
             <div className="sultion-item" key={i}>

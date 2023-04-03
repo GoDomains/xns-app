@@ -4,11 +4,11 @@ import './Numbers.scss'
 const ProblemsData = [
   {
     title: '9374',
-    description: 'Total Domains Sold'
+    description: 'Domains'
   },
   {
     title: '4$',
-    description: 'Cost to Host a Domain'
+    description: 'Starting Price'
   },
   {
     title: '5$',
@@ -16,7 +16,7 @@ const ProblemsData = [
   },
   {
     title: '24*7',
-    description: 'Customer Support'
+    description: 'Support'
   }
 ]
 

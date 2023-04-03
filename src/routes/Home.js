@@ -360,6 +360,7 @@ export default ({ match }) => {
         <NetworkStatus>
           <Network>
             {`${network} ${t('c.network')}`}
+            <br />
             {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
             {!isReadOnly && displayName && (
               <Name data-testid="display-name">
