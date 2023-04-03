@@ -13,7 +13,7 @@ function banner(props) {
           <h1>Decentralized Domains</h1>
         </div>
         <br />
-        <p>Give your crypto wallet address a human readable address!</p>
+        <p>Give your crypto wallet a human readable address!</p>
         <div className="home-search">
           <SearchContainer>
             <>

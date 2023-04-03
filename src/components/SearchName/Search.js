@@ -64,6 +64,7 @@ const SearchForm = styled('form')`
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
 
     &:hover {
       ${p => (p && p.hasSearch ? 'cursor: pointer;' : 'cursor: default;')}
