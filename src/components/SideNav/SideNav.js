@@ -96,12 +96,6 @@ const NavLink = styled(Link)`
     span {
       color: #03c7ff;
     }
-    path {
-      fill: #03c7ff;
-    }
-    g {
-      fill: #03c7ff;
-    }
   }
 `
 
