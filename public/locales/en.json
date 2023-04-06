@@ -243,7 +243,7 @@
   },
   "search": {
     "button": "SEARCH",
-    "placeholder": "Search your domain"
+    "placeholder": "Search your .go domain"
   },
   "searchErrors": {
     "domainMalformed": {

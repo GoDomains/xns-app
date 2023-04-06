@@ -64,7 +64,7 @@ const NavLink = styled(Link)`
   align-items: center;
   justify-content: center;
   font-weight: 200;
-  color: ${p => (p.active ? '#03c7ff' : '#C7D3E3')};
+  color: ${p => (p.active ? '#03c7ff' : '#86A3B8')};
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
@@ -74,14 +74,14 @@ const NavLink = styled(Link)`
   `}
 
   &:visited {
-    color: #c7d3e3;
+    color: #86a3b8;
   }
 
   span {
     transition: 0.2s;
     margin-left: 10px;
     font-size: 18px;
-    color: ${p => (p.active ? '#03c7ff' : '#C7D3E3')};
+    color: ${p => (p.active ? '#03c7ff' : '#86A3B8')};
   }
 
   p {

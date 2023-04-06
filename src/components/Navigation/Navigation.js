@@ -8,6 +8,11 @@ import About from '../../assets/about.svg'
 import Support from '../../assets/support.svg'
 const ProblemsData = [
   {
+    image: About,
+    title: 'About',
+    link: '/about'
+  },
+  {
     image: Faq,
     title: 'FAQ',
     link: '/faq'
@@ -17,11 +22,6 @@ const ProblemsData = [
     title: 'Terms',
     current: true,
     link: '/terms-of-service'
-  },
-  {
-    image: About,
-    title: 'About',
-    link: '/about'
   },
   {
     image: Support,

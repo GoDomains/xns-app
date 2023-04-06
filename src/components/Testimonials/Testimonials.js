@@ -5,28 +5,28 @@ const reviewData = [
   {
     image: 'https://randomuser.me/api/portraits/men/64.jpg',
     title: 'Pierrick Pretot ',
-    subTitle: 'Fondateur : Le Prospecteur',
+    subTitle: 'Founder : Le Prospecteur',
     description:
       'GoDomains is an amazing platform, I got my domain within a few minutes.'
   },
   {
     image: 'https://randomuser.me/api/portraits/men/29.jpg',
     title: 'Orel Hacman',
-    subTitle: 'Fondateur : Micromegas',
+    subTitle: 'Founder : Micromegas',
     description:
       'The GoDomains support is excellent. My problem was resolved in a day after being reported.'
   },
   {
     image: 'https://randomuser.me/api/portraits/women/32.jpg',
     title: 'Sandhya Mer',
-    subTitle: 'Fondateur : VRTeam Designs',
+    subTitle: 'Founder : VRTeam Designs',
     description:
       'I wanted a decentralized domain, the whole process of getting one was super smooth on GoDomains'
   },
   {
     image: 'https://randomuser.me/api/portraits/women/39.jpg',
     title: 'Maya Manders',
-    subTitle: 'Fondateur : CreativeCo.',
+    subTitle: 'Founder : CreativeCo.',
     description:
       'GoDomains is truly an amazing platform. The prices are reasonable as well.'
   }
