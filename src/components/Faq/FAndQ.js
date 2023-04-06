@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './FAndQ.scss'
+import Modal from 'react-modal'
 
 const reviewData = [
   {
+    id: 1,
     title: 'TOPIC',
     description: 'What is a Domain Name?',
     answer:
       'Your domain name is a key part of your online address, and is what your visitors will use to find you easily. For example, GoDomains domain name is GoDomains.io Your domain name is unique to you; once you have registered it, nobody else can register the same domain as long as you continue to renew it. Everything on the internet is located at a unique address which can be identified by a name or a number. Your computer finds different pages by looking them up using their unique numbers, but because these numbers would be hard to remember, the Domain Name System or DNS assigns a unique domain name to these numbers which we can use instead.\n'
   },
   {
+    id: 2,
     title: 'TOPIC',
     description:
       'What is Blockchain Domain? How are Blockchain domain different from traditional Domain Names?',
@@ -16,18 +19,21 @@ const reviewData = [
       'Blockchain Domains are new web extensions (like .com or .info) launched as smart contracts on blockchains.Unlike traditional Domain Names, Blockchain Domain name are stored in a wallet by the owner, much like a cryptocurrency, Blockchain domain names are also smart domain names which can provide forwarding to Website (IPFS), Wallet Address. A blockchain domain is an on the blockchain. Blockchain domains are designed to resolve your web address and wallet address using smart contracts.'
   },
   {
+    id: 3,
     title: 'TOPIC',
     description: 'How are BlockChain Domains created?',
     answer:
       'Blockchain Domains are built on the Crypto Name Service (CNS) — a set of smart contracts that determines how blockchain domains are created and utilized. Every CNS domain is issued as an ERC-721 token, also known as a non-fungible token (NFT). NFTs are unique, indivisible tokens and are often used to represent one-of-a-kind digital items. The use of the ERC-721 standard makes it easy for developers to integrate Blockchain based Domains into other applications, allowing users to manage their crypto domain ownership from compatible cryptocurrency wallets, exchanges, and marketplaces.'
   },
   {
+    id: 4,
     title: 'TOPIC',
     description: 'Is GoDomain extensions supported across all browser?',
     answer:
       'No, Blockchain based domains are not natively supported on all browsers, You require XDCPay for resolving these domains, This can be added as an extensions or add-ons, although this is almost certain to change in the near future. We also have domain extension support which could be added to browsers'
   },
   {
+    id: 5,
     title: 'TOPIC',
     description: 'How much does it cost to register domain name in GoDomains?',
     answer:
@@ -38,17 +44,20 @@ const reviewData = [
       '(This is subjected to change)'
   },
   {
+    id: 6,
     title: 'TOPIC',
     description: 'Which Currency can you use for Registration of .Go Domains?',
     answer: 'Currently users are required to pay USD equivalent fees in XDC'
   },
   {
+    id: 7,
     title: 'TOPIC',
     description: 'Can I host my website using GoDomains?',
     answer:
       'Since GoDomains are designed on smart contract, Hosting website option is currently limited to Interplanetary File System (IPFS).'
   },
   {
+    id: 8,
     title: 'TOPIC',
     description: 'How Do I Register Domain in GoDomains?',
     answer:
@@ -59,18 +68,21 @@ const reviewData = [
       'Kindly click here to see the vide demo'
   },
   {
+    id: 9,
     title: 'TOPIC',
     description: 'Why am I not able to search Domain Name for Registration?',
     answer:
       'GoDomain requires XDC Wallet with appropriate balance to be loaded and connect to the browser before you could search for domain names, Unless your wallet is connected with approrpirate XDC Balance Domain Name cannot be searched.'
   },
   {
+    id: 10,
     title: 'TOPIC',
     description: 'How can I register my domain?',
     answer:
       'From the home page enter the Domain Name you wish to Register and then click on search, The system will query from the list of domain names options available for registration, You follows the steps as mentioned and your domain name would be registered in simple steps.'
   },
   {
+    id: 11,
     title: 'TOPIC',
     description: 'How to connect my XDC Compatible Wallet in Browser?',
     answer:
@@ -81,6 +93,7 @@ const reviewData = [
       '5. In case, not connected, click on connect, and choose XDCPay.'
   },
   {
+    id: 12,
     title: 'TOPIC',
     description: 'Why is my wallet not connecting?',
     answer:
@@ -91,6 +104,7 @@ const reviewData = [
       '5. Set your wallet to XDC Mainnet, refresh the page.'
   },
   {
+    id: 13,
     title: 'TOPIC',
     description: 'How can I resolve my domain name/IPFS content?',
     answer:
@@ -98,6 +112,7 @@ const reviewData = [
       'Using the extension GoDOMAINS Content Resolver (Click Here to Download Browser Extension for Chrome/Edge)'
   },
   {
+    id: 14,
     title: 'TOPIC',
     description: 'How can I resolve my domain name/IPFS content?',
     answer:
@@ -108,6 +123,7 @@ const reviewData = [
       '5. In case no IPFS hash content is available it is redirected to 404, Not found Page.'
   },
   {
+    id: 15,
     title: 'TOPIC',
     description: 'How does GoDOMAINS Content Resolver works?',
     answer:
@@ -116,12 +132,14 @@ const reviewData = [
       'Finally, it is redirected to IPFS hash content on IPFS gateway ("https://gateway.ipfs.io/ipfs/" + ipfsHash).'
   },
   {
+    id: 16,
     title: 'TOPIC',
     description: 'Are GoDomains only for Crypto Users?',
     answer:
       'At the moment, the vast majority of these domains are used for crypto-related things. In addition, you have to use cryptocurrency to buy them, so from that point of view ― yes. A small but growing number of websites and services unrelated to crypto are starting to take advantage of these domains as well.'
   },
   {
+    id: 17,
     title: 'TOPIC',
     description:
       'What happen with my domain when it expires? Can I get it back?',
@@ -129,12 +147,14 @@ const reviewData = [
       'Its suggested that you renew your domain name at least 15 to 30 days prior to domain expiry. In case the user forgets to renew the domain name it will be lost and available for fresh registration to any one on first come basis.'
   },
   {
+    id: 18,
     title: 'TOPIC',
     description: 'How many domains can I register with you?',
     answer:
       'We do not have such limitations. You can register as many domains as you want.'
   },
   {
+    id: 19,
     title: 'TOPIC',
     description:
       'What Domain extensions are the options currently available on GoDomains for registration?',
@@ -142,18 +162,21 @@ const reviewData = [
       'Currently GoDomain has options for .go extension only, However this is going to change soon and we would supporting multiple domain names.'
   },
   {
+    id: 20,
     title: 'TOPIC',
     description: 'How long does it take to register my domain?',
     answer:
       'The process of domain registration at GoDomains takes minutes provided you already have all the information required, Domain Details, Funds and Wallet Connection.'
   },
   {
+    id: 21,
     title: 'TOPIC',
     description: 'Can I register a domain name without hosting it?',
     answer:
       'Yes, GoDomain reside in your wallet like crypto tokens, You can easily transfer it from one wallet to another. (Click here for more details).'
   },
   {
+    id: 22,
     title: 'TOPIC',
     description: 'Can I invest in GoDomain extensions?',
     answer:
@@ -161,6 +184,7 @@ const reviewData = [
       'Of course, to actually make a use of your domain and build a website, you need to choose a hosting service that will support your needs. In case you want to create a website, you shouldn’t leave your domain parked for too long.'
   },
   {
+    id: 23,
     title: 'TOPIC',
     description: 'What are some advantage of Blockchain Based Domain Name?',
     answer:
@@ -170,6 +194,7 @@ const reviewData = [
       'Holistic Access to DApps: GoDomains provide native support for decentralised apps, making them more accessible.'
   },
   {
+    id: 24,
     title: 'TOPIC',
     description: 'What are some disadvantage of Blockchain Based Domain Name?',
     answer:
@@ -178,6 +203,7 @@ const reviewData = [
       'Specific Hosting: To host a website using an GoDomains, you will need to use a hosting service that uses InterPlanetary File System (IPFS).\n'
   },
   {
+    id: 25,
     title: 'TOPIC',
     description: 'Why should I invest in Premium Domain Names?',
     answer:
@@ -185,7 +211,51 @@ const reviewData = [
   }
 ]
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    height: '40%',
+    right: 'auto',
+    width: '50%',
+    justifyContent: 'center',
+    textAlign: 'center',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)'
+  },
+  overlay: {
+    zIndex: 99,
+    background: 'transparent',
+    borderRadius: '50%'
+  }
+}
+
 function FAndQ() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const handleClick = id => {
+    console.log('handle div', id)
+    setIsModalOpen(!isModalOpen)
+  }
+  const ModalComponent = ({ id, isOpen, onRequestClose }) => {
+    console.log('=============>', id)
+    console.log('=============>', reviewData)
+    console.log('=============>', reviewData.find(q => q.id === id))
+    var review = reviewData.find(q => q.id === id)
+    const answer = review && review.answer
+    return (
+      <Modal
+        isOpen={isOpen}
+        style={customStyles}
+        onRequestClose={() => setIsModalOpen(false)}
+      >
+        <div className="close" key={id}>
+          X
+        </div>
+        <p>{answer}</p>
+      </Modal>
+    )
+  }
   return (
     <div className="faq">
       <div className="container">
@@ -263,13 +333,20 @@ function FAndQ() {
                     </clipPath>
                   </defs>
                 </svg>
-                <div className="details">
+                <div className="details" key={i} onClick={handleClick}>
                   <p>
                     <span>{data.title}</span>
                   </p>
                   <p>{data.description}</p>
-                  <h4>{data.answer}</h4>
+                  {/*                   <h4>{data.answer}</h4> */}
                 </div>
+                {isModalOpen && (
+                  <ModalComponent
+                    id={data.id}
+                    isOpen={isModalOpen}
+                    onRequestClose={() => setIsModalOpen(false)}
+                  />
+                )}
               </div>
             </>
           ))}
