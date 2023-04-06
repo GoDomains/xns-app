@@ -21,7 +21,8 @@ import {
   networkReactive,
   reverseRecordReactive,
   subDomainFavouritesReactive,
-  web3ProviderReactive
+  web3ProviderReactive,
+  isENSReadyReactive
 } from './apollo/reactiveVars'
 import { setupAnalytics } from './utils/analytics'
 import { getReverseRecord } from './apollo/sideEffects'
@@ -165,6 +166,23 @@ export const setWeb3Provider = async provider => {
 }
 
 export default async reconnect => {
+  if (!reconnect) {
+    try {
+      await setup({
+        customProvider: 'https://rpc.xinfin.network',
+        reloadOnAccountsChange: false,
+        enforceReload: true
+      })
+      isENSReadyReactive(true)
+      networkIdReactive(await getNetworkId())
+      networkReactive(await getNetwork())
+      networkNameReactive(await getNetworkName())
+      fetchNetworkReactive(await fetchNetwork())
+      return
+    } catch (error) {
+      throw error
+    }
+  }
   try {
     setFavourites()
     setSubDomainFavourites()

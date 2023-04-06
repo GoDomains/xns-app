@@ -75,7 +75,7 @@ const Value = styled('li')`
     justify-content: flex-start;
   `}
 
-  span:first-child {
+  span:first-of-type {
     width: 75px;
   }
 `

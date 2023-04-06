@@ -39,7 +39,7 @@ export const setupAnalytics = () => {
     ReactGA.initialize(TrackingID.dev)
     ReactGA.plugin.require('ecommerce', { debug: true })
     console.log(
-      'Analytics setup for godomain.yodaplus.net using GA4 ',
+      'Analytics setup for goDomains.io using GTAG with ',
       TrackingID.dev
     )
   }
