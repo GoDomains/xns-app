@@ -37,19 +37,21 @@ function Navigation() {
         <h3>Quick Actions</h3>
         <div className="item-row">
           {ProblemsData.map((data, i) => (
-            <div
-              className={`stastics-item ${data.current ? 'current' : ''}`}
-              key={i}
-            >
-              <span className="image">
-                <img src={data.image} onclick="window.open()" alt="" />
-              </span>
+            <a href={data.link}>
+              <div
+                className={`stastics-item ${data.current ? 'current' : ''}`}
+                key={i}
+              >
+                <span className="image">
+                  <img src={data.image} onclick="window.open()" alt="" />
+                </span>
 
-              <a href={data.link}>
-                <h4>{data.title}</h4>
-              </a>
-              <span className="count">{i + 1}</span>
-            </div>
+                <a href={data.link}>
+                  <h4>{data.title}</h4>
+                </a>
+                <span className="count">{i + 1}</span>
+              </div>
+            </a>
           ))}
         </div>
       </div>
