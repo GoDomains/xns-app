@@ -33,15 +33,15 @@
     display: flex;
     justify-content: space-between;
     .stastics-item {
-      padding: 30px 110px 60px;
+      padding: 30px 115px 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
 
       background: #ffffff;
       box-shadow: 0px 24px 48px rgba(119, 118, 156, 0.06);
       border-radius: 18px;
-      margin: 0 15px;
       position: relative;
       &.current {
         span.count {
@@ -71,7 +71,7 @@
           justify-content: center;
           align-items: center;
           font-weight: 700;
-          font-size: 30px;
+          font-size: 20px;
           line-height: 30px;
           color: #ffffff;
         }

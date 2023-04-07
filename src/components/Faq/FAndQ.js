@@ -215,9 +215,9 @@ const customStyles = {
   content: {
     top: '50%',
     left: '50%',
-    height: '40%',
+    height: 'auto',
     right: 'auto',
-    width: '50%',
+    width: '30%',
     justifyContent: 'center',
     textAlign: 'center',
     bottom: 'auto',
@@ -227,30 +227,28 @@ const customStyles = {
   overlay: {
     zIndex: 99,
     background: 'transparent',
+    transparent: '50%',
     borderRadius: '50%'
   }
 }
 
 function FAndQ() {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const handleClick = id => {
+  const [modalAnswer, setmodalAnswer] = useState(null)
+  const handleClick = (id, answer) => {
     console.log('handle div', id)
+    setmodalAnswer(answer)
     setIsModalOpen(!isModalOpen)
   }
-  const ModalComponent = ({ id, isOpen, onRequestClose }) => {
-    console.log('=============>', id)
-    console.log('=============>', reviewData)
-    console.log('=============>', reviewData.find(q => q.id === id))
-    var review = reviewData.find(q => q.id === id)
-    const answer = review && review.answer
+  const ModalComponent = ({ id, isOpen, answer, onRequestClose }) => {
     return (
       <Modal
         isOpen={isOpen}
         style={customStyles}
         onRequestClose={() => setIsModalOpen(false)}
       >
-        <div className="close" key={id}>
-          X
+        <div className="close" key={id} onClick={() => setIsModalOpen(false)}>
+          <span>X</span>
         </div>
         <p>{answer}</p>
       </Modal>
@@ -266,7 +264,11 @@ function FAndQ() {
         <div className="item-row">
           {reviewData.map((data, i) => (
             <>
-              <div className="item" key={i}>
+              <div
+                className="item"
+                key={i}
+                onClick={() => handleClick(data.id, data.answer)}
+              >
                 <svg
                   width="90"
                   height="90"
@@ -333,10 +335,11 @@ function FAndQ() {
                     </clipPath>
                   </defs>
                 </svg>
-                <div className="details" key={i} onClick={handleClick}>
-                  <p>
-                    <span>{data.title}</span>
-                  </p>
+                <div
+                  className="details"
+                  key={data.id}
+                  onClick={() => handleClick(data.id, data.answer)}
+                >
                   <p>{data.description}</p>
                   {/*                   <h4>{data.answer}</h4> */}
                 </div>
@@ -344,6 +347,7 @@ function FAndQ() {
                   <ModalComponent
                     id={data.id}
                     isOpen={isModalOpen}
+                    answer={modalAnswer}
                     onRequestClose={() => setIsModalOpen(false)}
                   />
                 )}
