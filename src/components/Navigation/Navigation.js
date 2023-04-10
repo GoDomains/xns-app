@@ -46,9 +46,7 @@ function Navigation() {
                   <img src={data.image} onclick="window.open()" alt="" />
                 </span>
 
-                <a href={data.link}>
-                  <h4>{data.title}</h4>
-                </a>
+                <h4>{data.title}</h4>
                 <span className="count">{i + 1}</span>
               </div>
             </a>

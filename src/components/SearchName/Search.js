@@ -9,6 +9,7 @@ import '../../api/subDomainRegistrar'
 import { withRouter } from 'react-router'
 import mq from 'mediaQuery'
 import Language from '../../assets/globe.svg'
+import LoadingAnimation from './LoadingAnimation'
 
 const SearchForm = styled('form')`
   display: flex;
@@ -142,7 +143,7 @@ function Search({ history, className, style }) {
         type="submit"
         data-testid={'home-search-button'}
       >
-        {t('search.button')}
+        {!isENSReady ? <LoadingAnimation /> : t('search.button')}
       </button>
     </SearchForm>
   )

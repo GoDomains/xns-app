@@ -32,6 +32,9 @@
   .item-row {
     display: flex;
     justify-content: space-between;
+    a {
+      width: calc(25% - 30px);
+    }
     .stastics-item {
       padding: 30px 115px 30px;
       display: flex;
@@ -86,6 +89,7 @@
         text-align: center;
         margin: 0;
         color: #1e1810;
+        padding-bottom: 10px;
       }
       p {
         font-weight: 400;
