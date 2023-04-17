@@ -58,6 +58,50 @@ const IconLogo = styled('img')`
   margin-left: 20px;
 `
 
+const HeadLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+  color: ${p => (p.active ? '#03c7ff' : '#86A3B8')};
+  padding: 10px 0;
+  margin-top: -55px;
+  margin-right: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  ${mq.medium`
+    justify-content: start;
+    border-bottom: 0;
+  `}
+
+  &:visited {
+    color: #86a3b8;
+  }
+
+  span {
+    transition: 0.2s;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  p {
+    transition: 0.2s;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 0;
+    color: ${p => (p.active ? '#03c7ff' : '#C7D3E3')};
+  }
+
+  &:hover {
+    span {
+      color: #03c7ff;
+    }
+  }
+`
+
 const TagLine = styled('div')`
   color: #ffffff;
   display: inline-block;
@@ -75,6 +119,17 @@ const MidGrid = styled('div')`
   display: flex;
 `
 
+const NetworkCard = styled('div')`
+  display: flex;
+  flex-direction: column;
+`
+
+const MyAccount = styled('div')`
+  display: flex;
+  align-items: center;
+  color: #fff;
+`
+
 const NetworkStatus = styled('div')`
   z-index: 5;
   margin-right: 20px;
@@ -82,9 +137,9 @@ const NetworkStatus = styled('div')`
   color: white;
   font-weight: 400;
   text-transform: capitalize;
-  display: none;
+  display: flex;
   ${mq.small`
-    display: block;
+    display: flex;
   `}
   ${mq.medium`
     left: 40px;
@@ -96,7 +151,7 @@ const NetworkStatus = styled('div')`
     top: 50%;
     transform: translate(-5px, -50%);
     content: '';
-    display: block;
+    display: flex;
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -357,24 +412,33 @@ export default ({ match }) => {
     <HeroBGC>
       <NetworkLogoGrid>
         <HeaderNew />
-
         <NetworkStatus>
-          <Network>
-            {`${network} ${t('c.network')}`}
-            <br />
-            {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
-            {!isReadOnly && displayName && (
-              <Name data-testid="display-name">
-                ({ethToXDCAddress(displayName)})
-              </Name>
-            )}
-          </Network>
-          {!isSafeApp && (
-            <NoAccounts
-              onClick={isReadOnly ? connectProvider : disconnectProvider}
-              buttonText={isReadOnly ? t('c.connect') : t('c.disconnect')}
-            />
+          {isReadOnly ? null : (
+            <HeadLink
+              to={'/address/' + accounts?.[0]}
+              active={isReadOnly ? 0 : 1}
+            >
+              <span>{t('c.mynames')}</span>
+            </HeadLink>
           )}
+          <NetworkCard>
+            <Network>
+              {`${network} ${t('c.network')}`}
+              <br />
+              {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
+              {!isReadOnly && displayName && (
+                <Name data-testid="display-name">
+                  ({ethToXDCAddress(displayName)})
+                </Name>
+              )}
+            </Network>
+            {!isSafeApp && (
+              <NoAccounts
+                onClick={isReadOnly ? connectProvider : disconnectProvider}
+                buttonText={isReadOnly ? t('c.connect') : t('c.disconnect')}
+              />
+            )}
+          </NetworkCard>
         </NetworkStatus>
       </NetworkLogoGrid>
       <Banner />
