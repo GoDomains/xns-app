@@ -143,7 +143,8 @@ function Search({ history, className, style }) {
         type="submit"
         data-testid={'home-search-button'}
       >
-        {!isENSReady ? <LoadingAnimation /> : t('search.button')}
+        {/* {!isENSReady ? <LoadingAnimation /> : t('search.button')} */}
+        {!isENSReady ? 'Loading' : t('search.button')}
       </button>
     </SearchForm>
   )
