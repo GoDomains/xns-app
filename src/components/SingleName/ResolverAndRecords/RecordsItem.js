@@ -68,7 +68,6 @@ export const RecordsKey = styled(DetailsKey)`
 `
 
 export const RecordsSubKey = styled('div')`
-  font-family: Open Sans;
   font-weight: 500;
   font-size: 14px;
   color: #adbbcd;
@@ -84,7 +83,6 @@ export const RecordsSubKey = styled('div')`
 export const RecordsValue = styled(DetailsValue)`
   font-size: 14px;
 
-  font-family: Open Sans;
   margin-top: 1em;
   ${mq.small`
       margin-top: 0;

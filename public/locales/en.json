@@ -39,8 +39,8 @@
     "cancel": "Cancel",
     "cannotclaimDns": "You cannot claim names under .{{ name }} on this site.",
     "claim": "Claim",
-    "connect": "Connect",
-    "disconnect": "Disconnect",
+    "connect": "Connect Wallet",
+    "disconnect": "Disconnect Wallet",
     "edit": "Edit",
     "email": "Email",
     "expires": "Expires",
@@ -201,18 +201,18 @@
     },
     "step1": {
       "label": "Step 1",
-      "text": "Your wallet will open and you will be asked to confirm the first of two transactions required for registration.",
-      "text2": "If the second transaction is not processed within 7 days of the first, you will need to start again from step 1.",
+      "text": "Your wallet will open and you need to confirm the transaction. ",
+      "text2": "This is first our of Two confirmations need, to complete registration. Subsequently second transaction needs to be completed.",
       "title": "Request to register"
     },
     "step2": {
       "label": "Step 2",
-      "text": "The waiting period is required to ensure another person hasn’t tried to register the same name and protect you after your request.",
-      "title": "Wait for 1 minute"
+      "text": "System reconfirms the availability of domain and if available request is sent to blockchain for registration. This process takes 1 Minute approximately",
+      "title": "Verification/Registration Queue"
     },
     "step3": {
       "label": "Step 3",
-      "text": "Click ‘register’ and your wallet will re-open. Only after the 2nd transaction is confirmed you'll know if you got the name.",
+      "text": "Click on “Register” and your wallet will reopen for transaction confirmation and domain name will be allocated based on availability.",
       "title": "Complete Registration"
     },
     "titles": [
@@ -242,8 +242,8 @@
     }
   },
   "search": {
-    "button": "Search",
-    "placeholder": "Search names or addresses"
+    "button": "SEARCH",
+    "placeholder": "Search your .go domain"
   },
   "searchErrors": {
     "domainMalformed": {

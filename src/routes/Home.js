@@ -8,26 +8,25 @@ import mq from 'mediaQuery'
 import { ethToXDCAddress } from '../utils/utils'
 import SearchDefault from '../components/SearchName/Search'
 import NoAccountsDefault from '../components/NoAccounts/NoAccountsModal'
-/* import bg from '../assets/heroBG.jpg' */
-// import bg from '../assets/StorXBG.png'
-import rocket from '../assets/rocket.png'
-// import storxLogo from '../assets/logo.png'
 import bg from '../assets/BG.png'
-import bgc from '../assets/BGColor.png'
-// import rocket from '../assets/NewRocket.png'
-// import storxLogo from '../assets/StorxLogo.png'
-import goDomainsLogo from '../assets/goDomainsLogo.png'
+
 import TextBubbleDefault from '../components/Icons/TextBubble'
 import QuestionMarkDefault from '../components/Icons/QuestionMark'
 import HowToUseDefault from '../components/HowToUse/HowToUse'
-// import ENSLogo from '../components/HomePage/images/ENSLogo.svg'
-import { aboutPageURL } from '../utils/utils'
 import { connectProvider, disconnectProvider } from '../utils/providerUtils'
 import { gql } from '@apollo/client'
-import {
-  MainPageBannerContainer,
-  DAOBannerContent
-} from '../components/Banner/DAOBanner'
+
+import Footer from '../components/Footer/Footer'
+import StatisticSteps from '../components/StatisticSteps/StatisticSteps'
+import WhyGodomains from '../components/WhyGodomains/WhyGodomains'
+import Numbers from '../components/Numbers/Numbers'
+import Banner from '../components/Banner'
+import Testimonials from '../components/Testimonials/Testimonials'
+import Blog from '../components/Blog/Blog'
+import HeaderNew from '../components/Header/HeaderNew'
+import SearchFooter from '../components/SearchFooter/SearchFooter'
+import Navigation from '../components/Navigation/Navigation'
+import AboutUs from '../components/AboutUs/AboutUs'
 
 const HeroTop = styled('div')`
   display: grid;
@@ -59,6 +58,50 @@ const IconLogo = styled('img')`
   margin-left: 20px;
 `
 
+const HeadLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+  color: ${p => (p.active ? '#03c7ff' : '#86A3B8')};
+  padding: 10px 0;
+  margin-top: -55px;
+  margin-right: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  ${mq.medium`
+    justify-content: start;
+    border-bottom: 0;
+  `}
+
+  &:visited {
+    color: #86a3b8;
+  }
+
+  span {
+    transition: 0.2s;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  p {
+    transition: 0.2s;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 0;
+    color: ${p => (p.active ? '#03c7ff' : '#C7D3E3')};
+  }
+
+  &:hover {
+    span {
+      color: #03c7ff;
+    }
+  }
+`
+
 const TagLine = styled('div')`
   color: #ffffff;
   display: inline-block;
@@ -67,20 +110,36 @@ const TagLine = styled('div')`
   align-self: flex-end;
 `
 const NetworkLogoGrid = styled('div')`
+  justify-content: space-between;
   display: flex;
+  z-index: 5;
 `
 const MidGrid = styled('div')`
   margin-bottom: 10px;
   display: flex;
 `
 
+const NetworkCard = styled('div')`
+  display: flex;
+  flex-direction: column;
+`
+
+const MyAccount = styled('div')`
+  display: flex;
+  align-items: center;
+  color: #fff;
+`
+
 const NetworkStatus = styled('div')`
+  z-index: 5;
+  margin-right: 20px;
+  margin-top: 10px;
   color: white;
-  font-weight: 200;
+  font-weight: 400;
   text-transform: capitalize;
-  display: none;
+  display: flex;
   ${mq.small`
-    display: block;
+    display: flex;
   `}
   ${mq.medium`
     left: 40px;
@@ -92,7 +151,7 @@ const NetworkStatus = styled('div')`
     top: 50%;
     transform: translate(-5px, -50%);
     content: '';
-    display: block;
+    display: flex;
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -171,7 +230,6 @@ const Hero = styled('section')`
   `}
 `
 const HeroBGC = styled('section')`
-  background: url(${bgc});
   background-size: cover;
   background-position: center;
 `
@@ -294,7 +352,6 @@ const Rocket = styled(motion.img)`
 `
 
 const PermanentRegistrarLogo = styled(motion.h1)`
-  font-family: Open Sans;
   font-weight: 800;
   font-size: 18px;
   text-transform: uppercase;
@@ -353,74 +410,47 @@ export default ({ match }) => {
 
   return (
     <HeroBGC>
-      <Hero>
-        <HeroTop>
-          <NetworkLogoGrid>
-            <NetworkStatus>
-              <Network>
-                {`${network} ${t('c.network')}`}
-                {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
-                {!isReadOnly && displayName && (
-                  <Name data-testid="display-name">
-                    ({ethToXDCAddress(displayName)})
-                  </Name>
-                )}
-              </Network>
-              {!isSafeApp && (
-                <NoAccounts
-                  onClick={isReadOnly ? connectProvider : disconnectProvider}
-                  buttonText={isReadOnly ? t('c.connect') : t('c.disconnect')}
-                />
+      <NetworkLogoGrid>
+        <HeaderNew />
+        <NetworkStatus>
+          {isReadOnly ? null : (
+            <HeadLink
+              to={'/address/' + accounts?.[0]}
+              active={isReadOnly ? 0 : 1}
+            >
+              <span>{t('c.mynames')}</span>
+            </HeadLink>
+          )}
+          <NetworkCard>
+            <Network>
+              {`${network} ${t('c.network')}`}
+              <br />
+              {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
+              {!isReadOnly && displayName && (
+                <Name data-testid="display-name">
+                  ({ethToXDCAddress(displayName)})
+                </Name>
               )}
-            </NetworkStatus>
-            <IconLogo src={goDomainsLogo} />
-          </NetworkLogoGrid>
-          <Nav>
-            {accounts?.length > 0 && !isReadOnly && (
-              <NavLink
-                active={url === '/address/' + accounts[0]}
-                to={'/address/' + accounts[0]}
-              >
-                {t('c.mynames')}
-              </NavLink>
-            )}
-            <NavLink to="/faq">{t('c.faq')}</NavLink>
-            {/*  <NavLink to="/favourites">{t('c.favourites')}</NavLink>  */}
-            <NavLink to="/about">{t('c.about')}</NavLink>
-            <NavLink to="/terms-of-service">Terms of Service</NavLink>
-
-            {/*   <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink> */}
-          </Nav>
-          {/* <MainPageBannerContainer>
-          <DAOBannerContent />
-        </MainPageBannerContainer> */}
-        </HeroTop>
-        <SearchContainer>
-          <>
-            {/*  <LogoLarge
-            initial={animation.initial}
-            animate={animation.animate}
-            src={ENSLogo}
-            alt="ENS logo"
-          /> */}
-            <MidGrid>
-              <TagLine>{t('c.tagLine')}</TagLine>
-              <Rocket
-                initial={animation.initial}
-                animate={animation.animate}
-                src={rocket}
-                alt="Rocket"
+            </Network>
+            {!isSafeApp && (
+              <NoAccounts
+                onClick={isReadOnly ? connectProvider : disconnectProvider}
+                buttonText={isReadOnly ? t('c.connect') : t('c.disconnect')}
               />
-            </MidGrid>
+            )}
+          </NetworkCard>
+        </NetworkStatus>
+      </NetworkLogoGrid>
+      <Banner />
 
-            {/*   <PermanentRegistrarLogo
-            initial={animation.initial}
-            animate={animation.animate}
-          /> */}
-            <Search />
-          </>
-        </SearchContainer>
-      </Hero>
+      <WhyGodomains />
+      <Numbers />
+      <Navigation />
+      <AboutUs />
+      <Testimonials />
+      <Blog />
+      <SearchFooter />
+      <Footer />
     </HeroBGC>
   )
 }

@@ -1,0 +1,18 @@
+.search-header {
+  padding: 0;
+  .search-container {
+    background: #6c00ff;
+    display: flex;
+    .logo {
+      background: linear-gradient(330.4deg, #44bcf0 4.54%, #7298f8 59.2%);
+      width: 25%;
+      img {
+        padding: 20px 50px 0px 40px;
+        width: 100%;
+      }
+    }
+    .search-header {
+      width: 75%;
+    }
+  }
+}

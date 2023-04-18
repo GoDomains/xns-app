@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from '@emotion/styled/macro'
-import mq from 'mediaQuery'
 
 import { H2 as DefaultH2, Title } from '../components/Typography/Basic'
+import AboutUs from '../components/AboutUs/AboutUs'
 
 const AboutContainer = styled('div')`
   margin: 1em;

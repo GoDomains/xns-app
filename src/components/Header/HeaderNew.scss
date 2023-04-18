@@ -1,0 +1,14 @@
+header {
+  z-index: 2;
+  .container {
+    z-index: 1;
+    .logo {
+      width: 298px;
+      img {
+        width: 100%;
+        margin-left: 40px;
+        margin-top: 20px;
+      }
+    }
+  }
+}

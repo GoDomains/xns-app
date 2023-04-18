@@ -6,7 +6,6 @@ const AddressLinkContainer = styled(Link)`
   display: inline-block;
   align-items: center;
   text-overflow: ellipsis;
-  font-family: Open Sans;
 `
 
 const AddressLink = ({ children, address, className, ariaLabel }) => (

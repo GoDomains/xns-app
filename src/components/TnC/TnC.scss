@@ -1,0 +1,40 @@
+body {
+  background: #eee;
+}
+.container {
+  padding: 120px 80px;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+  //overflow-x: scroll;
+}
+
+.card {
+  min-width: 240px;
+
+  padding: 16px 24px 2px;
+  margin-left: -32px;
+  will-change: transform;
+  transition: all 1s ease;
+  background: #0496ff;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.card:hover {
+  margin-right: 48px;
+  transform: translate(0, -40px);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 48px;
+  transform-style: preserve-3d;
+}
+
+.paragraph {
+  font-size: 20px;
+  line-height: 32px;
+  transform-style: preserve-3d;
+}

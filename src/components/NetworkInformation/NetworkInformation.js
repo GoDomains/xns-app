@@ -28,7 +28,6 @@ const NetworkInformationContainer = styled('div')`
 
 const Blockies = styled(UnstyledBlockies)`
   border-radius: 50%;
-  position: absolute;
   left: 10px;
   top: 10px;
   ${mq.medium`
@@ -48,7 +47,7 @@ const Avatar = styled('img')`
 `
 
 const NetworkStatus = styled('div')`
-  color: #cacaca;
+  color: #86a3b8;
   font-size: 14px;
   text-transform: capitalize;
   font-weight: 100;
@@ -56,32 +55,26 @@ const NetworkStatus = styled('div')`
   margin-left: 1px;
   display: flex;
   align-items: center;
-
-  &:before {
-    content: '';
-    display: flex;
-    width: 6px;
-    height: 6px;
-    border-radius: 3px;
-    background: #5284ff;
-    margin-right: 5px;
-  }
+  padding-top: 5px;
 `
 
 const Account = styled('div')`
-  color: #adbbcd;
+  color: #86a3b8;
   font-size: 16px;
   font-weight: 200;
-  font-family: Open Sans;
-  width: 140px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-top: 15px;
 `
 
 const AccountContainer = styled('div')`
-  padding: 10px 10px 10px 65px;
+  padding: 10px 10px 10px 20px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 33px;
   ${mq.medium`
     transform: translate(-25px, 5px);
     width: 225px;
@@ -140,9 +133,7 @@ function NetworkInformation() {
           <Account data-testid="account" className="account">
             <span>{ethToXDCAddress(displayName).toLowerCase()}</span>
           </Account>
-          <NetworkStatus>
-            {network} {t('c.network')}
-          </NetworkStatus>
+          <NetworkStatus>{network}</NetworkStatus>
           {!isSafeApp && (
             <NoAccountsModal
               onClick={disconnectProvider}
@@ -156,9 +147,7 @@ function NetworkInformation() {
           <Account data-testid="account" className="account">
             {t('c.readonly')}
           </Account>
-          <NetworkStatus>
-            {network} {t('c.network')}
-          </NetworkStatus>
+          <NetworkStatus>{network}</NetworkStatus>
           <NoAccountsModal
             onClick={connectProvider}
             colour={'#F5A623'}

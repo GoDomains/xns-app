@@ -62,7 +62,6 @@ export const RecordsKey = styled(DetailsKey)`
 `
 
 export const RecordsSubKey = styled('div')`
-  font-family: Open Sans;
   font-weight: 500;
   font-size: 14px;
   color: #adbbcd;

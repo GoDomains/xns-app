@@ -7,12 +7,16 @@ import { useQuery } from '@apollo/client'
 import { parseSearchTerm } from '../../utils/utils'
 import '../../api/subDomainRegistrar'
 import { withRouter } from 'react-router'
-import searchIcon from '../../assets/search.svg'
 import mq from 'mediaQuery'
-import LanguageSwitcher from '../LanguageSwitcher'
+import Language from '../../assets/globe.svg'
+import LoadingAnimation from './LoadingAnimation'
 
 const SearchForm = styled('form')`
   display: flex;
+  width: 100%;
+  border-radius: 50px 0px 0px 50px;
+  overflow: hidden;
+
   position: relative;
   &:before {
     content: '';
@@ -23,23 +27,16 @@ const SearchForm = styled('form')`
     display: block;
     width: 27px;
     height: 27px;
-    background: url(${searchIcon}) no-repeat;
   }
 
   input {
-    padding: 20px 0 20px 55px;
+    padding-left: 20px;
     width: 100%;
-    border-radius: 15px 0px 0px 15px;
     border: none;
     font-size: 18px;
     color: white;
-    font-family: Open Sans;
     font-weight: 100;
-    background-color: #0058ff;
-    ${mq.medium`
-      width: calc(100% - 162px);
-      font-size: 28px;
-    `}
+    background: transparent;
 
     &:focus {
       outline: 0;
@@ -51,20 +48,24 @@ const SearchForm = styled('form')`
     }
   }
 
+  .search-icon img {
+    position: unset;
+    padding: 4px 0 0 5px;
+    width: 40px;
+  }
+
   button {
-    ${p => (p && p.hasSearch ? 'background: #02a5ff;' : 'background: #03c7ff;')}
+    ${p => (p && p.hasSearch ? 'background: #AAEA03;' : 'background: #AAEA03;')}
+    width: 140px;
     color: white;
-    font-size: 22px;
-    border-radius: 0px 15px 15px 0px;
-    font-family: Open Sans;
-    padding: 20px 0;
-    height: 90px;
-    width: 162px;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 12px 12px 12px 12px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
-    display: none;
-    ${mq.medium`
-      display: block;
-    `}
 
     &:hover {
       ${p => (p && p.hasSearch ? 'cursor: pointer;' : 'cursor: default;')}
@@ -128,19 +129,21 @@ function Search({ history, className, style }) {
         }
       }}
     >
+      <div className="search-icon">
+        <img src={Language} alt="" />
+      </div>
       <input
         placeholder={t('search.placeholder')}
         ref={el => (input = el)}
         onChange={handleParse}
         autoCapitalize="off"
       />
-      <LanguageSwitcher />
       <button
         disabled={!hasSearch}
         type="submit"
         data-testid={'home-search-button'}
       >
-        {t('search.button')}
+        {!isENSReady ? <LoadingAnimation /> : t('search.button')}
       </button>
     </SearchForm>
   )

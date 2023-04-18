@@ -23,8 +23,8 @@ const HeartContainer = styled('svg')`
 
   &:hover {
     path {
-      fill: #c7d3e3;
-      stroke: #c7d3e3;
+      fill: #fc2947;
+      stroke: #fc2947;
     }
   }
 `

@@ -54,31 +54,35 @@ const StepContainer = styled('div')`
   display: flex;
 `
 
-const Step = ({ number, text, title, progress = 100 }) => (
+const Step = ({ number, text, title, progress = 100, image }) => (
   <StepContainer>
     <Number progress={progress}>
       <SVG height="60" width="60" progress={progress}>
-        <circle
-          cx="30"
-          cy="30"
-          r="28"
-          stroke="#dfdfdf"
-          strokeWidth="2"
-          fill="none"
-          transform="rotate(-90, 30, 30)"
-        />
-        <circle
-          cx="30"
-          cy="30"
-          r="28"
-          strokeWidth="2"
-          stroke="#42E068"
-          fill="none"
-          className="progress"
-          transform="rotate(-90, 30, 30)"
-        />
+        {/*<circle*/}
+        {/*  cx="30"*/}
+        {/*  cy="30"*/}
+        {/*  r="28"*/}
+        {/*  stroke="#dfdfdf"*/}
+        {/*  strokeWidth="2"*/}
+        {/*  fill="none"*/}
+        {/*  transform="rotate(-90, 30, 30)"*/}
+        {/*/>*/}
+        {/*<circle*/}
+        {/*  cx="30"*/}
+        {/*  cy="30"*/}
+        {/*  r="28"*/}
+        {/*  strokeWidth="2"*/}
+        {/*  stroke="#42E068"*/}
+        {/*  fill="none"*/}
+        {/*  className="progress"*/}
+        {/*  transform="rotate(-90, 30, 30)"*/}
+        {/*/>*/}
       </SVG>
-      <span>{number}</span>
+      <span>
+        <span className="image">
+          <img src={image} alt="" />
+        </span>
+      </span>
     </Number>
     <Content>
       <h3>{title}</h3>

@@ -48,7 +48,6 @@ const TAC = styled('div')`
 `
 
 const H1 = styled('h1')`
-  font-family: Open Sans;
   font-weight: 300;
   font-size: 25px;
   color: #2b2b2b;
@@ -324,8 +323,9 @@ const NameRegister = ({
       <div>
         <H1>GoDomains Invitation Beta Price</H1>
         <p>
-          Register domain name at Beta price: 3 Letter Domain Names at $30, 4
-          Letter Domain Names at $20, 5+ Letter Domain Names : $10.
+          GoDomain Prices (Per Year) <br />
+          Letter Domain Name : USD $ 50 ,4 Letter Domain Name : $ 25 and 5+
+          Letter Domain Name : $10
         </p>
       </div>
       <Explainer

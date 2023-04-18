@@ -1,0 +1,75 @@
+.footer {
+  display: block;
+  background: #1e1810;
+  padding: 92px 0 0;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+  .f-logo {
+    width: 374px;
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    padding: 48px 0 36px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    color: #ffffff;
+    margin: 0;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: #252ff2;
+    }
+  }
+  .copyright {
+    text-align: center;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    &.social-media {
+      padding-top: 20px;
+      display: flex;
+      justify-content: center;
+      li {
+        padding: 10px;
+        list-style: none;
+      }
+    }
+    &.social {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-around;
+      li {
+        list-style: none;
+        text-align: right;
+        font-size: 12px;
+        a {
+          text-decoration: none;
+        }
+        & + li {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+  .animation {
+    text-align: right;
+    float: right;
+    padding-left: 30px;
+  }
+}

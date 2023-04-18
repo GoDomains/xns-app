@@ -65,7 +65,6 @@ const TextInput = styled('input')`
   border-style: solid;
   padding: 16px;
   outline: 0;
-  font-family: inherit;
   font-size: 0.95em;
   background: #fff;
   border-color: #bbb;
