@@ -15,3 +15,23 @@ button {
 input {
   font-family: Montserrat;
 }
+
+.walletconnect-qrcode__image {
+  width: calc(100% - 45%)!important;
+}
+
+@media (min-width: 576px) {
+  .walletconnect-qrcode__image {
+    width: calc(100% - 40%);
+  }
+}
+
+.walletconnect-modal__footer {
+  margin-top: 10px!important;
+}
+
+@media only screen and (max-width: 768px) {
+  .walletconnect-modal__footer {
+      margin-top: 10px!important;
+  }
+}
